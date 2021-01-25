@@ -1,0 +1,1471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01E1380B9DAEF7517AD42713A8CB716E /* ButtonRowWithPresent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A868AEC95F4E476496C45CD6429E97 /* ButtonRowWithPresent.swift */; };
+		037A9945657069ED184EF47BF5EAB74A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164C674203C36C68DB89CF9F13074981 /* Foundation.framework */; };
+		052CDA13B29437A2FDCD9D19230AD39F /* FieldsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6A7B0C1FECAC25A03B25232E4F5BFA /* FieldsRow.swift */; };
+		05C88AAB95E98E3296996797706F19AF /* RuleRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDEFD786A6C32FF7FC196431AD0F4F /* RuleRequired.swift */; };
+		07572F1826C958646848D4EF5DBF377E /* RuleRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABBC4BEDBF04F27329A65A9ECD88CDE /* RuleRange.swift */; };
+		0D7339D0D404F9C394637DDFE383A7A8 /* DecimalFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E1EDD8016603F6F81EA2523EA1130 /* DecimalFormatter.swift */; };
+		119C3D64BDFECAB92F4FFCEF9B4F135D /* CheckRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D705F43E7D14B24A0C96BCA80F5DB0 /* CheckRow.swift */; };
+		184715569ECE8F58C7DE753E6CB01F1E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC65766921009E85B8DF681789016C2 /* UIKit.framework */; };
+		1BB933C505E10805A9E179E3DD2CA17E /* BaseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7FE2E8FED9A192BE141E9005C78D85 /* BaseRow.swift */; };
+		1F688CCB726777A3FA4E1182E0B44A94 /* Pods-SeniorProj-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D3F4FEA7C37D6687D7F200DF96386D89 /* Pods-SeniorProj-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20985D4D58589075ACE4005FBEB7B76B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164C674203C36C68DB89CF9F13074981 /* Foundation.framework */; };
+		27A3F7981DF0B5CFCB2E56AABBEAA319 /* FieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106748862F2B99EC780CE86AD042CCD8 /* FieldRow.swift */; };
+		2B5CDE335C271C91CE392B1901B4C605 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164C674203C36C68DB89CF9F13074981 /* Foundation.framework */; };
+		2D144E1543B0B44E364EFEC4E6CFE8D5 /* RuleRegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A82477C673D2B6C9A6F5E2D1CB4C86F /* RuleRegExp.swift */; };
+		2E5AD5FC9F45A7F38F5F5BC6FF7570E9 /* RuleClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DCED0C63ADDD1DCF702ED9825CE34A /* RuleClosure.swift */; };
+		3AEE367058904757B69ED2E76E98FF6B /* NFCReaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07AA3B65E93B0FD9AA55B0D52255EA6B /* NFCReaderDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B10E565DAFFAF455E4BB4314C95F4FA /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD006B10A22D9EFE8B75920776E1F61 /* CoreNFC.framework */; };
+		3BF29BEA4C1FF7360E93882C9D6C2A7C /* AlertRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5CCE95EA98EAF6454742219F4AF93A /* AlertRow.swift */; };
+		43BF9E101B293BBE9E6E8320FE5B1B92 /* Pods-SeniorProjTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AE705F7EB7D665BC7BB9BD2564E03AC /* Pods-SeniorProjTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45D64D81FC93E350F19E7A28A8A8FDAC /* NavigationAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBBD13C652778F435271F82F01CFFCD /* NavigationAccessoryView.swift */; };
+		4ACCB5F3DFEA1BA6EE6862F1B5D96088 /* NFCReaderWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = D12967EA985D85A6B6BA72AA66EFA2C6 /* NFCReaderWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D5CAEA66E12CA438CD7B4FA78BB6186 /* ListCheckRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427103B1D4A6C871EA06A63510999563 /* ListCheckRow.swift */; };
+		4E06B4A098934E4B5ABF82C76C56257E /* Pods-SeniorProj-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1696D0DD92D3970420A36620139F64DF /* Pods-SeniorProj-dummy.m */; };
+		50373F086BF01E92E8567F59A4EA4305 /* NFCReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D957F9F146234170595FFB32878EBBE /* NFCReader.m */; };
+		553F2C40EE9B6C0A1CC57FC2894455CD /* SelectableRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359AFED2F8D30ACC776595075AA8F99 /* SelectableRowType.swift */; };
+		56EB318A58A511C6BE4098E8EAD6A7C0 /* MultipleSelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA63F387DD4EA7A4FC2F2F6100BEBB /* MultipleSelectorRow.swift */; };
+		57DA9857A10221E5D429C48B85BB0010 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1229FF4EB8A4BE3A8B4D89547B86EE4 /* Cell.swift */; };
+		5A02CFF7195D1A7592F777170D8FC6D9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD933F9E95FCAC028824AA47DAD00C42 /* Protocols.swift */; };
+		5A1A55188705CB82F540F58D2910AB93 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CE0E5C7BAF9B4C0370E3E23160E938 /* Section.swift */; };
+		5A8396B9DDE887F7C397B7EEBC4163AA /* PickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAFC0D3BBFDC1D8077656B96FD387AF /* PickerRow.swift */; };
+		5F5515249E1A20C230755D2E8001F3FC /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640D83873C16A9533FA6FEE7957BE13 /* Operators.swift */; };
+		5FA0AFCA94E1291506DC54D03765FA22 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617DC556C92135536EBC0C3D60C3BDD0 /* Row.swift */; };
+		61D928089445221BAB80A8DB76A68904 /* PopoverSelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762A3178FD9A30CFEF17380868DE0A8D /* PopoverSelectorRow.swift */; };
+		62E99A538A3363A9013DCCBF519B876F /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6354E67DA08E2F32A64D64D4CEE7564F /* CellType.swift */; };
+		62F189F7BEEADAD0581C649CA51626FF /* NFCNDEFReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4E6233C96ACDF63A12787CF83FA15 /* NFCNDEFReader.m */; };
+		6706FE594A5FC58BE59F7AA454982D93 /* SliderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A51938D2F4EBF8995D164EF043716 /* SliderRow.swift */; };
+		6D13C3C40D5F2B21B4491B81002F2894 /* RuleEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E034A48366D8E7EBB65635A6A781A74 /* RuleEmail.swift */; };
+		7005C904B5F05004C2BC6703E8B14F39 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5856E3C5196AFCF459757EEF1E0F0DA1 /* Validation.swift */; };
+		74EC68DA659219AB56A917312A73EA7D /* SelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3CD7A26DCC01645095BA5544883731 /* SelectorViewController.swift */; };
+		7CB47EA97BB0F9D12DB9A556A77C5519 /* NFCReaderWriter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ED435CE389970FE4F0C417B34B53A04 /* NFCReaderWriter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CDE8FB3A24BA483F4D2AFB70D990F70 /* Eureka-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD0DE75F43F49352F71C6926FF3AC81 /* Eureka-dummy.m */; };
+		821C23BCC87386E7EDAAF97B3C4F1D5D /* RowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AF278B437B7D06769DCE0153D84895 /* RowType.swift */; };
+		8977378EC4880B223F1711B38573E36B /* NFCNDEFWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 06BA93578928568A9A340D36A57005E9 /* NFCNDEFWriter.m */; };
+		8A92D825C03E19810B5393EFDFE4502E /* MultipleSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BA92FF794F3F89984EBADD58C884F1 /* MultipleSelectorViewController.swift */; };
+		8AFA10B7F0591080EA6BCBCC9CB34BE1 /* GenericMultipleSelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E30790D357FAE755934BCF563BD7C /* GenericMultipleSelectorRow.swift */; };
+		8CDD660210D5A535F6725F30259E629A /* PresenterRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F19E76EDB43C65EE58746EF274C09F /* PresenterRowType.swift */; };
+		8F6FA2209FBF8D11ED0700B297E08F63 /* Pods-SeniorProj-SeniorProjUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1B4D718B2CF8498BD1C4D6C15E320D /* Pods-SeniorProj-SeniorProjUITests-dummy.m */; };
+		90AC4EC97290F51169068A86411BE31A /* NFCReaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C3362100FC3D5C4BA669893ACC4DF7 /* NFCReaderWriter.m */; };
+		A02F150A74062D9E29592D3EBD13B777 /* StepperRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B55BFF6C06B9E7667758343B5AA3218 /* StepperRow.swift */; };
+		A4714382908D19F0486CC7D722D66305 /* NFCTagReader.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2DDCAF4F7A400C36A71DE5D19AFE42 /* NFCTagReader.m */; };
+		A4C99CE4C6D89F2107F6A280A0A85688 /* HeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7371281F63EFC0F8AE57D5474C5068A /* HeaderFooterView.swift */; };
+		A77DA0652E7847FE296224EEB12F7EBD /* RuleLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5743C24EC767FFE76073AA105DDD470C /* RuleLength.swift */; };
+		A91D4F561E5C16644A5D3A389609ACD6 /* DoublePickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBC51FE68FA7D127878FD62CBCAD774 /* DoublePickerRow.swift */; };
+		AAA33D7843F1F33E3F9D6F261AB5C2B3 /* PickerInlineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D62A4A5CC759AFB20D757814CCD0B /* PickerInlineRow.swift */; };
+		AADC2477F0EC2A446D3342DCA1E220C8 /* TriplePickerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B316B0502C0BCCDB92CFE478D8D4DCF /* TriplePickerInputRow.swift */; };
+		AC2033953DBC0C8927338802D68343CC /* NFCConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 869F37B2D09AEF9CAD1417F3F314D05C /* NFCConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC3155977A1754250152CD3635EC1DD0 /* Pods-SeniorProj-SeniorProjUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 18D6BF8CD8C8F2B3897FDBA770D30BF8 /* Pods-SeniorProj-SeniorProjUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC795F2AEFA1C804BABDB1D4931FAAEB /* RowProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB5DACA3D3DD07DFE8F23F23573751 /* RowProtocols.swift */; };
+		AFCEB645D509F679CE8FBCFFEDBB65BC /* SwitchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A3A0501D28AE3FF3E092DD029EC01C /* SwitchRow.swift */; };
+		B466D5B2650B7521FBE653FC9B7A793D /* DateInlineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC77E0D3038CEB37A5A28F5D6577569 /* DateInlineRow.swift */; };
+		B490953386257F2C8E03C1D632AC361E /* OptionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63CC7FD7BA252359F0B118E911DF20D /* OptionsRow.swift */; };
+		B6DF9275361EA04A959E38F4133C33B7 /* SwipeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3FCE2A09923D1805EF07C2C6CFA17E /* SwipeActions.swift */; };
+		B8532DBCB3E55A60497E6A66830063C2 /* NFCReader.h in Headers */ = {isa = PBXBuildFile; fileRef = F47B7AF5EACA77ED2CC333EBF6818B21 /* NFCReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA1F123F3ECF653AFD60C2E52C0D7A08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164C674203C36C68DB89CF9F13074981 /* Foundation.framework */; };
+		BA4BC229F54ABE58463D68EFFD15F3A5 /* NFCNDEFReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 778FCE3C6BFED3FA822F2121C4A03E07 /* NFCNDEFReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE93E023215A8B4A05A2AEC8B7FAE170 /* InlineRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF2DD7D17CFDFCCC50A9548BC95C280 /* InlineRowType.swift */; };
+		C08713DF3DF904E55D8A3E3775A6F3EB /* TriplePickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20885DEB6F40C68BC05430D21927174B /* TriplePickerRow.swift */; };
+		C0F073D21CF9CB5F87F3F21044E98BF0 /* DateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93E2A7C8E7452D55BF5CAE4F9169464 /* DateRow.swift */; };
+		C299DDF2CE31D8489EFFD0B9D086F9FE /* SelectableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6BBF83DC74D2C2C3C672F54157938E /* SelectableSection.swift */; };
+		C2F5EF0076B32E28969F73229409F94E /* DatePickerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFEDED5D98057D5102FF2812F71F4E8 /* DatePickerRow.swift */; };
+		C4EB1DE2CCEE60A99EB5AA718DD67105 /* Eureka-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6717FD20B3FF8333FFFED679537BF633 /* Eureka-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5562E6984BB0FDC8358F2737187DC90 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8969C84BA8750D9D59147C7435405C0B /* Helpers.swift */; };
+		C5BB109885BB80A50267C66A1CE45D5C /* Pods-SeniorProjTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 865CA22B378123DC8918212D97E91D12 /* Pods-SeniorProjTests-dummy.m */; };
+		C63B306D3FAA845771A0B1CEB3F0DC16 /* TextAreaRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6FDADF09A1AB9BB96328C9DBEDF8E /* TextAreaRow.swift */; };
+		C74F50DD266F0933B137D16ACD76FB1A /* RuleURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460A5D4DCA55B22C93AEB54A4CAE3AF /* RuleURL.swift */; };
+		C831261CF70AECC8AC9DDFDBFC3F7172 /* LabelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3CCC19BF0BFBCE21E1061A0821AC7 /* LabelRow.swift */; };
+		C97BE76AAB5C7242509D8482EBA86AE9 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9FAC4F2DFF5E5A864E3120F2B1763 /* Form.swift */; };
+		CD02786BB2D7DB60EB169F96FA4404EC /* NFCNDEFWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = B9C805E6F387F1414A5203F4931C2D41 /* NFCNDEFWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEF27164EA8A8C1BCB66B7A75E287216 /* ActionSheetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E576C2F51D5CD60C25421F6137F2E5E /* ActionSheetRow.swift */; };
+		D75CBD8D2B4526B7DE24212AB7B24D20 /* RowControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F33E1CB321498F743183BD4ED58AC7 /* RowControllerType.swift */; };
+		D7663970356A7FBA65579C1EB951220C /* SelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6996CA7E5618610FCC6F5BF83617FC /* SelectorRow.swift */; };
+		D9FAA26AD41D565773823B074F93D909 /* DateFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FD08614E1CD403C0592AE6201FB3FA /* DateFieldRow.swift */; };
+		DE0D238C0FA3CA1B9090B55023D2C1EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164C674203C36C68DB89CF9F13074981 /* Foundation.framework */; };
+		DFD06D79C71CCAEFA59D7DFBD706C493 /* DoublePickerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43849644BE95586E2C17115B11E693C7 /* DoublePickerInputRow.swift */; };
+		E0F369B772C5C8F0AF3A1C8BA5674628 /* ButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4CD27FF5D3ADB11AEC08551D7D0098 /* ButtonRow.swift */; };
+		E157909F863B2ABC27A0BC3613BC999A /* NFCReaderWriter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82FA2D0B4EB8505234C7BD00F6697B2E /* NFCReaderWriter-dummy.m */; };
+		E3E2A605AF119D1F90CE77963E6CFD26 /* SelectorAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598DAD1EB35D10544BD4181AC173937A /* SelectorAlertController.swift */; };
+		E7DA4EBBBFFF3EB6992CA11B921DD211 /* SegmentedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCDA020BEAE326CF54B929FC93AC6A /* SegmentedRow.swift */; };
+		E987F386AA63D0DCD22642A475A8EFD7 /* PickerInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048583603C920589BEF1DE45BA3CCF32 /* PickerInputRow.swift */; };
+		E9AB923FC704B44222C8A5DB4145113A /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9361C9CAAA392ADC5213FA4FD0B64B /* Core.swift */; };
+		EB9E8E94E8877C33E88295D89CF5D9CC /* RuleEqualsToRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761B34905A6A9486BB79DFF6D5D3CC /* RuleEqualsToRow.swift */; };
+		F2279E1339CC1B6326AD6FF389D24F96 /* DateInlineFieldRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C107A56D355787E278DEFCF1E32BBD40 /* DateInlineFieldRow.swift */; };
+		F47D1993C006C374C634B04421484A4D /* AlertOptionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC156E75DA15A37A59137610A8CC62 /* AlertOptionsRow.swift */; };
+		F48A7BFCB721FC9106025CA7BA43E921 /* NFCTagReader.h in Headers */ = {isa = PBXBuildFile; fileRef = F04D9BD80DCBB23E1C412AB1073EF97D /* NFCTagReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FECC68B085B27878A5C1F2FECC9F088F /* PushRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7CB2A32A9525D1C35570BEEA68A78 /* PushRow.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07B9FCB50033849D4E4830302149EE3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88BE8BE7A2FE6CED4193CCD8FF3CBEF7;
+			remoteInfo = Eureka;
+		};
+		50B65CA4780FECA505AA169FDB779BC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3153D1329350B702E037E34741271C1C;
+			remoteInfo = NFCReaderWriter;
+		};
+		6203177C5D56543572EAFCA75EB4115F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3626AE70FF48CF45AFF5945736B685F7;
+			remoteInfo = "Pods-SeniorProj";
+		};
+		BF7B41A52A6D481019287B54EF99658B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3153D1329350B702E037E34741271C1C;
+			remoteInfo = NFCReaderWriter;
+		};
+		FD89D46DA01139DEEE7E6DBA6B3754FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88BE8BE7A2FE6CED4193CCD8FF3CBEF7;
+			remoteInfo = Eureka;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00CB5DACA3D3DD07DFE8F23F23573751 /* RowProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowProtocols.swift; path = Source/Core/RowProtocols.swift; sourceTree = "<group>"; };
+		032A51938D2F4EBF8995D164EF043716 /* SliderRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SliderRow.swift; path = Source/Rows/SliderRow.swift; sourceTree = "<group>"; };
+		048583603C920589BEF1DE45BA3CCF32 /* PickerInputRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerInputRow.swift; path = Source/Rows/PickerInputRow.swift; sourceTree = "<group>"; };
+		06BA93578928568A9A340D36A57005E9 /* NFCNDEFWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NFCNDEFWriter.m; path = Sources/NFCReaderWriter/NFCNDEFWriter.m; sourceTree = "<group>"; };
+		06DC156E75DA15A37A59137610A8CC62 /* AlertOptionsRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertOptionsRow.swift; path = Source/Rows/Common/AlertOptionsRow.swift; sourceTree = "<group>"; };
+		07AA3B65E93B0FD9AA55B0D52255EA6B /* NFCReaderDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NFCReaderDelegate.h; path = Sources/NFCReaderWriter/NFCReaderDelegate.h; sourceTree = "<group>"; };
+		082977F3777A7D434AB35C357B487F83 /* Eureka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Eureka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C3FCE2A09923D1805EF07C2C6CFA17E /* SwipeActions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActions.swift; path = Source/Core/SwipeActions.swift; sourceTree = "<group>"; };
+		0CD3CCC19BF0BFBCE21E1061A0821AC7 /* LabelRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LabelRow.swift; path = Source/Rows/LabelRow.swift; sourceTree = "<group>"; };
+		0D184292513D6877B49D3FE4B0BD6E79 /* Eureka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Eureka.debug.xcconfig; sourceTree = "<group>"; };
+		106748862F2B99EC780CE86AD042CCD8 /* FieldRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FieldRow.swift; path = Source/Rows/Common/FieldRow.swift; sourceTree = "<group>"; };
+		151B2106AEAEB77880485A3B55145525 /* Pods-SeniorProj-SeniorProjUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SeniorProj-SeniorProjUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		164C674203C36C68DB89CF9F13074981 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		1696D0DD92D3970420A36620139F64DF /* Pods-SeniorProj-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SeniorProj-dummy.m"; sourceTree = "<group>"; };
+		18D6BF8CD8C8F2B3897FDBA770D30BF8 /* Pods-SeniorProj-SeniorProjUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SeniorProj-SeniorProjUITests-umbrella.h"; sourceTree = "<group>"; };
+		1A8CC41C7FBF5386B5CD896E512A877C /* Pods_SeniorProjTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeniorProjTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AF2DD7D17CFDFCCC50A9548BC95C280 /* InlineRowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InlineRowType.swift; path = Source/Core/InlineRowType.swift; sourceTree = "<group>"; };
+		1E6BBF83DC74D2C2C3C672F54157938E /* SelectableSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectableSection.swift; path = Source/Core/SelectableSection.swift; sourceTree = "<group>"; };
+		1FE4E6233C96ACDF63A12787CF83FA15 /* NFCNDEFReader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NFCNDEFReader.m; path = Sources/NFCReaderWriter/NFCNDEFReader.m; sourceTree = "<group>"; };
+		20885DEB6F40C68BC05430D21927174B /* TriplePickerRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TriplePickerRow.swift; path = Source/Rows/TriplePickerRow.swift; sourceTree = "<group>"; };
+		24AF278B437B7D06769DCE0153D84895 /* RowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowType.swift; path = Source/Core/RowType.swift; sourceTree = "<group>"; };
+		24FA63F387DD4EA7A4FC2F2F6100BEBB /* MultipleSelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipleSelectorRow.swift; path = Source/Rows/MultipleSelectorRow.swift; sourceTree = "<group>"; };
+		29A672B20755329434CEC488B017AB3B /* Pods_SeniorProj_SeniorProjUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeniorProj_SeniorProjUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29DCED0C63ADDD1DCF702ED9825CE34A /* RuleClosure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleClosure.swift; path = Source/Validations/RuleClosure.swift; sourceTree = "<group>"; };
+		2ABBC4BEDBF04F27329A65A9ECD88CDE /* RuleRange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleRange.swift; path = Source/Validations/RuleRange.swift; sourceTree = "<group>"; };
+		2DE5545C349B9E14595B37AFC41F6D6F /* Pods-SeniorProj-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SeniorProj-Info.plist"; sourceTree = "<group>"; };
+		30D6FDADF09A1AB9BB96328C9DBEDF8E /* TextAreaRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextAreaRow.swift; path = Source/Rows/TextAreaRow.swift; sourceTree = "<group>"; };
+		32644439F25D2BF22289C80D0A0AE831 /* Pods-SeniorProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SeniorProj.release.xcconfig"; sourceTree = "<group>"; };
+		36A02F1FE05C0866F16EE21C82E58687 /* Pods-SeniorProjTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SeniorProjTests.debug.xcconfig"; sourceTree = "<group>"; };
+		37A7CB2A32A9525D1C35570BEEA68A78 /* PushRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PushRow.swift; path = Source/Rows/PushRow.swift; sourceTree = "<group>"; };
+		3A9361C9CAAA392ADC5213FA4FD0B64B /* Core.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Core.swift; path = Source/Core/Core.swift; sourceTree = "<group>"; };
+		3AD006B10A22D9EFE8B75920776E1F61 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreNFC.framework; sourceTree = DEVELOPER_DIR; };
+		3D706D5D7239941C088C34120A7B4276 /* Eureka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Eureka.release.xcconfig; sourceTree = "<group>"; };
+		3ED435CE389970FE4F0C417B34B53A04 /* NFCReaderWriter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NFCReaderWriter-umbrella.h"; sourceTree = "<group>"; };
+		3F6BA491C0CB066CAABEB3F0ADDCE723 /* Pods-SeniorProjTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SeniorProjTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		427103B1D4A6C871EA06A63510999563 /* ListCheckRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ListCheckRow.swift; path = Source/Rows/SelectableRows/ListCheckRow.swift; sourceTree = "<group>"; };
+		43849644BE95586E2C17115B11E693C7 /* DoublePickerInputRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DoublePickerInputRow.swift; path = Source/Rows/DoublePickerInputRow.swift; sourceTree = "<group>"; };
+		48A3A0501D28AE3FF3E092DD029EC01C /* SwitchRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchRow.swift; path = Source/Rows/SwitchRow.swift; sourceTree = "<group>"; };
+		49F19E76EDB43C65EE58746EF274C09F /* PresenterRowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PresenterRowType.swift; path = Source/Core/PresenterRowType.swift; sourceTree = "<group>"; };
+		4A1B122B84804EFCB96AA2B350CACCC5 /* NFCReaderWriter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NFCReaderWriter.release.xcconfig; sourceTree = "<group>"; };
+		4ADD3E652C94A1DDECC9F2C1582E7C37 /* Eureka-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Eureka-Info.plist"; sourceTree = "<group>"; };
+		4AE705F7EB7D665BC7BB9BD2564E03AC /* Pods-SeniorProjTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SeniorProjTests-umbrella.h"; sourceTree = "<group>"; };
+		4B30B8E27F9E9A8365E64059748F522D /* NFCReaderWriter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "NFCReaderWriter-Info.plist"; sourceTree = "<group>"; };
+		4BCD66A86AA328522712825E4E2AAEF4 /* Pods-SeniorProjTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SeniorProjTests.release.xcconfig"; sourceTree = "<group>"; };
+		4C11D309FE52D4DE072895CFB09DB72B /* Pods-SeniorProjTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SeniorProjTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4CBC51FE68FA7D127878FD62CBCAD774 /* DoublePickerRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DoublePickerRow.swift; path = Source/Rows/DoublePickerRow.swift; sourceTree = "<group>"; };
+		4D5CCE95EA98EAF6454742219F4AF93A /* AlertRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertRow.swift; path = Source/Rows/AlertRow.swift; sourceTree = "<group>"; };
+		4DBF8D3A3131EB72E09D82FBEDF61B7C /* Pods_SeniorProj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeniorProj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EAFC0D3BBFDC1D8077656B96FD387AF /* PickerRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerRow.swift; path = Source/Rows/PickerRow.swift; sourceTree = "<group>"; };
+		51326799A54CFDDF59EDD408B4D3A094 /* Pods-SeniorProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SeniorProj.debug.xcconfig"; sourceTree = "<group>"; };
+		523E1EDD8016603F6F81EA2523EA1130 /* DecimalFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DecimalFormatter.swift; path = Source/Rows/Common/DecimalFormatter.swift; sourceTree = "<group>"; };
+		52BDEFD786A6C32FF7FC196431AD0F4F /* RuleRequired.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleRequired.swift; path = Source/Validations/RuleRequired.swift; sourceTree = "<group>"; };
+		5731FD74D2C5609383792889F0189BF8 /* NFCReaderWriter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NFCReaderWriter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5743C24EC767FFE76073AA105DDD470C /* RuleLength.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleLength.swift; path = Source/Validations/RuleLength.swift; sourceTree = "<group>"; };
+		5856E3C5196AFCF459757EEF1E0F0DA1 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Core/Validation.swift; sourceTree = "<group>"; };
+		598DAD1EB35D10544BD4181AC173937A /* SelectorAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorAlertController.swift; path = Source/Rows/Controllers/SelectorAlertController.swift; sourceTree = "<group>"; };
+		5A82477C673D2B6C9A6F5E2D1CB4C86F /* RuleRegExp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleRegExp.swift; path = Source/Validations/RuleRegExp.swift; sourceTree = "<group>"; };
+		5B1E30790D357FAE755934BCF563BD7C /* GenericMultipleSelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GenericMultipleSelectorRow.swift; path = Source/Rows/Common/GenericMultipleSelectorRow.swift; sourceTree = "<group>"; };
+		5B55BFF6C06B9E7667758343B5AA3218 /* StepperRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepperRow.swift; path = Source/Rows/StepperRow.swift; sourceTree = "<group>"; };
+		5D37A2B7287AD4DA698E4F4AEF72AD86 /* Pods-SeniorProj-SeniorProjUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SeniorProj-SeniorProjUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D957F9F146234170595FFB32878EBBE /* NFCReader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NFCReader.m; path = Sources/NFCReaderWriter/NFCReader.m; sourceTree = "<group>"; };
+		5F0001B5D3CBFCC4F0FAC545C2BCD763 /* Pods-SeniorProj-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SeniorProj-acknowledgements.plist"; sourceTree = "<group>"; };
+		617DC556C92135536EBC0C3D60C3BDD0 /* Row.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Row.swift; path = Source/Core/Row.swift; sourceTree = "<group>"; };
+		6354E67DA08E2F32A64D64D4CEE7564F /* CellType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellType.swift; path = Source/Core/CellType.swift; sourceTree = "<group>"; };
+		6717FD20B3FF8333FFFED679537BF633 /* Eureka-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Eureka-umbrella.h"; sourceTree = "<group>"; };
+		67F33E1CB321498F743183BD4ED58AC7 /* RowControllerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowControllerType.swift; path = Source/Core/RowControllerType.swift; sourceTree = "<group>"; };
+		6B9B46BE442343C8C16ED8B761EB68D8 /* Eureka-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Eureka-prefix.pch"; sourceTree = "<group>"; };
+		6CC65766921009E85B8DF681789016C2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		6EFEDED5D98057D5102FF2812F71F4E8 /* DatePickerRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatePickerRow.swift; path = Source/Rows/DatePickerRow.swift; sourceTree = "<group>"; };
+		7359AFED2F8D30ACC776595075AA8F99 /* SelectableRowType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectableRowType.swift; path = Source/Core/SelectableRowType.swift; sourceTree = "<group>"; };
+		7460A5D4DCA55B22C93AEB54A4CAE3AF /* RuleURL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleURL.swift; path = Source/Validations/RuleURL.swift; sourceTree = "<group>"; };
+		762A3178FD9A30CFEF17380868DE0A8D /* PopoverSelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopoverSelectorRow.swift; path = Source/Rows/PopoverSelectorRow.swift; sourceTree = "<group>"; };
+		7640D83873C16A9533FA6FEE7957BE13 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Source/Core/Operators.swift; sourceTree = "<group>"; };
+		778FCE3C6BFED3FA822F2121C4A03E07 /* NFCNDEFReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NFCNDEFReader.h; path = Sources/NFCReaderWriter/NFCNDEFReader.h; sourceTree = "<group>"; };
+		77BCDA020BEAE326CF54B929FC93AC6A /* SegmentedRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentedRow.swift; path = Source/Rows/SegmentedRow.swift; sourceTree = "<group>"; };
+		7D4CD27FF5D3ADB11AEC08551D7D0098 /* ButtonRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonRow.swift; path = Source/Rows/ButtonRow.swift; sourceTree = "<group>"; };
+		7D7FE2E8FED9A192BE141E9005C78D85 /* BaseRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseRow.swift; path = Source/Core/BaseRow.swift; sourceTree = "<group>"; };
+		7E576C2F51D5CD60C25421F6137F2E5E /* ActionSheetRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActionSheetRow.swift; path = Source/Rows/ActionSheetRow.swift; sourceTree = "<group>"; };
+		7EBBD13C652778F435271F82F01CFFCD /* NavigationAccessoryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NavigationAccessoryView.swift; path = Source/Core/NavigationAccessoryView.swift; sourceTree = "<group>"; };
+		82FA2D0B4EB8505234C7BD00F6697B2E /* NFCReaderWriter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NFCReaderWriter-dummy.m"; sourceTree = "<group>"; };
+		83B5826E65BD997C3B16473457E141D9 /* Pods-SeniorProj-SeniorProjUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SeniorProj-SeniorProjUITests-frameworks.sh"; sourceTree = "<group>"; };
+		85BA92FF794F3F89984EBADD58C884F1 /* MultipleSelectorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipleSelectorViewController.swift; path = Source/Rows/Controllers/MultipleSelectorViewController.swift; sourceTree = "<group>"; };
+		865CA22B378123DC8918212D97E91D12 /* Pods-SeniorProjTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SeniorProjTests-dummy.m"; sourceTree = "<group>"; };
+		869F37B2D09AEF9CAD1417F3F314D05C /* NFCConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NFCConstants.h; path = Sources/NFCReaderWriter/NFCConstants.h; sourceTree = "<group>"; };
+		86D705F43E7D14B24A0C96BCA80F5DB0 /* CheckRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckRow.swift; path = Source/Rows/CheckRow.swift; sourceTree = "<group>"; };
+		8795DCA7A9E3C047CED0D2C76F238709 /* Pods-SeniorProj-SeniorProjUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SeniorProj-SeniorProjUITests-Info.plist"; sourceTree = "<group>"; };
+		8969C84BA8750D9D59147C7435405C0B /* Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = Source/Core/Helpers.swift; sourceTree = "<group>"; };
+		95C3362100FC3D5C4BA669893ACC4DF7 /* NFCReaderWriter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NFCReaderWriter.m; path = Sources/NFCReaderWriter/NFCReaderWriter.m; sourceTree = "<group>"; };
+		98FFEE0F1882972E0A0EA4DDD8940738 /* NFCReaderWriter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NFCReaderWriter.debug.xcconfig; sourceTree = "<group>"; };
+		9B316B0502C0BCCDB92CFE478D8D4DCF /* TriplePickerInputRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TriplePickerInputRow.swift; path = Source/Rows/TriplePickerInputRow.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E034A48366D8E7EBB65635A6A781A74 /* RuleEmail.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleEmail.swift; path = Source/Validations/RuleEmail.swift; sourceTree = "<group>"; };
+		A1113E21037D3EB101430807F2B4137E /* NFCReaderWriter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NFCReaderWriter-prefix.pch"; sourceTree = "<group>"; };
+		A21678E06CADD35137FED2B1AB600262 /* Pods-SeniorProj-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SeniorProj-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A7A868AEC95F4E476496C45CD6429E97 /* ButtonRowWithPresent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonRowWithPresent.swift; path = Source/Rows/ButtonRowWithPresent.swift; sourceTree = "<group>"; };
+		AA332A27F7F144A0BD258ACFB82D1CA6 /* Pods-SeniorProjTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SeniorProjTests-Info.plist"; sourceTree = "<group>"; };
+		AD933F9E95FCAC028824AA47DAD00C42 /* Protocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Source/Rows/Common/Protocols.swift; sourceTree = "<group>"; };
+		B5CE0E5C7BAF9B4C0370E3E23160E938 /* Section.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Section.swift; path = Source/Core/Section.swift; sourceTree = "<group>"; };
+		B9C805E6F387F1414A5203F4931C2D41 /* NFCNDEFWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NFCNDEFWriter.h; path = Sources/NFCReaderWriter/NFCNDEFWriter.h; sourceTree = "<group>"; };
+		C107A56D355787E278DEFCF1E32BBD40 /* DateInlineFieldRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateInlineFieldRow.swift; path = Source/Rows/Common/DateInlineFieldRow.swift; sourceTree = "<group>"; };
+		C38D0230E8A8DE71B96D56C4D222A9EA /* Pods-SeniorProj-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SeniorProj-frameworks.sh"; sourceTree = "<group>"; };
+		C63CC7FD7BA252359F0B118E911DF20D /* OptionsRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionsRow.swift; path = Source/Rows/Common/OptionsRow.swift; sourceTree = "<group>"; };
+		C93E2A7C8E7452D55BF5CAE4F9169464 /* DateRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateRow.swift; path = Source/Rows/DateRow.swift; sourceTree = "<group>"; };
+		C966355084E9B3557B9A606BE5591C67 /* Pods-SeniorProj-SeniorProjUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SeniorProj-SeniorProjUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		CC1B4D718B2CF8498BD1C4D6C15E320D /* Pods-SeniorProj-SeniorProjUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SeniorProj-SeniorProjUITests-dummy.m"; sourceTree = "<group>"; };
+		CD2DDCAF4F7A400C36A71DE5D19AFE42 /* NFCTagReader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NFCTagReader.m; path = Sources/NFCReaderWriter/NFCTagReader.m; sourceTree = "<group>"; };
+		CE6A7B0C1FECAC25A03B25232E4F5BFA /* FieldsRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FieldsRow.swift; path = Source/Rows/FieldsRow.swift; sourceTree = "<group>"; };
+		CF270F9FCAB8D2704212B9E3DB37727B /* Pods-SeniorProjTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SeniorProjTests.modulemap"; sourceTree = "<group>"; };
+		CFA9FAC4F2DFF5E5A864E3120F2B1763 /* Form.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Form.swift; path = Source/Core/Form.swift; sourceTree = "<group>"; };
+		D12967EA985D85A6B6BA72AA66EFA2C6 /* NFCReaderWriter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NFCReaderWriter.h; path = Sources/NFCReaderWriter/NFCReaderWriter.h; sourceTree = "<group>"; };
+		D2C64D37029EA6A99D2889D6EB080F57 /* Pods-SeniorProj-SeniorProjUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SeniorProj-SeniorProjUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D3F4FEA7C37D6687D7F200DF96386D89 /* Pods-SeniorProj-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SeniorProj-umbrella.h"; sourceTree = "<group>"; };
+		DB6996CA7E5618610FCC6F5BF83617FC /* SelectorRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorRow.swift; path = Source/Rows/Common/SelectorRow.swift; sourceTree = "<group>"; };
+		DEC77E0D3038CEB37A5A28F5D6577569 /* DateInlineRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateInlineRow.swift; path = Source/Rows/DateInlineRow.swift; sourceTree = "<group>"; };
+		F04D9BD80DCBB23E1C412AB1073EF97D /* NFCTagReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NFCTagReader.h; path = Sources/NFCReaderWriter/NFCTagReader.h; sourceTree = "<group>"; };
+		F0FD08614E1CD403C0592AE6201FB3FA /* DateFieldRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFieldRow.swift; path = Source/Rows/Common/DateFieldRow.swift; sourceTree = "<group>"; };
+		F1229FF4EB8A4BE3A8B4D89547B86EE4 /* Cell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = Source/Core/Cell.swift; sourceTree = "<group>"; };
+		F39EF26BD78A7ECF4338F80B1A818C7D /* Pods-SeniorProj-SeniorProjUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SeniorProj-SeniorProjUITests.modulemap"; sourceTree = "<group>"; };
+		F47B7AF5EACA77ED2CC333EBF6818B21 /* NFCReader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NFCReader.h; path = Sources/NFCReaderWriter/NFCReader.h; sourceTree = "<group>"; };
+		F4D51A62B495C1240D5DB36872F216D9 /* Pods-SeniorProj.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SeniorProj.modulemap"; sourceTree = "<group>"; };
+		F53D62A4A5CC759AFB20D757814CCD0B /* PickerInlineRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerInlineRow.swift; path = Source/Rows/PickerInlineRow.swift; sourceTree = "<group>"; };
+		F5761B34905A6A9486BB79DFF6D5D3CC /* RuleEqualsToRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RuleEqualsToRow.swift; path = Source/Validations/RuleEqualsToRow.swift; sourceTree = "<group>"; };
+		F6B9E9DCFF697CAE6EE23B71F8782852 /* Eureka.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Eureka.modulemap; sourceTree = "<group>"; };
+		F7371281F63EFC0F8AE57D5474C5068A /* HeaderFooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeaderFooterView.swift; path = Source/Core/HeaderFooterView.swift; sourceTree = "<group>"; };
+		F9DF955BCAF8CE8159ADF6CFADEDEB31 /* NFCReaderWriter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NFCReaderWriter.modulemap; sourceTree = "<group>"; };
+		FCD0DE75F43F49352F71C6926FF3AC81 /* Eureka-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Eureka-dummy.m"; sourceTree = "<group>"; };
+		FF3CD7A26DCC01645095BA5544883731 /* SelectorViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorViewController.swift; path = Source/Rows/Controllers/SelectorViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11E7B4092984208E5C9E727CBDBA854F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B10E565DAFFAF455E4BB4314C95F4FA /* CoreNFC.framework in Frameworks */,
+				2B5CDE335C271C91CE392B1901B4C605 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		484F38E7277F35ADBDEBE4B6E7BF9351 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20985D4D58589075ACE4005FBEB7B76B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C739679CAE74D90F140F5EDC0EE4EC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA1F123F3ECF653AFD60C2E52C0D7A08 /* Foundation.framework in Frameworks */,
+				184715569ECE8F58C7DE753E6CB01F1E /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC1F139D1471EEBE8C22D444B1A50D58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0D238C0FA3CA1B9090B55023D2C1EB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC9A8B0EBDE50FDAFBA9DC9C1F368039 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				037A9945657069ED184EF47BF5EAB74A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9AF4CC5B950F5B52235CCF09C3A6C676 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5EEB30D23F6AD1FD36A8FA2017168185 /* Pods-SeniorProj */ = {
+			isa = PBXGroup;
+			children = (
+				F4D51A62B495C1240D5DB36872F216D9 /* Pods-SeniorProj.modulemap */,
+				A21678E06CADD35137FED2B1AB600262 /* Pods-SeniorProj-acknowledgements.markdown */,
+				5F0001B5D3CBFCC4F0FAC545C2BCD763 /* Pods-SeniorProj-acknowledgements.plist */,
+				1696D0DD92D3970420A36620139F64DF /* Pods-SeniorProj-dummy.m */,
+				C38D0230E8A8DE71B96D56C4D222A9EA /* Pods-SeniorProj-frameworks.sh */,
+				2DE5545C349B9E14595B37AFC41F6D6F /* Pods-SeniorProj-Info.plist */,
+				D3F4FEA7C37D6687D7F200DF96386D89 /* Pods-SeniorProj-umbrella.h */,
+				51326799A54CFDDF59EDD408B4D3A094 /* Pods-SeniorProj.debug.xcconfig */,
+				32644439F25D2BF22289C80D0A0AE831 /* Pods-SeniorProj.release.xcconfig */,
+			);
+			name = "Pods-SeniorProj";
+			path = "Target Support Files/Pods-SeniorProj";
+			sourceTree = "<group>";
+		};
+		8E000DBD4B7CB966953BA0DBF2FC9A92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECE6D998038C7100C67BBA3B12DC20AB /* Eureka */,
+				EDEE3F914E8831FD04635C2D70259DDF /* NFCReaderWriter */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9AF4CC5B950F5B52235CCF09C3A6C676 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3AD006B10A22D9EFE8B75920776E1F61 /* CoreNFC.framework */,
+				164C674203C36C68DB89CF9F13074981 /* Foundation.framework */,
+				6CC65766921009E85B8DF681789016C2 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		AB88B7279893981A04E0BC118ABC9163 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9DF955BCAF8CE8159ADF6CFADEDEB31 /* NFCReaderWriter.modulemap */,
+				82FA2D0B4EB8505234C7BD00F6697B2E /* NFCReaderWriter-dummy.m */,
+				4B30B8E27F9E9A8365E64059748F522D /* NFCReaderWriter-Info.plist */,
+				A1113E21037D3EB101430807F2B4137E /* NFCReaderWriter-prefix.pch */,
+				3ED435CE389970FE4F0C417B34B53A04 /* NFCReaderWriter-umbrella.h */,
+				98FFEE0F1882972E0A0EA4DDD8940738 /* NFCReaderWriter.debug.xcconfig */,
+				4A1B122B84804EFCB96AA2B350CACCC5 /* NFCReaderWriter.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NFCReaderWriter";
+			sourceTree = "<group>";
+		};
+		B2DF30EC4135D0B0917B50EC7F6296A2 /* Pods-SeniorProj-SeniorProjUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F39EF26BD78A7ECF4338F80B1A818C7D /* Pods-SeniorProj-SeniorProjUITests.modulemap */,
+				151B2106AEAEB77880485A3B55145525 /* Pods-SeniorProj-SeniorProjUITests-acknowledgements.markdown */,
+				C966355084E9B3557B9A606BE5591C67 /* Pods-SeniorProj-SeniorProjUITests-acknowledgements.plist */,
+				CC1B4D718B2CF8498BD1C4D6C15E320D /* Pods-SeniorProj-SeniorProjUITests-dummy.m */,
+				83B5826E65BD997C3B16473457E141D9 /* Pods-SeniorProj-SeniorProjUITests-frameworks.sh */,
+				8795DCA7A9E3C047CED0D2C76F238709 /* Pods-SeniorProj-SeniorProjUITests-Info.plist */,
+				18D6BF8CD8C8F2B3897FDBA770D30BF8 /* Pods-SeniorProj-SeniorProjUITests-umbrella.h */,
+				5D37A2B7287AD4DA698E4F4AEF72AD86 /* Pods-SeniorProj-SeniorProjUITests.debug.xcconfig */,
+				D2C64D37029EA6A99D2889D6EB080F57 /* Pods-SeniorProj-SeniorProjUITests.release.xcconfig */,
+			);
+			name = "Pods-SeniorProj-SeniorProjUITests";
+			path = "Target Support Files/Pods-SeniorProj-SeniorProjUITests";
+			sourceTree = "<group>";
+		};
+		B927B668CA493CEFB7196D23E19A9893 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6B9E9DCFF697CAE6EE23B71F8782852 /* Eureka.modulemap */,
+				FCD0DE75F43F49352F71C6926FF3AC81 /* Eureka-dummy.m */,
+				4ADD3E652C94A1DDECC9F2C1582E7C37 /* Eureka-Info.plist */,
+				6B9B46BE442343C8C16ED8B761EB68D8 /* Eureka-prefix.pch */,
+				6717FD20B3FF8333FFFED679537BF633 /* Eureka-umbrella.h */,
+				0D184292513D6877B49D3FE4B0BD6E79 /* Eureka.debug.xcconfig */,
+				3D706D5D7239941C088C34120A7B4276 /* Eureka.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Eureka";
+			sourceTree = "<group>";
+		};
+		CBE49071C44516B4C16FF72C126459CF /* Pods-SeniorProjTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF270F9FCAB8D2704212B9E3DB37727B /* Pods-SeniorProjTests.modulemap */,
+				4C11D309FE52D4DE072895CFB09DB72B /* Pods-SeniorProjTests-acknowledgements.markdown */,
+				3F6BA491C0CB066CAABEB3F0ADDCE723 /* Pods-SeniorProjTests-acknowledgements.plist */,
+				865CA22B378123DC8918212D97E91D12 /* Pods-SeniorProjTests-dummy.m */,
+				AA332A27F7F144A0BD258ACFB82D1CA6 /* Pods-SeniorProjTests-Info.plist */,
+				4AE705F7EB7D665BC7BB9BD2564E03AC /* Pods-SeniorProjTests-umbrella.h */,
+				36A02F1FE05C0866F16EE21C82E58687 /* Pods-SeniorProjTests.debug.xcconfig */,
+				4BCD66A86AA328522712825E4E2AAEF4 /* Pods-SeniorProjTests.release.xcconfig */,
+			);
+			name = "Pods-SeniorProjTests";
+			path = "Target Support Files/Pods-SeniorProjTests";
+			sourceTree = "<group>";
+		};
+		CCFCD48E3EA9C631B6896FBC69A5C318 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EEB30D23F6AD1FD36A8FA2017168185 /* Pods-SeniorProj */,
+				B2DF30EC4135D0B0917B50EC7F6296A2 /* Pods-SeniorProj-SeniorProjUITests */,
+				CBE49071C44516B4C16FF72C126459CF /* Pods-SeniorProjTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
+				8E000DBD4B7CB966953BA0DBF2FC9A92 /* Pods */,
+				E96A4D2D153FDA537E541742366A0277 /* Products */,
+				CCFCD48E3EA9C631B6896FBC69A5C318 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E96A4D2D153FDA537E541742366A0277 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				082977F3777A7D434AB35C357B487F83 /* Eureka.framework */,
+				5731FD74D2C5609383792889F0189BF8 /* NFCReaderWriter.framework */,
+				4DBF8D3A3131EB72E09D82FBEDF61B7C /* Pods_SeniorProj.framework */,
+				29A672B20755329434CEC488B017AB3B /* Pods_SeniorProj_SeniorProjUITests.framework */,
+				1A8CC41C7FBF5386B5CD896E512A877C /* Pods_SeniorProjTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECE6D998038C7100C67BBA3B12DC20AB /* Eureka */ = {
+			isa = PBXGroup;
+			children = (
+				7E576C2F51D5CD60C25421F6137F2E5E /* ActionSheetRow.swift */,
+				06DC156E75DA15A37A59137610A8CC62 /* AlertOptionsRow.swift */,
+				4D5CCE95EA98EAF6454742219F4AF93A /* AlertRow.swift */,
+				7D7FE2E8FED9A192BE141E9005C78D85 /* BaseRow.swift */,
+				7D4CD27FF5D3ADB11AEC08551D7D0098 /* ButtonRow.swift */,
+				A7A868AEC95F4E476496C45CD6429E97 /* ButtonRowWithPresent.swift */,
+				F1229FF4EB8A4BE3A8B4D89547B86EE4 /* Cell.swift */,
+				6354E67DA08E2F32A64D64D4CEE7564F /* CellType.swift */,
+				86D705F43E7D14B24A0C96BCA80F5DB0 /* CheckRow.swift */,
+				3A9361C9CAAA392ADC5213FA4FD0B64B /* Core.swift */,
+				F0FD08614E1CD403C0592AE6201FB3FA /* DateFieldRow.swift */,
+				C107A56D355787E278DEFCF1E32BBD40 /* DateInlineFieldRow.swift */,
+				DEC77E0D3038CEB37A5A28F5D6577569 /* DateInlineRow.swift */,
+				6EFEDED5D98057D5102FF2812F71F4E8 /* DatePickerRow.swift */,
+				C93E2A7C8E7452D55BF5CAE4F9169464 /* DateRow.swift */,
+				523E1EDD8016603F6F81EA2523EA1130 /* DecimalFormatter.swift */,
+				43849644BE95586E2C17115B11E693C7 /* DoublePickerInputRow.swift */,
+				4CBC51FE68FA7D127878FD62CBCAD774 /* DoublePickerRow.swift */,
+				106748862F2B99EC780CE86AD042CCD8 /* FieldRow.swift */,
+				CE6A7B0C1FECAC25A03B25232E4F5BFA /* FieldsRow.swift */,
+				CFA9FAC4F2DFF5E5A864E3120F2B1763 /* Form.swift */,
+				5B1E30790D357FAE755934BCF563BD7C /* GenericMultipleSelectorRow.swift */,
+				F7371281F63EFC0F8AE57D5474C5068A /* HeaderFooterView.swift */,
+				8969C84BA8750D9D59147C7435405C0B /* Helpers.swift */,
+				1AF2DD7D17CFDFCCC50A9548BC95C280 /* InlineRowType.swift */,
+				0CD3CCC19BF0BFBCE21E1061A0821AC7 /* LabelRow.swift */,
+				427103B1D4A6C871EA06A63510999563 /* ListCheckRow.swift */,
+				24FA63F387DD4EA7A4FC2F2F6100BEBB /* MultipleSelectorRow.swift */,
+				85BA92FF794F3F89984EBADD58C884F1 /* MultipleSelectorViewController.swift */,
+				7EBBD13C652778F435271F82F01CFFCD /* NavigationAccessoryView.swift */,
+				7640D83873C16A9533FA6FEE7957BE13 /* Operators.swift */,
+				C63CC7FD7BA252359F0B118E911DF20D /* OptionsRow.swift */,
+				F53D62A4A5CC759AFB20D757814CCD0B /* PickerInlineRow.swift */,
+				048583603C920589BEF1DE45BA3CCF32 /* PickerInputRow.swift */,
+				4EAFC0D3BBFDC1D8077656B96FD387AF /* PickerRow.swift */,
+				762A3178FD9A30CFEF17380868DE0A8D /* PopoverSelectorRow.swift */,
+				49F19E76EDB43C65EE58746EF274C09F /* PresenterRowType.swift */,
+				AD933F9E95FCAC028824AA47DAD00C42 /* Protocols.swift */,
+				37A7CB2A32A9525D1C35570BEEA68A78 /* PushRow.swift */,
+				617DC556C92135536EBC0C3D60C3BDD0 /* Row.swift */,
+				67F33E1CB321498F743183BD4ED58AC7 /* RowControllerType.swift */,
+				00CB5DACA3D3DD07DFE8F23F23573751 /* RowProtocols.swift */,
+				24AF278B437B7D06769DCE0153D84895 /* RowType.swift */,
+				29DCED0C63ADDD1DCF702ED9825CE34A /* RuleClosure.swift */,
+				9E034A48366D8E7EBB65635A6A781A74 /* RuleEmail.swift */,
+				F5761B34905A6A9486BB79DFF6D5D3CC /* RuleEqualsToRow.swift */,
+				5743C24EC767FFE76073AA105DDD470C /* RuleLength.swift */,
+				2ABBC4BEDBF04F27329A65A9ECD88CDE /* RuleRange.swift */,
+				5A82477C673D2B6C9A6F5E2D1CB4C86F /* RuleRegExp.swift */,
+				52BDEFD786A6C32FF7FC196431AD0F4F /* RuleRequired.swift */,
+				7460A5D4DCA55B22C93AEB54A4CAE3AF /* RuleURL.swift */,
+				B5CE0E5C7BAF9B4C0370E3E23160E938 /* Section.swift */,
+				77BCDA020BEAE326CF54B929FC93AC6A /* SegmentedRow.swift */,
+				7359AFED2F8D30ACC776595075AA8F99 /* SelectableRowType.swift */,
+				1E6BBF83DC74D2C2C3C672F54157938E /* SelectableSection.swift */,
+				598DAD1EB35D10544BD4181AC173937A /* SelectorAlertController.swift */,
+				DB6996CA7E5618610FCC6F5BF83617FC /* SelectorRow.swift */,
+				FF3CD7A26DCC01645095BA5544883731 /* SelectorViewController.swift */,
+				032A51938D2F4EBF8995D164EF043716 /* SliderRow.swift */,
+				5B55BFF6C06B9E7667758343B5AA3218 /* StepperRow.swift */,
+				0C3FCE2A09923D1805EF07C2C6CFA17E /* SwipeActions.swift */,
+				48A3A0501D28AE3FF3E092DD029EC01C /* SwitchRow.swift */,
+				30D6FDADF09A1AB9BB96328C9DBEDF8E /* TextAreaRow.swift */,
+				9B316B0502C0BCCDB92CFE478D8D4DCF /* TriplePickerInputRow.swift */,
+				20885DEB6F40C68BC05430D21927174B /* TriplePickerRow.swift */,
+				5856E3C5196AFCF459757EEF1E0F0DA1 /* Validation.swift */,
+				B927B668CA493CEFB7196D23E19A9893 /* Support Files */,
+			);
+			path = Eureka;
+			sourceTree = "<group>";
+		};
+		EDEE3F914E8831FD04635C2D70259DDF /* NFCReaderWriter */ = {
+			isa = PBXGroup;
+			children = (
+				869F37B2D09AEF9CAD1417F3F314D05C /* NFCConstants.h */,
+				778FCE3C6BFED3FA822F2121C4A03E07 /* NFCNDEFReader.h */,
+				1FE4E6233C96ACDF63A12787CF83FA15 /* NFCNDEFReader.m */,
+				B9C805E6F387F1414A5203F4931C2D41 /* NFCNDEFWriter.h */,
+				06BA93578928568A9A340D36A57005E9 /* NFCNDEFWriter.m */,
+				F47B7AF5EACA77ED2CC333EBF6818B21 /* NFCReader.h */,
+				5D957F9F146234170595FFB32878EBBE /* NFCReader.m */,
+				07AA3B65E93B0FD9AA55B0D52255EA6B /* NFCReaderDelegate.h */,
+				D12967EA985D85A6B6BA72AA66EFA2C6 /* NFCReaderWriter.h */,
+				95C3362100FC3D5C4BA669893ACC4DF7 /* NFCReaderWriter.m */,
+				F04D9BD80DCBB23E1C412AB1073EF97D /* NFCTagReader.h */,
+				CD2DDCAF4F7A400C36A71DE5D19AFE42 /* NFCTagReader.m */,
+				AB88B7279893981A04E0BC118ABC9163 /* Support Files */,
+			);
+			path = NFCReaderWriter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0EFD407A5165EDCC4A2BE3EAEEC00DB7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC3155977A1754250152CD3635EC1DD0 /* Pods-SeniorProj-SeniorProjUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13636EEE2B0F4D71757AC4D678E19300 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BF9E101B293BBE9E6E8320FE5B1B92 /* Pods-SeniorProjTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7DD3157FBDD386B4916158C875050C47 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4EB1DE2CCEE60A99EB5AA718DD67105 /* Eureka-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A39A10068B1C6BD22C7EE2956D06CDF9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F688CCB726777A3FA4E1182E0B44A94 /* Pods-SeniorProj-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3BB3351E2B4BD2397B427169B1B74CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC2033953DBC0C8927338802D68343CC /* NFCConstants.h in Headers */,
+				BA4BC229F54ABE58463D68EFFD15F3A5 /* NFCNDEFReader.h in Headers */,
+				CD02786BB2D7DB60EB169F96FA4404EC /* NFCNDEFWriter.h in Headers */,
+				B8532DBCB3E55A60497E6A66830063C2 /* NFCReader.h in Headers */,
+				3AEE367058904757B69ED2E76E98FF6B /* NFCReaderDelegate.h in Headers */,
+				7CB47EA97BB0F9D12DB9A556A77C5519 /* NFCReaderWriter-umbrella.h in Headers */,
+				4ACCB5F3DFEA1BA6EE6862F1B5D96088 /* NFCReaderWriter.h in Headers */,
+				F48A7BFCB721FC9106025CA7BA43E921 /* NFCTagReader.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3153D1329350B702E037E34741271C1C /* NFCReaderWriter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EF74451D90F0225B2865A035122B387 /* Build configuration list for PBXNativeTarget "NFCReaderWriter" */;
+			buildPhases = (
+				B3BB3351E2B4BD2397B427169B1B74CB /* Headers */,
+				F60EAAF7461437A3EA7C621ED5C3A383 /* Sources */,
+				11E7B4092984208E5C9E727CBDBA854F /* Frameworks */,
+				049101C97867408E81671ECFF80E2F6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NFCReaderWriter;
+			productName = NFCReaderWriter;
+			productReference = 5731FD74D2C5609383792889F0189BF8 /* NFCReaderWriter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3626AE70FF48CF45AFF5945736B685F7 /* Pods-SeniorProj */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DDED4DE7020B592C587B895A839EB8F /* Build configuration list for PBXNativeTarget "Pods-SeniorProj" */;
+			buildPhases = (
+				A39A10068B1C6BD22C7EE2956D06CDF9 /* Headers */,
+				DF95423171CF71510A1D2E90F9662677 /* Sources */,
+				484F38E7277F35ADBDEBE4B6E7BF9351 /* Frameworks */,
+				10C337748EF37D0D1681CE826FF28575 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				20F1B934ECBF436267B249E78FF04EA5 /* PBXTargetDependency */,
+				9B0ECD195C06C8D9075F1B3A35CEF1DE /* PBXTargetDependency */,
+			);
+			name = "Pods-SeniorProj";
+			productName = "Pods-SeniorProj";
+			productReference = 4DBF8D3A3131EB72E09D82FBEDF61B7C /* Pods_SeniorProj.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		376BD241BE6DC381EBB98AD3CC0A5848 /* Pods-SeniorProj-SeniorProjUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 116F7D56A25E4FE58DCDBF6B6FC55526 /* Build configuration list for PBXNativeTarget "Pods-SeniorProj-SeniorProjUITests" */;
+			buildPhases = (
+				0EFD407A5165EDCC4A2BE3EAEEC00DB7 /* Headers */,
+				493EF6CE49B0BDDAE904D371910E359A /* Sources */,
+				EC9A8B0EBDE50FDAFBA9DC9C1F368039 /* Frameworks */,
+				7F11E5F26309A054AED99D31D6F09CC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F87B835E0E538F830505CA325A59F47 /* PBXTargetDependency */,
+				49544CC84C1223C1C85A330601C997B3 /* PBXTargetDependency */,
+			);
+			name = "Pods-SeniorProj-SeniorProjUITests";
+			productName = "Pods-SeniorProj-SeniorProjUITests";
+			productReference = 29A672B20755329434CEC488B017AB3B /* Pods_SeniorProj_SeniorProjUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7CDE2A7CA8B62ACCC1DBCA8F16BAC58F /* Pods-SeniorProjTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98F6327F040797AF72F2B5746818C486 /* Build configuration list for PBXNativeTarget "Pods-SeniorProjTests" */;
+			buildPhases = (
+				13636EEE2B0F4D71757AC4D678E19300 /* Headers */,
+				86A5BC65AC6D6B4E9FA7423E247C181B /* Sources */,
+				CC1F139D1471EEBE8C22D444B1A50D58 /* Frameworks */,
+				ACD901DB40FFC93B40156FA1DBFE57E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EB028608CECA8A25AAB2B0881AE64EB /* PBXTargetDependency */,
+			);
+			name = "Pods-SeniorProjTests";
+			productName = "Pods-SeniorProjTests";
+			productReference = 1A8CC41C7FBF5386B5CD896E512A877C /* Pods_SeniorProjTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		88BE8BE7A2FE6CED4193CCD8FF3CBEF7 /* Eureka */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36778B42AB96755AAFA8AF892C40E50E /* Build configuration list for PBXNativeTarget "Eureka" */;
+			buildPhases = (
+				7DD3157FBDD386B4916158C875050C47 /* Headers */,
+				112A449208BD77617F656312EA4943E8 /* Sources */,
+				7C739679CAE74D90F140F5EDC0EE4EC0 /* Frameworks */,
+				C6AFE590176E3A846DAE473492B8ADE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Eureka;
+			productName = Eureka;
+			productReference = 082977F3777A7D434AB35C357B487F83 /* Eureka.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1200;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = E96A4D2D153FDA537E541742366A0277 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88BE8BE7A2FE6CED4193CCD8FF3CBEF7 /* Eureka */,
+				3153D1329350B702E037E34741271C1C /* NFCReaderWriter */,
+				3626AE70FF48CF45AFF5945736B685F7 /* Pods-SeniorProj */,
+				376BD241BE6DC381EBB98AD3CC0A5848 /* Pods-SeniorProj-SeniorProjUITests */,
+				7CDE2A7CA8B62ACCC1DBCA8F16BAC58F /* Pods-SeniorProjTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		049101C97867408E81671ECFF80E2F6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C337748EF37D0D1681CE826FF28575 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F11E5F26309A054AED99D31D6F09CC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACD901DB40FFC93B40156FA1DBFE57E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6AFE590176E3A846DAE473492B8ADE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		112A449208BD77617F656312EA4943E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF27164EA8A8C1BCB66B7A75E287216 /* ActionSheetRow.swift in Sources */,
+				F47D1993C006C374C634B04421484A4D /* AlertOptionsRow.swift in Sources */,
+				3BF29BEA4C1FF7360E93882C9D6C2A7C /* AlertRow.swift in Sources */,
+				1BB933C505E10805A9E179E3DD2CA17E /* BaseRow.swift in Sources */,
+				E0F369B772C5C8F0AF3A1C8BA5674628 /* ButtonRow.swift in Sources */,
+				01E1380B9DAEF7517AD42713A8CB716E /* ButtonRowWithPresent.swift in Sources */,
+				57DA9857A10221E5D429C48B85BB0010 /* Cell.swift in Sources */,
+				62E99A538A3363A9013DCCBF519B876F /* CellType.swift in Sources */,
+				119C3D64BDFECAB92F4FFCEF9B4F135D /* CheckRow.swift in Sources */,
+				E9AB923FC704B44222C8A5DB4145113A /* Core.swift in Sources */,
+				D9FAA26AD41D565773823B074F93D909 /* DateFieldRow.swift in Sources */,
+				F2279E1339CC1B6326AD6FF389D24F96 /* DateInlineFieldRow.swift in Sources */,
+				B466D5B2650B7521FBE653FC9B7A793D /* DateInlineRow.swift in Sources */,
+				C2F5EF0076B32E28969F73229409F94E /* DatePickerRow.swift in Sources */,
+				C0F073D21CF9CB5F87F3F21044E98BF0 /* DateRow.swift in Sources */,
+				0D7339D0D404F9C394637DDFE383A7A8 /* DecimalFormatter.swift in Sources */,
+				DFD06D79C71CCAEFA59D7DFBD706C493 /* DoublePickerInputRow.swift in Sources */,
+				A91D4F561E5C16644A5D3A389609ACD6 /* DoublePickerRow.swift in Sources */,
+				7CDE8FB3A24BA483F4D2AFB70D990F70 /* Eureka-dummy.m in Sources */,
+				27A3F7981DF0B5CFCB2E56AABBEAA319 /* FieldRow.swift in Sources */,
+				052CDA13B29437A2FDCD9D19230AD39F /* FieldsRow.swift in Sources */,
+				C97BE76AAB5C7242509D8482EBA86AE9 /* Form.swift in Sources */,
+				8AFA10B7F0591080EA6BCBCC9CB34BE1 /* GenericMultipleSelectorRow.swift in Sources */,
+				A4C99CE4C6D89F2107F6A280A0A85688 /* HeaderFooterView.swift in Sources */,
+				C5562E6984BB0FDC8358F2737187DC90 /* Helpers.swift in Sources */,
+				BE93E023215A8B4A05A2AEC8B7FAE170 /* InlineRowType.swift in Sources */,
+				C831261CF70AECC8AC9DDFDBFC3F7172 /* LabelRow.swift in Sources */,
+				4D5CAEA66E12CA438CD7B4FA78BB6186 /* ListCheckRow.swift in Sources */,
+				56EB318A58A511C6BE4098E8EAD6A7C0 /* MultipleSelectorRow.swift in Sources */,
+				8A92D825C03E19810B5393EFDFE4502E /* MultipleSelectorViewController.swift in Sources */,
+				45D64D81FC93E350F19E7A28A8A8FDAC /* NavigationAccessoryView.swift in Sources */,
+				5F5515249E1A20C230755D2E8001F3FC /* Operators.swift in Sources */,
+				B490953386257F2C8E03C1D632AC361E /* OptionsRow.swift in Sources */,
+				AAA33D7843F1F33E3F9D6F261AB5C2B3 /* PickerInlineRow.swift in Sources */,
+				E987F386AA63D0DCD22642A475A8EFD7 /* PickerInputRow.swift in Sources */,
+				5A8396B9DDE887F7C397B7EEBC4163AA /* PickerRow.swift in Sources */,
+				61D928089445221BAB80A8DB76A68904 /* PopoverSelectorRow.swift in Sources */,
+				8CDD660210D5A535F6725F30259E629A /* PresenterRowType.swift in Sources */,
+				5A02CFF7195D1A7592F777170D8FC6D9 /* Protocols.swift in Sources */,
+				FECC68B085B27878A5C1F2FECC9F088F /* PushRow.swift in Sources */,
+				5FA0AFCA94E1291506DC54D03765FA22 /* Row.swift in Sources */,
+				D75CBD8D2B4526B7DE24212AB7B24D20 /* RowControllerType.swift in Sources */,
+				AC795F2AEFA1C804BABDB1D4931FAAEB /* RowProtocols.swift in Sources */,
+				821C23BCC87386E7EDAAF97B3C4F1D5D /* RowType.swift in Sources */,
+				2E5AD5FC9F45A7F38F5F5BC6FF7570E9 /* RuleClosure.swift in Sources */,
+				6D13C3C40D5F2B21B4491B81002F2894 /* RuleEmail.swift in Sources */,
+				EB9E8E94E8877C33E88295D89CF5D9CC /* RuleEqualsToRow.swift in Sources */,
+				A77DA0652E7847FE296224EEB12F7EBD /* RuleLength.swift in Sources */,
+				07572F1826C958646848D4EF5DBF377E /* RuleRange.swift in Sources */,
+				2D144E1543B0B44E364EFEC4E6CFE8D5 /* RuleRegExp.swift in Sources */,
+				05C88AAB95E98E3296996797706F19AF /* RuleRequired.swift in Sources */,
+				C74F50DD266F0933B137D16ACD76FB1A /* RuleURL.swift in Sources */,
+				5A1A55188705CB82F540F58D2910AB93 /* Section.swift in Sources */,
+				E7DA4EBBBFFF3EB6992CA11B921DD211 /* SegmentedRow.swift in Sources */,
+				553F2C40EE9B6C0A1CC57FC2894455CD /* SelectableRowType.swift in Sources */,
+				C299DDF2CE31D8489EFFD0B9D086F9FE /* SelectableSection.swift in Sources */,
+				E3E2A605AF119D1F90CE77963E6CFD26 /* SelectorAlertController.swift in Sources */,
+				D7663970356A7FBA65579C1EB951220C /* SelectorRow.swift in Sources */,
+				74EC68DA659219AB56A917312A73EA7D /* SelectorViewController.swift in Sources */,
+				6706FE594A5FC58BE59F7AA454982D93 /* SliderRow.swift in Sources */,
+				A02F150A74062D9E29592D3EBD13B777 /* StepperRow.swift in Sources */,
+				B6DF9275361EA04A959E38F4133C33B7 /* SwipeActions.swift in Sources */,
+				AFCEB645D509F679CE8FBCFFEDBB65BC /* SwitchRow.swift in Sources */,
+				C63B306D3FAA845771A0B1CEB3F0DC16 /* TextAreaRow.swift in Sources */,
+				AADC2477F0EC2A446D3342DCA1E220C8 /* TriplePickerInputRow.swift in Sources */,
+				C08713DF3DF904E55D8A3E3775A6F3EB /* TriplePickerRow.swift in Sources */,
+				7005C904B5F05004C2BC6703E8B14F39 /* Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		493EF6CE49B0BDDAE904D371910E359A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F6FA2209FBF8D11ED0700B297E08F63 /* Pods-SeniorProj-SeniorProjUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86A5BC65AC6D6B4E9FA7423E247C181B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5BB109885BB80A50267C66A1CE45D5C /* Pods-SeniorProjTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF95423171CF71510A1D2E90F9662677 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E06B4A098934E4B5ABF82C76C56257E /* Pods-SeniorProj-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F60EAAF7461437A3EA7C621ED5C3A383 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62F189F7BEEADAD0581C649CA51626FF /* NFCNDEFReader.m in Sources */,
+				8977378EC4880B223F1711B38573E36B /* NFCNDEFWriter.m in Sources */,
+				50373F086BF01E92E8567F59A4EA4305 /* NFCReader.m in Sources */,
+				E157909F863B2ABC27A0BC3613BC999A /* NFCReaderWriter-dummy.m in Sources */,
+				90AC4EC97290F51169068A86411BE31A /* NFCReaderWriter.m in Sources */,
+				A4714382908D19F0486CC7D722D66305 /* NFCTagReader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20F1B934ECBF436267B249E78FF04EA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Eureka;
+			target = 88BE8BE7A2FE6CED4193CCD8FF3CBEF7 /* Eureka */;
+			targetProxy = FD89D46DA01139DEEE7E6DBA6B3754FE /* PBXContainerItemProxy */;
+		};
+		2EB028608CECA8A25AAB2B0881AE64EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-SeniorProj";
+			target = 3626AE70FF48CF45AFF5945736B685F7 /* Pods-SeniorProj */;
+			targetProxy = 6203177C5D56543572EAFCA75EB4115F /* PBXContainerItemProxy */;
+		};
+		3F87B835E0E538F830505CA325A59F47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Eureka;
+			target = 88BE8BE7A2FE6CED4193CCD8FF3CBEF7 /* Eureka */;
+			targetProxy = 07B9FCB50033849D4E4830302149EE3B /* PBXContainerItemProxy */;
+		};
+		49544CC84C1223C1C85A330601C997B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NFCReaderWriter;
+			target = 3153D1329350B702E037E34741271C1C /* NFCReaderWriter */;
+			targetProxy = BF7B41A52A6D481019287B54EF99658B /* PBXContainerItemProxy */;
+		};
+		9B0ECD195C06C8D9075F1B3A35CEF1DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NFCReaderWriter;
+			target = 3153D1329350B702E037E34741271C1C /* NFCReaderWriter */;
+			targetProxy = 50B65CA4780FECA505AA169FDB779BC8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2970C634118E91C13265B794D78E6C90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D184292513D6877B49D3FE4B0BD6E79 /* Eureka.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Eureka/Eureka-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Eureka/Eureka-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Eureka/Eureka.modulemap";
+				PRODUCT_MODULE_NAME = Eureka;
+				PRODUCT_NAME = Eureka;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3C880177F40E4D63C60666FD52875109 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98FFEE0F1882972E0A0EA4DDD8940738 /* NFCReaderWriter.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NFCReaderWriter/NFCReaderWriter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NFCReaderWriter/NFCReaderWriter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/NFCReaderWriter/NFCReaderWriter.modulemap";
+				PRODUCT_MODULE_NAME = NFCReaderWriter;
+				PRODUCT_NAME = NFCReaderWriter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4BC7450F9457737EE3E637BA155B56F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4CCCD8FABB3D074545EE69E3BB27F9D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2C64D37029EA6A99D2889D6EB080F57 /* Pods-SeniorProj-SeniorProjUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SeniorProj-SeniorProjUITests/Pods-SeniorProj-SeniorProjUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SeniorProj-SeniorProjUITests/Pods-SeniorProj-SeniorProjUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4D1E7B2E04601C0A0A43D8E65EC4051B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D706D5D7239941C088C34120A7B4276 /* Eureka.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Eureka/Eureka-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Eureka/Eureka-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Eureka/Eureka.modulemap";
+				PRODUCT_MODULE_NAME = Eureka;
+				PRODUCT_NAME = Eureka;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		620959FD8746B986254F240A03BF0117 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36A02F1FE05C0866F16EE21C82E58687 /* Pods-SeniorProjTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SeniorProjTests/Pods-SeniorProjTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SeniorProjTests/Pods-SeniorProjTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		64C071E1DDCE6097FD3D3F10C72CDB52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D37A2B7287AD4DA698E4F4AEF72AD86 /* Pods-SeniorProj-SeniorProjUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SeniorProj-SeniorProjUITests/Pods-SeniorProj-SeniorProjUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SeniorProj-SeniorProjUITests/Pods-SeniorProj-SeniorProjUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		75D940E3B1AC86D0676A67A89F4F5B09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32644439F25D2BF22289C80D0A0AE831 /* Pods-SeniorProj.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SeniorProj/Pods-SeniorProj-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SeniorProj/Pods-SeniorProj.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		9719A83070D4F04791AD83A780B4F0A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BCD66A86AA328522712825E4E2AAEF4 /* Pods-SeniorProjTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SeniorProjTests/Pods-SeniorProjTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SeniorProjTests/Pods-SeniorProjTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9D48C11ACC725CD8C61919168E6AEE37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51326799A54CFDDF59EDD408B4D3A094 /* Pods-SeniorProj.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SeniorProj/Pods-SeniorProj-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SeniorProj/Pods-SeniorProj.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AD07EC9E439655BE1455B24B8C883A02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A1B122B84804EFCB96AA2B350CACCC5 /* NFCReaderWriter.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NFCReaderWriter/NFCReaderWriter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NFCReaderWriter/NFCReaderWriter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/NFCReaderWriter/NFCReaderWriter.modulemap";
+				PRODUCT_MODULE_NAME = NFCReaderWriter;
+				PRODUCT_NAME = NFCReaderWriter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		116F7D56A25E4FE58DCDBF6B6FC55526 /* Build configuration list for PBXNativeTarget "Pods-SeniorProj-SeniorProjUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64C071E1DDCE6097FD3D3F10C72CDB52 /* Debug */,
+				4CCCD8FABB3D074545EE69E3BB27F9D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36778B42AB96755AAFA8AF892C40E50E /* Build configuration list for PBXNativeTarget "Eureka" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2970C634118E91C13265B794D78E6C90 /* Debug */,
+				4D1E7B2E04601C0A0A43D8E65EC4051B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DDED4DE7020B592C587B895A839EB8F /* Build configuration list for PBXNativeTarget "Pods-SeniorProj" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D48C11ACC725CD8C61919168E6AEE37 /* Debug */,
+				75D940E3B1AC86D0676A67A89F4F5B09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC7450F9457737EE3E637BA155B56F7 /* Debug */,
+				8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EF74451D90F0225B2865A035122B387 /* Build configuration list for PBXNativeTarget "NFCReaderWriter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C880177F40E4D63C60666FD52875109 /* Debug */,
+				AD07EC9E439655BE1455B24B8C883A02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98F6327F040797AF72F2B5746818C486 /* Build configuration list for PBXNativeTarget "Pods-SeniorProjTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				620959FD8746B986254F240A03BF0117 /* Debug */,
+				9719A83070D4F04791AD83A780B4F0A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
