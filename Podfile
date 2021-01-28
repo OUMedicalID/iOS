@@ -8,6 +8,8 @@ target 'SeniorProj' do
   # Pods for SeniorProj
 	pod 'NFCReaderWriter'
   pod 'Eureka'
+  pod 'CryptoSwift', '~> 1.3.8'
+  pod 'CRDCrypt'
 
 
   target 'SeniorProjTests' do
