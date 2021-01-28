@@ -1,0 +1,6 @@
+framework module CRDCrypt {
+  umbrella header "CRDCrypt-umbrella.h"
+
+  export *
+  module * { export * }
+}
