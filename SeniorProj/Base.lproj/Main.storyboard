@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O4l-Aw-Xxb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SeniorProj" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,15 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8KJ-JG-y7c">
-                                <rect key="frame" x="99" y="259" width="228" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8KJ-JG-y7c">
+                                <rect key="frame" x="52" y="211" width="316" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tf4-aZ-4DM">
-                                <rect key="frame" x="129" y="338" width="156" height="108"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tf4-aZ-4DM">
+                                <rect key="frame" x="128" y="341" width="131" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="5Sh-ju-H3I"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -34,32 +35,80 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tf4-aZ-4DM" secondAttribute="bottom" constant="364" id="4Nm-CK-lm4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8KJ-JG-y7c" secondAttribute="trailing" constant="46" id="967-XR-EVe"/>
+                            <constraint firstItem="Tf4-aZ-4DM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="128" id="Km0-oD-wIy"/>
+                            <constraint firstItem="8KJ-JG-y7c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="N4a-Cg-K8x"/>
+                            <constraint firstItem="Tf4-aZ-4DM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-13.5" id="dFU-XQ-X0q"/>
+                            <constraint firstItem="Tf4-aZ-4DM" firstAttribute="top" secondItem="8KJ-JG-y7c" secondAttribute="bottom" constant="96" id="qv9-T4-RGT"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="lWm-xh-hxX"/>
                     <connections>
                         <outlet property="msg" destination="8KJ-JG-y7c" id="bWA-VC-lsW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-30.434782608695656" y="72.991071428571431"/>
+            <point key="canvasLocation" x="-3659.420289855073" y="573.88392857142856"/>
         </scene>
-        <!--My Form View Controller-->
+        <!--Information-->
         <scene sceneID="PmK-uy-yBC">
             <objects>
-                <viewController storyboardIdentifier="X" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ziC-vk-85j" customClass="MyFormViewController" customModule="SeniorProj" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="X" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ziC-vk-85j" customClass="MyFormViewController" customModule="SeniorProj" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qJt-IZ-jNq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="oJa-bT-wBP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Information" image="medical" id="gjY-A5-8x6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlR-G0-cuv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="632" y="73"/>
+            <point key="canvasLocation" x="-1313" y="574"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Od1-5T-qYS">
+            <objects>
+                <tabBarController id="O4l-Aw-Xxb" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UVm-vZ-ntV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="k8Y-vG-KbG"/>
+                        <segue destination="ziC-vk-85j" kind="relationship" relationship="viewControllers" id="NNI-pt-nac"/>
+                        <segue destination="tBB-4R-PyG" kind="relationship" relationship="viewControllers" id="Bsb-hO-8j0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hp7-vW-KLL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1312" y="-352"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="WXX-OA-uFP">
+            <objects>
+                <viewController id="tBB-4R-PyG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TdL-7F-l7j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HP7-33-eas"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="3Sa-pw-kgS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwA-C6-Dzl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="574"/>
         </scene>
     </scenes>
     <resources>
+        <image name="home" width="25" height="25"/>
+        <image name="medical" width="28" height="25"/>
+        <image name="settings" width="22" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

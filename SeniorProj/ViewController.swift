@@ -27,9 +27,10 @@ class ViewController: UIViewController, NFCReaderDelegate {
         print("Attempting to call...")
         DispatchQueue.main.async {
           
+            /*
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "X") as! MyFormViewController
-            self.present(nextViewController, animated:true, completion:nil)
+            self.present(nextViewController, animated:true, completion:nil)*/
             
             
         }

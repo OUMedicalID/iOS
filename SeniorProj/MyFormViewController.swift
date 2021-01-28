@@ -8,16 +8,15 @@ class MyFormViewController: FormViewController {
          static let birthDate = "birthDate"
          static let like = "like"
          static let streetAddress = "Street Address"
-         static let yoda = "Save Info"
      }
      
      override func viewDidLoad() {
          //self.tableViewStyle = .insetGrouped //We'll uncomment this later.
          super.viewDidLoad()
          
-        // Random comment here.
         
          form +++ Section("About You")
+            
              <<< TextRow(FormItems.name) { row in
                  row.title = "Name"
                  row.placeholder = "Your Name"
@@ -33,35 +32,34 @@ class MyFormViewController: FormViewController {
                 row.placeholder = "Complete Street Address"
             }
         
-        form +++
+         form +++
             
-            MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete], header: "Medical Conditions",footer: ".Insert adds a 'Add Item' (Add New Tag) button row as last cell.") {
+            MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
+                                   header: "Multivalued TextField",
+                                   footer: ".Insert adds a 'Add Item' (Add New Tag) button row as last cell.") {
                 
-                           
-                
-                $0.addButtonProvider = { section in
-                    return ButtonRow(){
-                        $0.title = "Add New Condition"
+                    $0.addButtonProvider = { section in
+                        return ButtonRow(){
+                            $0.title = "Add New Tag"
+                        }
                     }
-                }
-                $0.multivaluedRowToInsertAt = { index in
-                    return NameRow() {
-                        $0.placeholder = "Condition"
+                    $0.multivaluedRowToInsertAt = { index in
+                        return NameRow() {
+                            $0.placeholder = "Tag Name"
+                        }
                     }
-                }
+                    $0 <<< NameRow() {
+                        $0.placeholder = "Tag Name"
+                    }
+            }
+        
                 
                 
 
-                
-                $0 <<< NameRow() {
-                    $0.placeholder = "Condition"
-                }
-            }
-        
          
          
          
-         form +++ Section("Pre-fill")
+         form +++ Section("Save Information")
              <<< ButtonRow { row in
                  row.title = "Save Info"
                  }.onCellSelection({ [unowned self] (cell, row) in
@@ -69,10 +67,9 @@ class MyFormViewController: FormViewController {
                          let birthDateRow = self.form.rowBy(tag: FormItems.birthDate) as? RowOf<Date>,
                          let streetAddressRow = self.form.rowBy(tag: FormItems.streetAddress) as? RowOf<String> {
                         
-                         print("I can confirm that the name is " + nameRow.value!)
-                         //print("I can confirm that the DOB is " + df.string(from: birthDateRow))
-                        
-                        //print(birthDateRow.value!)
+                        // We want to make sure we can print all of our info here.
+                        print("Name: " + nameRow.value!)
+                        print("Street Address: "+streetAddressRow.value!)
                         
                         if let date = birthDateRow.value {
                            print( "Date: \(date)")
@@ -81,13 +78,12 @@ class MyFormViewController: FormViewController {
                         }
                         
                         // create the alert
-                              let alert = UIAlertController(title: "Medical Info Saved", message: "Thank you, \(nameRow.value!). Your medical info is saved.", preferredStyle: UIAlertController.Style.alert)
+                        let alert = UIAlertController(title: "Medical Info Saved", message: "Thank you, \(nameRow.value!). Your medical info is saved.", preferredStyle: UIAlertController.Style.alert)
 
                               // add an action (button)
-                              alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
 
-                              // show the alert
-                              self.present(alert, animated: true, completion: nil)
+                        self.present(alert, animated: true, completion: nil)
                         
                         
                         
@@ -108,11 +104,12 @@ class MyFormViewController: FormViewController {
                  })
         
         
-        
-        
+        // Deleting the line below gets rid of icons (We don't want this)
+        tableView.isEditing = true
         
         
      }
+    
      
  }
 
