@@ -166,7 +166,15 @@ class MyFormViewController: FormViewController {
         
             <<< ButtonRow { row in
                 row.title = "Save Info"
-            }
+            }.onCellSelection({ [unowned self] (cell, row) in
+                print(self)
+                print("Button was clicked!")
+                let listofValues: [String]? = (form.sectionBy(tag: "MedicalConditionsMVS")?.compactMap { ($0 as? NameRow)?.value })
+                
+                let values = listofValues!.compactMap { $0 }
+                print(values)
+
+            })
         
        
                 
