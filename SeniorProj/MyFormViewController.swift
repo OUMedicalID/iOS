@@ -4,10 +4,26 @@ import Eureka
 class MyFormViewController: FormViewController {
     // Struct for form items tag constants
      struct FormItems {
+         // Personal note: These are identifiers.
+        
+         // Personal
          static let name = "name"
          static let birthDate = "birthDate"
          static let like = "like"
          static let streetAddress = "Street Address"
+         static let streetAddress2 = "Street Address 2"
+        
+        
+        
+        // Emergency Contacts
+        static let eContactName1 = "Name"
+        static let eContactPhone1 = "Phone"
+        static let eContactRelationship1 = "Relationship"
+        
+        static let eContactName2 = "Name2"
+        static let eContactPhone2 = "Phone2"
+        static let eContactRelationship2 = "Relationship2"
+        
      }
      
      override func viewDidLoad() {
@@ -15,99 +31,153 @@ class MyFormViewController: FormViewController {
          super.viewDidLoad()
          
         
-         form +++ Section("About You")
-            
-             <<< TextRow(FormItems.name) { row in
-                 row.title = "Name"
-                 row.placeholder = "Your Name"
-             }
-             <<< DateRow(FormItems.birthDate) { row in
-                 row.title = "Birthday"
-                 //row.placeholder = "DOB"
-             }
-            
-            
-            <<< TextRow(FormItems.streetAddress) { row in
-                row.title = "Steet Address"
-                row.placeholder = "Complete Street Address"
-            }
-        
-         form +++
-            
-            MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
-                                   header: "Multivalued TextField",
-                                   footer: ".Insert adds a 'Add Item' (Add New Tag) button row as last cell.") {
-                
-                    $0.addButtonProvider = { section in
-                        return ButtonRow(){
-                            $0.title = "Add New Tag"
-                        }
+                form = Section("Choose Information To Edit")
+                    <<< SegmentedRow<String>("segments"){
+                        $0.options = ["Personal", "Contacts", "Medical Conditions"]
+                        $0.value = "Personal"
                     }
-                    $0.multivaluedRowToInsertAt = { index in
-                        return NameRow() {
-                            $0.placeholder = "Tag Name"
-                        }
+                    
+                    
+                    +++ Section(){
+                        $0.tag = "personal_s"
+                        $0.hidden = "$segments != 'Personal'"
                     }
-                    $0 <<< NameRow() {
-                        $0.placeholder = "Tag Name"
+                    
+                    <<< TextRow(FormItems.name) { row in
+                        row.title = "Name"
+                        row.placeholder = "Your Name"
                     }
-            }
-        
-                
-                
-
-         
-         
-         
-         form +++ Section("Save Information")
-             <<< ButtonRow { row in
-                 row.title = "Save Info"
-                 }.onCellSelection({ [unowned self] (cell, row) in
-                      if let nameRow = self.form.rowBy(tag: FormItems.name) as? RowOf<String>,
-                         let birthDateRow = self.form.rowBy(tag: FormItems.birthDate) as? RowOf<Date>,
-                         let streetAddressRow = self.form.rowBy(tag: FormItems.streetAddress) as? RowOf<String> {
-                        
-                        // We want to make sure we can print all of our info here.
-                        print("Name: " + nameRow.value!)
-                        print("Street Address: "+streetAddressRow.value!)
-                        
-                        if let date = birthDateRow.value {
-                           print( "Date: \(date)")
-                        } else {
-                            //Here display something if no date is available
-                        }
-                        
-                        // create the alert
-                        let alert = UIAlertController(title: "Medical Info Saved", message: "Thank you, \(nameRow.value!). Your medical info is saved.", preferredStyle: UIAlertController.Style.alert)
-
-                              // add an action (button)
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-                        self.present(alert, animated: true, completion: nil)
-                        
-                        
-                        
-                       // nameRow.value = "Save"
-                       //  nameRow.updateCell()
-                         
-                        // birthDateRow.value = Date(timeInterval: -900*365*86400, since: Date())
-                        // birthDateRow.updateCell()
-                         
-                        // likeRow.value = true
-                       //  likeRow.updateCell()
-                       /*
-                         row.disabled = .function([FormItems.name]) { form in
-                             (form.rowBy(tag: FormItems.name) as? RowOf<String>)?.value == "Save Info"
-                         }
-                         row.evaluateDisabled()*/
+                    <<< DateRow(FormItems.birthDate) { row in
+                        row.title = "Birthday"
+                        //row.placeholder = "DOB"
+                    }
+                    
+                    <<< SegmentedRow<String>(){
+                       $0.title = "Gender"
+                       $0.options = ["Male", "Female", "Other"]
                      }
-                 })
+       
+                   <<< TextRow(FormItems.streetAddress) { row in
+                        row.title = "Address Line 1"
+                        row.placeholder = "Address Line 1"
+                  }
+                  
+                  <<< TextRow(FormItems.streetAddress2) { row in
+                        row.title = "Address Line 2"
+                        row.placeholder = "Address Line 2 (Optional)"
+                   }
+
+                    
+                    +++ Section(){
+                        $0.tag = "emergencycontacts_s"
+                        $0.hidden = "$segments != 'Contacts'"
+                    }
+                    
+                    <<< TextRow(FormItems.eContactName1) { row in
+                        row.title = "Name"
+                        row.placeholder = "Emergency Contact Name"
+                    }
+                    
+                    <<< PhoneRow(FormItems.eContactPhone1) { row in
+                        row.title = "Phone"
+                        row.placeholder = "+(248) 717-0000"
+                        row.add(rule: RuleMinLength(minLength: 10))
+                        row.add(rule: RuleMaxLength(maxLength: 11))
+                    }.cellUpdate { cell, row in
+                        if !row.isValid {
+                            cell.titleLabel?.textColor = .red
+                        }
+                    }
+                    
+                    <<< TextRow(FormItems.eContactRelationship1) { row in
+                        row.title = "Relationship"
+                        row.placeholder = "Relationship To Patient"
+                    }
+                    
+                    
+                    // Get a space right here
+                    
+                    
+            
+                    <<< TextRow(FormItems.eContactName2) { row in
+                        row.title = "Name"
+                        row.placeholder = "Emergency Contact Name"
+                    }
+                    
+                    <<< PhoneRow(FormItems.eContactPhone2) { row in
+                        row.title = "Phone"
+                        row.placeholder = "+(248) 717-0000"
+                        row.add(rule: RuleMinLength(minLength: 10))
+                        row.add(rule: RuleMaxLength(maxLength: 11))
+                    }.cellUpdate { cell, row in
+                        if !row.isValid {
+                            cell.titleLabel?.textColor = .red
+                        }
+                    }
+                    
+                    <<< TextRow(FormItems.eContactRelationship2) { row in
+                        row.title = "Relationship"
+                        row.placeholder = "Relationship To Patient"
+                    }
+                    
+                    
+
+                    
+                    +++ Section(){
+                        $0.tag = "medicalconditions_s"
+                        $0.hidden = "$segments != 'Medical Conditions'"
+                    }
+        
+        
+       
+           
+        form +++
+            MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
+                               header: "Medical Conditions",
+                               footer: "To add a new medical condition, click on the plus.") {
+                
+                $0.hidden = "$segments != 'Medical Conditions'"
+                $0.header?.height = {10}
+                $0.tag = "MedicalConditionsMVS"
+                
+                
+                $0.addButtonProvider = { section in
+                    return ButtonRow(){
+                        $0.title = "Add New Condition"
+                    }
+                }
+                
+                $0.multivaluedRowToInsertAt = { index in
+                 return NameRow("tag_\(index+1)") {
+                  $0.placeholder = "Your option"
+                 }
+               }
+                
+            }
+        
+            
+        
+            
+        
+            +++ Section(){ section in
+                section.tag = "SaveConditions"
+                section.hidden = "$segments != 'Medical Conditions'"
+            }
+        
+            <<< ButtonRow { row in
+                row.title = "Save Info"
+            }
+        
+       
+                
+                    
+            
+        
+        
         
         
         // Deleting the line below gets rid of icons (We don't want this)
         tableView.isEditing = true
-        
-        
      }
     
      
