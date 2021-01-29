@@ -10,6 +10,7 @@
 		218C997C92FA279A57655FC5 /* Pods_SeniorProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F92B94A4249A71CD5CA255 /* Pods_SeniorProj.framework */; };
 		663EECA881CB2D1C2B2CFA29 /* Pods_SeniorProj_SeniorProjUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121309B709F8D9A525B3F135 /* Pods_SeniorProj_SeniorProjUITests.framework */; };
 		AFCE096210EA15D4B192D6E5 /* Pods_SeniorProjTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F27EE90F9546744783E50F /* Pods_SeniorProjTests.framework */; };
+		E888353525C3854C00687650 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E888353425C3854C00687650 /* HelperFunctions.swift */; };
 		E8BAF4D225AE91EB0036CD77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAF4D125AE91EB0036CD77 /* AppDelegate.swift */; };
 		E8BAF4D425AE91EB0036CD77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAF4D325AE91EB0036CD77 /* SceneDelegate.swift */; };
 		E8BAF4D625AE91EB0036CD77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAF4D525AE91EB0036CD77 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 		8BCA2950D2416295C8B9553E /* Pods-SeniorProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProj.debug.xcconfig"; path = "Target Support Files/Pods-SeniorProj/Pods-SeniorProj.debug.xcconfig"; sourceTree = "<group>"; };
 		961EDC5B75B66B191F22839E /* Pods-SeniorProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProj.release.xcconfig"; path = "Target Support Files/Pods-SeniorProj/Pods-SeniorProj.release.xcconfig"; sourceTree = "<group>"; };
 		E22A8B327DE1C6B2F948BADB /* Pods-SeniorProjTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProjTests.debug.xcconfig"; path = "Target Support Files/Pods-SeniorProjTests/Pods-SeniorProjTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E888353425C3854C00687650 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		E8BAF4CE25AE91EB0036CD77 /* SeniorProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeniorProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BAF4D125AE91EB0036CD77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8BAF4D325AE91EB0036CD77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				E8BAF4D325AE91EB0036CD77 /* SceneDelegate.swift */,
 				E8BAF4D525AE91EB0036CD77 /* ViewController.swift */,
 				E8E9F9FD25B24B330049FE11 /* MyFormViewController.swift */,
+				E888353425C3854C00687650 /* HelperFunctions.swift */,
 				E8BAF4D725AE91EB0036CD77 /* Main.storyboard */,
 				E8BAF4DA25AE91EE0036CD77 /* Assets.xcassets */,
 				E8BAF4DC25AE91EE0036CD77 /* LaunchScreen.storyboard */,
@@ -411,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E888353525C3854C00687650 /* HelperFunctions.swift in Sources */,
 				E8BAF4D625AE91EB0036CD77 /* ViewController.swift in Sources */,
 				E8BAF4D225AE91EB0036CD77 /* AppDelegate.swift in Sources */,
 				E8E9F9FE25B24B330049FE11 /* MyFormViewController.swift in Sources */,
