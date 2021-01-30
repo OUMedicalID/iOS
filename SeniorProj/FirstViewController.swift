@@ -4,6 +4,11 @@ import CoreNFC
 import NFCReaderWriter
 
 
+
+
+
+
+
 struct ContentView: View {
     var body: some View {
         Home()
@@ -84,15 +89,21 @@ struct Login: View{
     
     let borderColor = Color(red: 107.0/255.0, green: 164.0/255.0, blue: 252.0/255.0)
     
+    
     var body: some View{
         VStack(){
             
             
             let images = ["welcome1", "welcome2", "welcome3"]
-            
             Image(images.randomElement()!).resizable().frame(width: 300.0, height: 255.0, alignment: .top)
             
-            Text("Welcome, John!")
+            // No if statements allowed in a VStack, but we can use a ternary operator
+            let defaults = UserDefaults.standard
+            let name = defaults.string(forKey: "name")
+            let welcome = "Welcome" + (name != nil ? ", "+name!+"!" : "!")
+            
+            
+            Text(welcome)
                 .font(.title)
                 .fontWeight(.bold)
                 .padding(.top, 15)
@@ -179,14 +190,14 @@ class FirstViewController: UIHostingController<Home>,NFCReaderDelegate {
         
         DispatchQueue.main.async {
 
-        var payloadData = Data([0x02])
-        let myData = "X%"+"THE MESSAGE"+"%X";
+        var payloadData = Data([0x00])
+        let myData = "[[2a77b04723b4a960:b72fddcbe416aa20]]" //Max of 39 characters.
         let urls = [myData]
         payloadData.append(urls[Int.random(in: 0..<urls.count)].data(using: .utf8)!)
 
         let payload = NFCNDEFPayload.init(
           format: NFCTypeNameFormat.nfcWellKnown,
-          type: "U".data(using: .utf8)!,
+          type: "T".data(using: .utf8)!,
           identifier: Data.init(count: 0),
           payload: payloadData,
           chunkSize: 0)
