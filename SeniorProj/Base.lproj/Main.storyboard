@@ -17,12 +17,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8KJ-JG-y7c">
-                                <rect key="frame" x="52" y="211" width="316" height="34"/>
+                                <rect key="frame" x="52" y="260" width="316" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tf4-aZ-4DM">
-                                <rect key="frame" x="128" y="341" width="131" height="108"/>
+                                <rect key="frame" x="128" y="390" width="131" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="108" id="5Sh-ju-H3I"/>
                                 </constraints>
@@ -79,7 +79,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="k8Y-vG-KbG"/>
+                        <segue destination="zqT-YG-Bcw" kind="relationship" relationship="viewControllers" id="vrL-DT-i3b"/>
                         <segue destination="ziC-vk-85j" kind="relationship" relationship="viewControllers" id="NNI-pt-nac"/>
                         <segue destination="tBB-4R-PyG" kind="relationship" relationship="viewControllers" id="Bsb-hO-8j0"/>
                     </connections>
@@ -103,6 +103,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwA-C6-Dzl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="481" y="574"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="E7M-oq-83V">
+            <objects>
+                <hostingController id="zqT-YG-Bcw" customClass="FirstViewController" customModule="SeniorProj" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="9OZ-Jo-PMg"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzq-Fa-XZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2630" y="588"/>
         </scene>
     </scenes>
     <resources>

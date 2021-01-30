@@ -19,6 +19,7 @@
 		E8BAF4DE25AE91EE0036CD77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BAF4DC25AE91EE0036CD77 /* LaunchScreen.storyboard */; };
 		E8BAF4E925AE91EF0036CD77 /* SeniorProjTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAF4E825AE91EF0036CD77 /* SeniorProjTests.swift */; };
 		E8BAF4F425AE91EF0036CD77 /* SeniorProjUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAF4F325AE91EF0036CD77 /* SeniorProjUITests.swift */; };
+		E8C712B225C549A00010CCBB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C712B125C549A00010CCBB /* FirstViewController.swift */; };
 		E8E9F9FE25B24B330049FE11 /* MyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9F9FD25B24B330049FE11 /* MyFormViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		E8BAF4F325AE91EF0036CD77 /* SeniorProjUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorProjUITests.swift; sourceTree = "<group>"; };
 		E8BAF4F525AE91EF0036CD77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8BAF50425AE923F0036CD77 /* SeniorProj.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeniorProj.entitlements; sourceTree = "<group>"; };
+		E8C712B125C549A00010CCBB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		E8E9F9FD25B24B330049FE11 /* MyFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFormViewController.swift; sourceTree = "<group>"; };
 		FA12B66A87E6117CCC3D31AB /* Pods-SeniorProj-SeniorProjUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProj-SeniorProjUITests.debug.xcconfig"; path = "Target Support Files/Pods-SeniorProj-SeniorProjUITests/Pods-SeniorProj-SeniorProjUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +152,7 @@
 				E8BAF4D525AE91EB0036CD77 /* ViewController.swift */,
 				E8E9F9FD25B24B330049FE11 /* MyFormViewController.swift */,
 				E888353425C3854C00687650 /* HelperFunctions.swift */,
+				E8C712B125C549A00010CCBB /* FirstViewController.swift */,
 				E8BAF4D725AE91EB0036CD77 /* Main.storyboard */,
 				E8BAF4DA25AE91EE0036CD77 /* Assets.xcassets */,
 				E8BAF4DC25AE91EE0036CD77 /* LaunchScreen.storyboard */,
@@ -417,6 +420,7 @@
 				E888353525C3854C00687650 /* HelperFunctions.swift in Sources */,
 				E8BAF4D625AE91EB0036CD77 /* ViewController.swift in Sources */,
 				E8BAF4D225AE91EB0036CD77 /* AppDelegate.swift in Sources */,
+				E8C712B225C549A00010CCBB /* FirstViewController.swift in Sources */,
 				E8E9F9FE25B24B330049FE11 /* MyFormViewController.swift in Sources */,
 				E8BAF4D425AE91EB0036CD77 /* SceneDelegate.swift in Sources */,
 			);
@@ -597,12 +601,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SeniorProj/SeniorProj.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = S7UN6N8EFD;
 				INFOPLIST_FILE = SeniorProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.matt.seniorProjectMedID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -618,12 +624,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SeniorProj/SeniorProj.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = S7UN6N8EFD;
 				INFOPLIST_FILE = SeniorProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.matt.seniorProjectMedID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

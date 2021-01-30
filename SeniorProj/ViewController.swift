@@ -5,6 +5,40 @@
 //  Created by 2ndGen on 1/12/21.
 //
 
+
+
+
+
+
+
+
+
+
+
+// NOTE:
+
+
+
+// AFTER AN UPDATE WE WILL NO LONGER BE USING THIS FILE, BUT WE WILL KEEP IT FOR REFERENCE
+// AS THIS CODE IS FOR A WORKING NFC IMPLEMENTATION. WE NOW USE FIRSTVIEWCONTROLLER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import UIKit
 import CoreNFC
 import NFCReaderWriter
