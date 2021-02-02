@@ -12,8 +12,11 @@ class MyFormViewController: FormViewController {
          static let like = "like"
          static let streetAddress = "Street Address"
          static let streetAddress2 = "Street Address 2"
-        
-        
+         static let city = "city"
+         static let state = "state"
+         static let zip = "zip"
+         static let marital = "marital"
+         static let height = "height"
         
         // Emergency Contacts
         static let eContactName1 = "Name"
@@ -82,6 +85,46 @@ class MyFormViewController: FormViewController {
                         row.placeholder = "Address Line 2 (Optional)"
                    }
                     
+                  <<< TextRow(FormItems.city) { row in
+                        row.title = "City"
+                        row.placeholder = "City"
+                  }
+                    
+                  <<< PickerInputRow<String>("State"){
+                        $0.tag = FormItems.state
+                        $0.title = "State"
+                        $0.options = HelperFunctions().states
+                        $0.noValueDisplayText = "Select State" //If we want to set a default value.
+                  }
+                    
+                    <<< ZipCodeRow(FormItems.zip) { row in
+                        row.title = "ZIP Code"
+                        row.placeholder = "5-Digit ZIP"
+                  }
+                
+                    
+                  
+                    
+                    <<< ActionSheetRow<String>() {
+                        $0.tag = FormItems.marital
+                        $0.title = "Marital Status"
+                        $0.selectorTitle = "What's your martial status?"
+                        $0.options = ["Single", "Married", "Divorced", "Widowed"]
+                        $0.noValueDisplayText = "Select Status"
+                        }.onPresent { from, to in
+                         to.popoverPresentationController?.permittedArrowDirections = .up
+                        }
+                    /*
+                     <<< DoublePickerInlineRow<String, String>() {
+                        $0.tag = FormItems.height
+                        $0.title = "Height"
+                        $0.firstOptions = { return ["2'", "3'", "4'", "5'","6'", "7'", "8'"]}
+                        $0.secondOptions = { _ in return ["1\"", "2\"","3\""]}
+                        $0.noValueDisplayText = "Height"
+                    }
+                    */
+                    
+                    
                     
                     +++ Section(){ section in
                         section.tag = "SavePersonalInformation"
@@ -110,24 +153,34 @@ class MyFormViewController: FormViewController {
                         let birthdayV = self.form.rowBy(tag: FormItems.birthDate) as? RowOf<Date>
                         let genderV = self.form.rowBy(tag: "gender") as? RowOf<String>
                         let addressLine1V = self.form.rowBy(tag: FormItems.streetAddress) as? RowOf<String>
-                       
+                        let cityV = self.form.rowBy(tag: FormItems.city) as? RowOf<String>
+                        let stateV = self.form.rowBy(tag: FormItems.state) as? RowOf<String>
+                        let zipV = self.form.rowBy(tag: FormItems.zip) as? RowOf<String>
+                        let maritalV = self.form.rowBy(tag: FormItems.marital) as? RowOf<String>
+                        let heightV = self.form.rowBy(tag: FormItems.height) as? RowOf<String>
                         
                         
                         
-                        if let name = nameV, let bday = birthdayV, let gender = genderV, let addr1 = addressLine1V{
+                        if let name = nameV, let bday = birthdayV, let gender = genderV, let addr1 = addressLine1V, let city = cityV, let state = stateV, let zip = zipV, let marital = maritalV/*, let height = heightV*/{
                             
                             print("We have passed this stage")
-                            if(name.value == nil || bday.value == nil || addr1.value == nil){
-                                HelperFunctions().showAlert(title: "Error", msg: "Fill out everything", controller: self)
+                            if(name.value == nil || bday.value == nil || addr1.value == nil || city.value == nil || state.value == nil || state.value == "Select State" || zip.value == nil || marital.value == nil /*|| height.value == nil*/){
+                                
+                                HelperFunctions().showAlert(title: "Error", msg: "Please fill out everything", controller: self)
                                 return
                             }
+                            
+                           
                             
                             defaults.set(name.value, forKey: "name")
                             defaults.set(bday.value, forKey: "birthday")
                             defaults.set(gender.value, forKey: "gender")
                             defaults.set(addr1.value, forKey: "address1")
-                            
-                           
+                            defaults.set(city.value, forKey: "city")
+                            defaults.set(state.value, forKey: "state")
+                            defaults.set(zip.value, forKey: "zip")
+                            defaults.set(marital.value, forKey: "marital")
+                            //defaults.set(height.value, forKey: "height")
                             
                             if let addressLine2V = self.form.rowBy(tag: FormItems.streetAddress2) as? RowOf<String>{
                                 defaults.set(addressLine2V.value, forKey: "address2")
@@ -390,6 +443,12 @@ class MyFormViewController: FormViewController {
         let gender = defaults.string(forKey: "gender")
         let address1 = defaults.string(forKey: "address1")
         let address2 = defaults.string(forKey: "address2")
+        let city = defaults.string(forKey: "city")
+        let state = defaults.string(forKey: "state")
+        let zip = defaults.string(forKey: "zip")
+        let marital = defaults.string(forKey: "marital")
+        let height = defaults.string(forKey: "height")
+        
         
         if(name != nil){
             print("name is not nil")
@@ -408,6 +467,26 @@ class MyFormViewController: FormViewController {
         if(address2 != nil){
             self.form.rowBy(tag: FormItems.streetAddress2)?.baseValue = address2
         }
+        if(city != nil){
+            self.form.rowBy(tag: FormItems.city)?.baseValue = city
+        }
+        
+        if(state != nil){
+            self.form.rowBy(tag: FormItems.state)?.baseValue = state
+        }
+        
+        if(zip != nil){
+            self.form.rowBy(tag: FormItems.zip)?.baseValue = zip
+        }
+        
+        if(marital != nil){
+            self.form.rowBy(tag: FormItems.marital)?.baseValue = marital
+        }
+        
+        /*
+        if(height != nil){
+            self.form.rowBy(tag: FormItems.height)?.baseValue = height
+        }*/
         
         
                 
