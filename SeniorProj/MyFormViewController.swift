@@ -17,6 +17,14 @@ class MyFormViewController: FormViewController {
          static let zip = "zip"
          static let marital = "marital"
          static let height = "height"
+         static let weight = "weight"
+         static let bloodType = "bloodType"
+         static let ethnicity = "ethnicity"
+         static let primaryInsurance = "primaryInsurance"
+         static let accidentInfo = "accidentInfo"
+       //static let releasingInfo = "releasingInfo"
+       //static let patientConsent = "patientConsent"
+         static let illnessHistory = "illnessHistory"
         
         // Emergency Contacts
         static let eContactName1 = "Name"
@@ -123,7 +131,50 @@ class MyFormViewController: FormViewController {
                         $0.noValueDisplayText = "Height"
                     }
                     */
+                   
                     
+                    
+                    <<< TextRow(FormItems.weight) { row in
+                        row.title = "Weight"
+                        row.placeholder = "Weight"
+                    }
+                    
+                    <<< ActionSheetRow<String>() {
+                        $0.tag = FormItems.bloodType
+                        $0.title = "Blood Type"
+                        $0.selectorTitle = "What's your blood type?"
+                        $0.options = ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"]
+                        $0.noValueDisplayText = "Select Status"
+                        }.onPresent { from, to in
+                         to.popoverPresentationController?.permittedArrowDirections = .up
+                        }
+                    
+                    <<< ActionSheetRow<String>() {
+                        $0.tag = FormItems.ethnicity
+                        $0.title = "Ethnicity"
+                        $0.selectorTitle = "What's your ethnicity?"
+                        $0.options = ["American Indian or Alaskan Native", "Asian", "Black or African American", "Hispanic or Latino", "Native Hawaiian or other Pacific Islander", "White", "Two or more races", "Other"]
+                        $0.noValueDisplayText = "Select Status"
+                        }.onPresent { from, to in
+                         to.popoverPresentationController?.permittedArrowDirections = .up
+                        }
+                    
+                    <<< TextRow(FormItems.primaryInsurance) { row in
+                        row.title = "Primary Insurance"
+                        row.placeholder = "Primary Insurance"
+                    }
+                    
+                    <<< TextRow(FormItems.accidentInfo) { row in
+                        row.title = "Accident Information"
+                        row.placeholder = "Accident Information"
+                    }
+                    
+                    <<< TextRow(FormItems.illnessHistory) { row in
+                        row.title = "Illness History"
+                        row.placeholder = "Illness History"
+                    }
+                    
+                    //releasing info & patient consent rows still need to be implemented
                     
                     
                     +++ Section(){ section in
@@ -157,14 +208,21 @@ class MyFormViewController: FormViewController {
                         let stateV = self.form.rowBy(tag: FormItems.state) as? RowOf<String>
                         let zipV = self.form.rowBy(tag: FormItems.zip) as? RowOf<String>
                         let maritalV = self.form.rowBy(tag: FormItems.marital) as? RowOf<String>
-                        let heightV = self.form.rowBy(tag: FormItems.height) as? RowOf<String>
+                        //let heightV = self.form.rowBy(tag: FormItems.height) as? RowOf<String>
+                        let weightV = self.form.rowBy(tag: FormItems.weight) as? RowOf<String>
+                        let bloodTypeV = self.form.rowBy(tag: FormItems.bloodType) as? RowOf<String>
+                        let ethnicityV = self.form.rowBy(tag: FormItems.ethnicity) as? RowOf<String>
+                        let primaryInsuranceV = self.form.rowBy(tag: FormItems.primaryInsurance) as? RowOf<String>
+                        let accidentInfoV = self.form.rowBy(tag: FormItems.accidentInfo) as? RowOf<String>
+                        let illnessHistoryV = self.form.rowBy(tag: FormItems.illnessHistory) as? RowOf<String>
                         
                         
                         
-                        if let name = nameV, let bday = birthdayV, let gender = genderV, let addr1 = addressLine1V, let city = cityV, let state = stateV, let zip = zipV, let marital = maritalV/*, let height = heightV*/{
+                        
+                        if let name = nameV, let bday = birthdayV, let gender = genderV, let addr1 = addressLine1V, let city = cityV, let state = stateV, let zip = zipV, let marital = maritalV, let weight = weightV, let bloodType = bloodTypeV, let ethnicity = ethnicityV, let primaryInsurance = primaryInsuranceV, let accidentInfo = accidentInfoV, let illnessHistory = illnessHistoryV/*, let height = heightV*/{
                             
                             print("We have passed this stage")
-                            if(name.value == nil || bday.value == nil || addr1.value == nil || city.value == nil || state.value == nil || state.value == "Select State" || zip.value == nil || marital.value == nil /*|| height.value == nil*/){
+                            if(name.value == nil || bday.value == nil || addr1.value == nil || city.value == nil || state.value == nil || state.value == "Select State" || zip.value == nil || marital.value == nil || marital.value == "Select Status" || weight.value == nil || bloodType.value == nil || bloodType.value == "Select Status" || ethnicity.value == nil || ethnicity.value == "Select Status" || primaryInsurance.value == nil || accidentInfo.value == nil || illnessHistory.value == nil/*|| height.value == nil*/){
                                 
                                 HelperFunctions().showAlert(title: "Error", msg: "Please fill out everything", controller: self)
                                 return
@@ -181,6 +239,12 @@ class MyFormViewController: FormViewController {
                             defaults.set(zip.value, forKey: "zip")
                             defaults.set(marital.value, forKey: "marital")
                             //defaults.set(height.value, forKey: "height")
+                            defaults.set(weight.value, forKey: "weight")
+                            defaults.set(bloodType.value, forKey: "blood type")
+                            defaults.set(ethnicity.value, forKey: "ethnicity")
+                            defaults.set(primaryInsurance.value, forKey: "primary insurance")
+                            defaults.set(accidentInfo.value, forKey: "accident information")
+                            defaults.set(illnessHistory.value, forKey: "illness history")
                             
                             if let addressLine2V = self.form.rowBy(tag: FormItems.streetAddress2) as? RowOf<String>{
                                 defaults.set(addressLine2V.value, forKey: "address2")
