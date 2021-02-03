@@ -228,7 +228,7 @@ class MyFormViewController: FormViewController {
                                 return
                             }
                             
-                           
+                            
                             
                             defaults.set(name.value, forKey: "name")
                             defaults.set(bday.value, forKey: "birthday")
