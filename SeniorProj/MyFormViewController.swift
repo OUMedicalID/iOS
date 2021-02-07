@@ -25,10 +25,14 @@ class MyFormViewController: FormViewController {
          static let bloodType = "bloodType"
          static let ethnicity = "ethnicity"
          static let primaryInsurance = "primaryInsurance"
+         static let policyNumber = "policyNumber"
+         static let groupNumberorMPH = "groupNumberorMPH"
          static let accidentInfo = "accidentInfo"
-        //static let releasingInfo = "releasingInfo"
-        //static let patientConsent = "patientConsent"
+         //static let releasingInfo = "releasingInfo"
+         //static let patientConsent = "patientConsent"
          static let illnessHistory = "illnessHistory"
+        
+        
         
         // Emergency Contacts
         static let eContactName1 = "Name"
@@ -75,19 +79,25 @@ class MyFormViewController: FormViewController {
                         row.title = "Name"
                         row.placeholder = "Your Name"
                     }
-                    <<< DateRow(FormItems.birthDate) { row in
-                        row.title = "Birthday"
-                        //row.placeholder = "DOB"
-                    }.cellUpdate({ (cell, row) in
-                        // Make the text black like everything else rather than gray.
-                        cell.detailTextLabel?.textColor = UIColor.black
-                    })
                     
                     <<< SegmentedRow<String>(){
                        $0.tag = "gender"
                        $0.title = "Gender"
                        $0.options = ["Male", "Female", "Other"]
                      }
+                    
+                    
+                    <<< DateRow(FormItems.birthDate) { row in
+                        row.title = "Date Of Birth"
+                        row.noValueDisplayText = "Select DOB"
+                        //row.placeholder = "DOB"
+                    }.cellUpdate({ (cell, row) in
+                        // Make the text black like everything else rather than gray.
+                        
+                        cell.detailTextLabel?.textColor = UIColor.black
+                    })
+                    
+                    
        
                    <<< TextRow(FormItems.streetAddress) { row in
                         row.title = "Address Line 1"
@@ -131,7 +141,7 @@ class MyFormViewController: FormViewController {
                 
                     
                     
-                    +++ Section(header: "Other Personal Information", footer: ""){
+                    +++ Section(header: "Other Personal Information", footer: "M.P.H = Main Policy Holder"){
                         $0.tag = "personal_s2"
                         $0.hidden = "$segments != 'Personal'"
                         
@@ -150,6 +160,7 @@ class MyFormViewController: FormViewController {
                             // Make the text black like everything else rather than gray.
                             cell.detailTextLabel?.textColor = UIColor.black
                         })
+                    
                     /*
                      <<< DoublePickerInlineRow<String, String>() {
                         $0.tag = FormItems.height
@@ -159,13 +170,21 @@ class MyFormViewController: FormViewController {
                         $0.noValueDisplayText = "Height"
                     }
                     */
-                   
                     
                     
                     <<< TextRow(FormItems.weight) { row in
                         row.title = "Weight"
                         row.placeholder = "Weight"
                     }
+                    
+                    
+                    <<< TextRow(FormItems.height) { row in
+                        row.title = "Height"
+                        row.placeholder = "Height"
+                    }
+                   
+                    
+                    
                     
                     <<< ActionSheetRow<String>() {
                         $0.tag = FormItems.bloodType
@@ -198,18 +217,22 @@ class MyFormViewController: FormViewController {
                         row.placeholder = "Primary Insurance"
                     }
                     
-                    /*
-                    <<< TextRow(FormItems.accidentInfo) { row in
-                        row.title = "Accident Information"
-                        row.placeholder = "Accident Information"
+                    <<< TextRow(FormItems.policyNumber) { row in
+                        row.title = "Policy Number"
+                        row.placeholder = "Policy Number"
                     }
                     
-                    <<< TextRow(FormItems.illnessHistory) { row in
-                        row.title = "Illness History"
-                        row.placeholder = "Illness History"
-                    }*/
+                    <<< TextRow(FormItems.groupNumberorMPH) { row in
+                        row.title = "Group # / M.P.H"
+                        row.placeholder = "Group # / M.P.H"
+                    }
                     
-                    //releasing info & patient consent rows still need to be implemented
+                    
+                    
+                   
+                    
+                    
+                    
                     
                     
                     +++ Section(){ section in
@@ -461,8 +484,8 @@ class MyFormViewController: FormViewController {
            
         form +++
             MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
-                               header: "Medical Conditions",
-                               footer: "To add a new medical condition, click on the plus.") {
+             header: "Medical Conditions",
+             footer: "To add a new medical condition, click on the plus.") {
                 
                 $0.hidden = "$segments != 'Conditions'"
                 $0.header?.height = {10}
@@ -495,6 +518,50 @@ class MyFormViewController: FormViewController {
                 
                 
             }
+            
+            
+            
+        form +++
+            MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
+             header: "Injury Information",
+             footer: "To add new injury information, click on the plus.") {
+                
+                $0.hidden = "$segments != 'Conditions'"
+                $0.header?.height = {40}
+                $0.tag = "InjuryMVS"
+                
+                
+                $0.addButtonProvider = { section in
+                    return ButtonRow(){
+                        $0.title = "Add New Injury"
+                    }
+                }
+                
+                $0.multivaluedRowToInsertAt = { index in
+                 return NameRow("injury_tag_\(index+1)") {
+                  $0.placeholder = "Your option"
+                 }
+               }
+                
+                
+                // Restore Injuries
+                let injuries = defaults.stringArray(forKey: "InjuryMVS") ?? [String]()
+                
+                // Loop through all saved conditions and put them back.
+                for condition in injuries {
+                    $0 <<< NameRow() {
+                        $0.value = condition
+                    }
+                }
+                
+                
+                
+            }
+            
+            
+            
+            
+            
         
             
             
@@ -518,15 +585,16 @@ class MyFormViewController: FormViewController {
                 
                 print(self)
                 print("Button was clicked!")
+                
                 let listofValues: [String]? = (form.sectionBy(tag: "MedicalConditionsMVS")?.compactMap { ($0 as? NameRow)?.value })
-                
-                
-                print("We are going to save medical conditions")
                 let medicalConditionValues = listofValues!.compactMap { $0 }
-                print(medicalConditionValues)
-                
                 defaults.set(medicalConditionValues, forKey: "medicalConditions")
-                print("Medical Conditions Saved")
+                
+                
+                let injuryValues: [String]? = (form.sectionBy(tag: "InjuryMVS")?.compactMap { ($0 as? NameRow)?.value })
+                let InjuriesMVS = injuryValues!.compactMap { $0 }
+                defaults.set(InjuriesMVS, forKey: "InjuryMVS")
+
                 
             })
         
