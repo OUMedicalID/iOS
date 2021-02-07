@@ -84,5 +84,10 @@ class HelperFunctions{
     }
     
     
+    func sha512(password: String) -> String{
+        return password.sha512()
+    }
+    
+    
 }
 

@@ -42,7 +42,7 @@ class MyFormViewController: FormViewController {
      }
      
      override func viewDidLoad() {
-         //self.tableViewStyle = .insetGrouped //We'll uncomment this later.
+         self.tableViewStyle = .insetGrouped //We'll uncomment this later.
          super.viewDidLoad()
          let defaults = UserDefaults.standard
         
