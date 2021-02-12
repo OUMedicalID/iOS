@@ -439,22 +439,35 @@ class MyFormViewController: FormViewController {
                         let name1  = self.form.rowBy(tag: FormItems.eContactName1) as? RowOf<String>
                         let phone1 = self.form.rowBy(tag: FormItems.eContactPhone1) as? RowOf<String>
                         let relationship1 = self.form.rowBy(tag: FormItems.eContactRelationship1) as? RowOf<String>
+                        let name2  = self.form.rowBy(tag: FormItems.eContactName2) as? RowOf<String>
+                        let phone2 = self.form.rowBy(tag: FormItems.eContactPhone2) as? RowOf<String>
+                        let relationship2 = self.form.rowBy(tag: FormItems.eContactRelationship2) as? RowOf<String>
                         
                         
-                        if let name = name1, let phone = phone1, let rel = relationship1{
+                        if let name = name1, let phone = phone1, let rel = relationship1, let optName = name2, let optPhone = phone2, let optRel = relationship2{
                             
                             if(name.value == nil || phone.value == nil || rel.value == nil){
                                 HelperFunctions().showAlert(title: "Error", msg: "Fill out everything", controller: self)
                                 return
                             }
                             
+                            if(optName.value == nil || optPhone.value == nil || optRel.value == nil){
+                                return
+                            }
+                            
+                            
                             if(phone.value!.count < 10 || phone.value!.count > 11){
                                 HelperFunctions().showAlert(title: "Error", msg: "Invalid Phone", controller: self)
                             }
                             
                             
+                            
+                            
                             let EContact1 = ["name": name.value!, "phone": phone.value!, "relationship": rel.value!]
                             defaults.set(EContact1, forKey: "EContact1")
+                            
+                            let EContact2 = ["name": optName.value!, "phone": optPhone.value!, "relationship": optRel.value!]
+                            defaults.set(EContact2, forKey: "EContact2")
                             
                         }
                         
@@ -688,7 +701,17 @@ class MyFormViewController: FormViewController {
             self.form.rowBy(tag: FormItems.eContactRelationship1)?.baseValue = EContact1!["relationship"] as! String
         }
         
+        let EContact2 = defaults.dictionary(forKey: "EContact2")
+        if(EContact2 != nil){
+            self.form.rowBy(tag: FormItems.eContactName2)?.baseValue = EContact2!["name"] as! String
+            self.form.rowBy(tag: FormItems.eContactPhone2)?.baseValue = EContact2!["phone"] as! String
+            self.form.rowBy(tag: FormItems.eContactRelationship2)?.baseValue = EContact2!["relationship"] as! String
         
+        }
+        self.form.rowBy(tag: FormItems.eContactName2)?.baseValue = EContact2!["name"] as! String
+        self.form.rowBy(tag: FormItems.eContactPhone2)?.baseValue = EContact2!["phone"] as! String
+        self.form.rowBy(tag: FormItems.eContactRelationship2)?.baseValue = EContact2!["relationship"] as! String
+
         
         // Deleting the line below gets rid of icons (We don't want this)
         tableView.isEditing = true
