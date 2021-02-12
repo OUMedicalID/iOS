@@ -49,6 +49,9 @@ class HelperFunctions{
     
     // Decrypt Data
     func decryptData(data: String) -> String{
+        
+           print("Data that we received: "+data)
+     
            let key: Array<UInt8> = Array(secretKey.utf8)
            let iv: Array<UInt8> = Array(secretIV.utf8)
            let newData = NSData(base64Encoded: data, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)!
@@ -59,6 +62,8 @@ class HelperFunctions{
                let decrypted = try AES(key: key, blockMode: CBC(iv: iv), padding: .pkcs7).decrypt(array)
                if let string = String(bytes: decrypted, encoding: .utf8) {
                    print(string) //WE SHOULD END UP HERE.
+                   return string
+                
                }
                
            } catch {
@@ -83,10 +88,18 @@ class HelperFunctions{
         print(information)
     }
     
-    
     func sha512(password: String) -> String{
         return password.sha512()
     }
+    
+    func showAllValues(){
+        print("Now printing all UserDefaults")
+        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
+                    print("\(key) = \(value) \n")
+        }
+    }
+    
+    
     
     
 }

@@ -265,19 +265,20 @@ class MyFormViewController: FormViewController {
                         let cityV = self.form.rowBy(tag: FormItems.city) as? RowOf<String>
                         let stateV = self.form.rowBy(tag: FormItems.state) as? RowOf<String>
                         let zipV = self.form.rowBy(tag: FormItems.zip) as? RowOf<String>
+                       
                         let maritalV = self.form.rowBy(tag: FormItems.marital) as? RowOf<String>
-                        //let heightV = self.form.rowBy(tag: FormItems.height) as? RowOf<String>
+                        let heightV = self.form.rowBy(tag: FormItems.height) as? RowOf<String>
                         let weightV = self.form.rowBy(tag: FormItems.weight) as? RowOf<String>
                         let bloodTypeV = self.form.rowBy(tag: FormItems.bloodType) as? RowOf<String>
                         let ethnicityV = self.form.rowBy(tag: FormItems.ethnicity) as? RowOf<String>
                         let primaryInsuranceV = self.form.rowBy(tag: FormItems.primaryInsurance) as? RowOf<String>
-                       // let accidentInfoV = self.form.rowBy(tag: FormItems.accidentInfo) as? RowOf<String>
-                      //  let illnessHistoryV = self.form.rowBy(tag: FormItems.illnessHistory) as? RowOf<String>
+                        let policyNumV = self.form.rowBy(tag: FormItems.policyNumber) as? RowOf<String>
+                        let GroupMPHV = self.form.rowBy(tag: FormItems.groupNumberorMPH) as? RowOf<String>
                         
                         
                         
                         
-                        if let name = nameV, let bday = birthdayV, let gender = genderV, let addr1 = addressLine1V, let city = cityV, let state = stateV, let zip = zipV, let marital = maritalV, let weight = weightV, let bloodType = bloodTypeV, let ethnicity = ethnicityV, let primaryInsurance = primaryInsuranceV/*, let accidentInfo = accidentInfoV, let illnessHistory = illnessHistoryV, let height = heightV*/{
+                        if let name = nameV, let bday = birthdayV, let gender = genderV, let addr1 = addressLine1V, let city = cityV, let state = stateV, let zip = zipV, let marital = maritalV, let weight = weightV, let bloodType = bloodTypeV, let ethnicity = ethnicityV, let primaryInsurance = primaryInsuranceV, let height = heightV, let policyNum = policyNumV, let GroupMPH = GroupMPHV{
                             
                             print("We have passed this stage")
                             if(name.value == nil || bday.value == nil || addr1.value == nil || city.value == nil || state.value == nil || state.value == "Select State" || zip.value == nil || marital.value == nil || marital.value == "Select Status" || weight.value == nil || bloodType.value == nil || bloodType.value == "Select Status" || ethnicity.value == nil || ethnicity.value == "Select Status" || primaryInsurance.value == nil /*|| accidentInfo.value == nil || illnessHistory.value == nil|| height.value == nil*/){
@@ -288,32 +289,45 @@ class MyFormViewController: FormViewController {
                             
                             
                             
-                            defaults.set(name.value, forKey: "name")
+                            defaults.set(HelperFunctions().encryptData(data: name.value!), forKey: "name")
                             defaults.set(bday.value, forKey: "birthday")
-                            defaults.set(gender.value, forKey: "gender")
-                            defaults.set(addr1.value, forKey: "address1")
-                            defaults.set(city.value, forKey: "city")
-                            defaults.set(state.value, forKey: "state")
-                            defaults.set(zip.value, forKey: "zip")
-                            defaults.set(marital.value, forKey: "marital")
-                            //defaults.set(height.value, forKey: "height")
-                            defaults.set(weight.value, forKey: "weight")
-                            defaults.set(bloodType.value, forKey: "blood type")
-                            defaults.set(ethnicity.value, forKey: "ethnicity")
-                            defaults.set(primaryInsurance.value, forKey: "primary insurance")
-                            //defaults.set(accidentInfo.value, forKey: "accident information")
-                            //defaults.set(illnessHistory.value, forKey: "illness history")
+                            defaults.set(HelperFunctions().encryptData(data: gender.value!), forKey: "gender")
+                            defaults.set(HelperFunctions().encryptData(data: addr1.value!), forKey: "address1")
+                            defaults.set(HelperFunctions().encryptData(data: city.value!), forKey: "city")
+                            defaults.set(HelperFunctions().encryptData(data: state.value!), forKey: "state")
+                            defaults.set(HelperFunctions().encryptData(data: zip.value!), forKey: "zip")
+                           
+                            defaults.set(HelperFunctions().encryptData(data: marital.value!), forKey: "marital")
+                            defaults.set(HelperFunctions().encryptData(data: height.value!), forKey: "height")
+                            defaults.set(HelperFunctions().encryptData(data: weight.value!), forKey: "weight")
+                            defaults.set(HelperFunctions().encryptData(data: bloodType.value!), forKey: "bloodtype")
+                            defaults.set(HelperFunctions().encryptData(data: ethnicity.value!), forKey: "ethnicity")
+                            defaults.set(HelperFunctions().encryptData(data: primaryInsurance.value!), forKey: "primaryInsurance")
+                            defaults.set(HelperFunctions().encryptData(data: policyNum.value!), forKey: "policyNum")
+                            defaults.set(HelperFunctions().encryptData(data: GroupMPH.value!), forKey: "groupMPH")
+                            
+                            
+                            
                             
                         if let address2 = self.form.rowBy(tag: FormItems.streetAddress2) as? RowOf<String>{
-                            defaults.set(address2.value, forKey: "address2")
+                            if(address2.value == nil){
+                                return
+                            }
+                            defaults.set(HelperFunctions().encryptData(data: address2.value!), forKey: "address2")
                         }
                             
                         if let homeP = self.form.rowBy(tag: FormItems.homePhone) as? RowOf<String>{
-                                defaults.set(homeP.value, forKey: "homePhone")
+                            if(homeP.value == nil){
+                                return
+                            }
+                            defaults.set(HelperFunctions().encryptData(data: homeP.value!), forKey: "homePhone")
                         }
                         
                         if let workP = self.form.rowBy(tag: FormItems.workPhone) as? RowOf<String>{
-                                    defaults.set(workP.value, forKey: "workPhone")
+                            if(workP.value == nil){
+                                return
+                            }
+                            defaults.set(HelperFunctions().encryptData(data: workP.value!), forKey: "workPhone")
                         }
                             
                      }
@@ -439,21 +453,17 @@ class MyFormViewController: FormViewController {
                         let name1  = self.form.rowBy(tag: FormItems.eContactName1) as? RowOf<String>
                         let phone1 = self.form.rowBy(tag: FormItems.eContactPhone1) as? RowOf<String>
                         let relationship1 = self.form.rowBy(tag: FormItems.eContactRelationship1) as? RowOf<String>
-                        let name2  = self.form.rowBy(tag: FormItems.eContactName2) as? RowOf<String>
-                        let phone2 = self.form.rowBy(tag: FormItems.eContactPhone2) as? RowOf<String>
-                        let relationship2 = self.form.rowBy(tag: FormItems.eContactRelationship2) as? RowOf<String>
                         
                         
-                        if let name = name1, let phone = phone1, let rel = relationship1, let optName = name2, let optPhone = phone2, let optRel = relationship2{
+                        
+                        if let name = name1, let phone = phone1, let rel = relationship1{
                             
                             if(name.value == nil || phone.value == nil || rel.value == nil){
                                 HelperFunctions().showAlert(title: "Error", msg: "Fill out everything", controller: self)
                                 return
                             }
                             
-                            if(optName.value == nil || optPhone.value == nil || optRel.value == nil){
-                                return
-                            }
+                            
                             
                             
                             if(phone.value!.count < 10 || phone.value!.count > 11){
@@ -461,17 +471,36 @@ class MyFormViewController: FormViewController {
                             }
                             
                             
-                            
-                            
                             let EContact1 = ["name": name.value!, "phone": phone.value!, "relationship": rel.value!]
                             defaults.set(EContact1, forKey: "EContact1")
                             
+                           
+                            
+                        } // End big let
+                        
+                        // SAVE OPTIONAL ECONTACT
+                        
+                        let name2  = self.form.rowBy(tag: FormItems.eContactName2) as? RowOf<String>
+                        let phone2 = self.form.rowBy(tag: FormItems.eContactPhone2) as? RowOf<String>
+                        let relationship2 = self.form.rowBy(tag: FormItems.eContactRelationship2) as? RowOf<String>
+                        
+                        
+                        if let optName = name2, let optPhone = phone2, let optRel = relationship2{
+                        
+                            
+                            if(optName.value == nil || optPhone.value == nil || optRel.value == nil){
+                                return
+                            }
+                        
                             let EContact2 = ["name": optName.value!, "phone": optPhone.value!, "relationship": optRel.value!]
                             defaults.set(EContact2, forKey: "EContact2")
-                            
+                        
                         }
+                    
+                        
                         
                     })
+                    
                     
                     
     
@@ -524,7 +553,7 @@ class MyFormViewController: FormViewController {
                 // Loop through all saved conditions and put them back.
                 for condition in medicalConditions {
                     $0 <<< NameRow() {
-                        $0.value = condition
+                        $0.value = HelperFunctions().decryptData(data: condition)
                     }
                 }
                 
@@ -563,7 +592,7 @@ class MyFormViewController: FormViewController {
                 // Loop through all saved conditions and put them back.
                 for condition in injuries {
                     $0 <<< NameRow() {
-                        $0.value = condition
+                        $0.value = HelperFunctions().decryptData(data: condition)
                     }
                 }
                 
@@ -599,13 +628,13 @@ class MyFormViewController: FormViewController {
                 print(self)
                 print("Button was clicked!")
                 
-                let listofValues: [String]? = (form.sectionBy(tag: "MedicalConditionsMVS")?.compactMap { ($0 as? NameRow)?.value })
-                let medicalConditionValues = listofValues!.compactMap { $0 }
+                let listofValues: [String]? = (form.sectionBy(tag: "MedicalConditionsMVS")?.compactMap {($0 as? NameRow)?.value })
+                let medicalConditionValues = listofValues!.compactMap { HelperFunctions().encryptData(data: $0) }
                 defaults.set(medicalConditionValues, forKey: "medicalConditions")
                 
                 
                 let injuryValues: [String]? = (form.sectionBy(tag: "InjuryMVS")?.compactMap { ($0 as? NameRow)?.value })
-                let InjuriesMVS = injuryValues!.compactMap { $0 }
+                let InjuriesMVS = injuryValues!.compactMap { HelperFunctions().encryptData(data: $0) }
                 defaults.set(InjuriesMVS, forKey: "InjuryMVS")
 
                 
@@ -641,55 +670,89 @@ class MyFormViewController: FormViewController {
         
         let marital = defaults.string(forKey: "marital")
         let height = defaults.string(forKey: "height")
+        let weight = defaults.string(forKey: "weight")
+        let bloodType = defaults.string(forKey: "bloodtype")
+        let ethnicity = defaults.string(forKey: "ethnicity")
+        let primaryInsurance = defaults.string(forKey: "primaryInsurance")
+        let policyNum = defaults.string(forKey: "policyNum")
+        let groupMPH = defaults.string(forKey: "groupMPH")
+        
         
         
         if(name != nil){
             print("name is not nil")
-            self.form.rowBy(tag: FormItems.name)?.baseValue = name
+            self.form.rowBy(tag: FormItems.name)?.baseValue = HelperFunctions().decryptData(data: name!)
         }
         if(birthday != nil){
             let date = birthday as! Date
             self.form.rowBy(tag: FormItems.birthDate)?.baseValue = date
         }
         if(gender != nil){
-            self.form.rowBy(tag: "gender")?.baseValue = gender
+            self.form.rowBy(tag: "gender")?.baseValue = HelperFunctions().decryptData(data: gender!)
         }
         if(address1 != nil){
-            self.form.rowBy(tag: FormItems.streetAddress)?.baseValue = address1
+            self.form.rowBy(tag: FormItems.streetAddress)?.baseValue = HelperFunctions().decryptData(data: address1!)
         }
         if(address2 != nil){
-            self.form.rowBy(tag: FormItems.streetAddress2)?.baseValue = address2
+            self.form.rowBy(tag: FormItems.streetAddress2)?.baseValue = HelperFunctions().decryptData(data: address2!)
         }
         if(city != nil){
-            self.form.rowBy(tag: FormItems.city)?.baseValue = city
+            self.form.rowBy(tag: FormItems.city)?.baseValue = HelperFunctions().decryptData(data: city!)
         }
         
         if(state != nil){
-            self.form.rowBy(tag: FormItems.state)?.baseValue = state
+            self.form.rowBy(tag: FormItems.state)?.baseValue = HelperFunctions().decryptData(data: state!)
         }
         
         if(zip != nil){
-            self.form.rowBy(tag: FormItems.zip)?.baseValue = zip
+            self.form.rowBy(tag: FormItems.zip)?.baseValue = HelperFunctions().decryptData(data: zip!)
         }
         
         if(homePhone != nil){
-            self.form.rowBy(tag: FormItems.homePhone)?.baseValue = homePhone
+            self.form.rowBy(tag: FormItems.homePhone)?.baseValue = HelperFunctions().decryptData(data: homePhone!)
         }
         
         if(workPhone != nil){
-            self.form.rowBy(tag: FormItems.workPhone)?.baseValue = workPhone
+            self.form.rowBy(tag: FormItems.workPhone)?.baseValue = HelperFunctions().decryptData(data: workPhone!)
         }
         
         
         
         if(marital != nil){
-            self.form.rowBy(tag: FormItems.marital)?.baseValue = marital
+            self.form.rowBy(tag: FormItems.marital)?.baseValue = HelperFunctions().decryptData(data: marital!)
         }
         
-        /*
         if(height != nil){
-            self.form.rowBy(tag: FormItems.height)?.baseValue = height
-        }*/
+            self.form.rowBy(tag: FormItems.height)?.baseValue = HelperFunctions().decryptData(data: height!)
+        }
+                
+        if(weight != nil){
+            self.form.rowBy(tag: FormItems.weight)?.baseValue = HelperFunctions().decryptData(data: weight!)
+        }
+                
+        if(bloodType != nil){
+            self.form.rowBy(tag: "bloodType")?.baseValue = HelperFunctions().decryptData(data: bloodType!)
+        }
+                
+        if(ethnicity != nil){
+            self.form.rowBy(tag: "ethnicity")?.baseValue = HelperFunctions().decryptData(data: ethnicity!)
+        }
+                
+        if(primaryInsurance != nil){
+            self.form.rowBy(tag: FormItems.primaryInsurance)?.baseValue = HelperFunctions().decryptData(data: primaryInsurance!)
+        }
+                
+      
+        
+        if(policyNum != nil){
+            self.form.rowBy(tag: FormItems.policyNumber)?.baseValue = HelperFunctions().decryptData(data: policyNum!)
+        }
+                
+        if(groupMPH != nil){
+            self.form.rowBy(tag: FormItems.groupNumberorMPH)?.baseValue = HelperFunctions().decryptData(data: groupMPH!)
+        }
+        
+        
         
         
                 
@@ -701,6 +764,7 @@ class MyFormViewController: FormViewController {
             self.form.rowBy(tag: FormItems.eContactRelationship1)?.baseValue = EContact1!["relationship"] as! String
         }
         
+        
         let EContact2 = defaults.dictionary(forKey: "EContact2")
         if(EContact2 != nil){
             self.form.rowBy(tag: FormItems.eContactName2)?.baseValue = EContact2!["name"] as! String
@@ -708,9 +772,8 @@ class MyFormViewController: FormViewController {
             self.form.rowBy(tag: FormItems.eContactRelationship2)?.baseValue = EContact2!["relationship"] as! String
         
         }
-        self.form.rowBy(tag: FormItems.eContactName2)?.baseValue = EContact2!["name"] as! String
-        self.form.rowBy(tag: FormItems.eContactPhone2)?.baseValue = EContact2!["phone"] as! String
-        self.form.rowBy(tag: FormItems.eContactRelationship2)?.baseValue = EContact2!["relationship"] as! String
+        
+        
 
         
         // Deleting the line below gets rid of icons (We don't want this)

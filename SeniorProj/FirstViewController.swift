@@ -100,7 +100,9 @@ struct Login: View{
             // No if statements allowed in a VStack, but we can use a ternary operator
             let defaults = UserDefaults.standard
             let name = defaults.string(forKey: "name")
-            let welcome = "Welcome" + (name != nil ? ", "+name!+"!" : "!")
+            //print(name)
+            //print(HelperFunctions().decryptData(data: name!))
+            let welcome = "Welcome" + (name != nil ? ", "+HelperFunctions().decryptData(data: name!)+"!" : "!")
             
             
             Text(welcome)
@@ -174,6 +176,9 @@ class FirstViewController: UIHostingController<Home>,NFCReaderDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        HelperFunctions().showAllValues()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.showSpinningWheel(_:)), name: NSNotification.Name(rawValue: "notificationName"), object: nil)
 
     }
