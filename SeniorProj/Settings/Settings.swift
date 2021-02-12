@@ -35,7 +35,7 @@ class Settings: FormViewController {
               $0.title = "Password Authentication"
               //$0.value = ""
             }.onCellSelection { cell, row in
-                print("clICKED")
+                print("Clicked")
                 
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyBoard.instantiateViewController(withIdentifier: "SettingsPassword") as! SettingsPassword
@@ -85,6 +85,13 @@ class Settings: FormViewController {
               $0.title = "Credits"
             }.cellSetup() { cell, row in
                 cell.accessoryType = .disclosureIndicator
+            }.onCellSelection { cell, row in
+                print("Clicked")
+                
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "credits") as! Credits
+                self.present(vc, animated: true, completion: nil)
+                
             }
             
             <<< LabelRow () {

@@ -288,9 +288,13 @@ class MyFormViewController: FormViewController {
                             }
                             
                             
+                            let df = DateFormatter()
+                            df.dateFormat = "yyyy-MM-dd hh:mm:ss"
+                            let birthday = HelperFunctions().encryptData(data:df.string(from: bday.value!))
+                            
                             
                             defaults.set(HelperFunctions().encryptData(data: name.value!), forKey: "name")
-                            defaults.set(bday.value, forKey: "birthday")
+                            defaults.set(birthday, forKey: "birthday")
                             defaults.set(HelperFunctions().encryptData(data: gender.value!), forKey: "gender")
                             defaults.set(HelperFunctions().encryptData(data: addr1.value!), forKey: "address1")
                             defaults.set(HelperFunctions().encryptData(data: city.value!), forKey: "city")
@@ -657,7 +661,7 @@ class MyFormViewController: FormViewController {
         
         // Restore Personal
         let name = defaults.string(forKey: "name")
-        let birthday = defaults.object(forKey: "birthday")
+        let birthday = defaults.string(forKey: "birthday")
         let gender = defaults.string(forKey: "gender")
         let address1 = defaults.string(forKey: "address1")
         let address2 = defaults.string(forKey: "address2")
@@ -683,10 +687,15 @@ class MyFormViewController: FormViewController {
             print("name is not nil")
             self.form.rowBy(tag: FormItems.name)?.baseValue = HelperFunctions().decryptData(data: name!)
         }
+        
         if(birthday != nil){
-            let date = birthday as! Date
+            let decryptedbday = HelperFunctions().decryptData(data: birthday!)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+            let date = dateFormatter.date(from:decryptedbday)
             self.form.rowBy(tag: FormItems.birthDate)?.baseValue = date
         }
+        
         if(gender != nil){
             self.form.rowBy(tag: "gender")?.baseValue = HelperFunctions().decryptData(data: gender!)
         }
