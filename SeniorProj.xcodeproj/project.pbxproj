@@ -24,6 +24,7 @@
 		E8BAF4E925AE91EF0036CD77 /* SeniorProjTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAF4E825AE91EF0036CD77 /* SeniorProjTests.swift */; };
 		E8BAF4F425AE91EF0036CD77 /* SeniorProjUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAF4F325AE91EF0036CD77 /* SeniorProjUITests.swift */; };
 		E8C712B225C549A00010CCBB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C712B125C549A00010CCBB /* FirstViewController.swift */; };
+		E8DD5CF425D7508800244C3C /* authFailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DD5CF325D7508800244C3C /* authFailed.swift */; };
 		E8E9F9FE25B24B330049FE11 /* MyFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E9F9FD25B24B330049FE11 /* MyFormViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		E8BAF4F325AE91EF0036CD77 /* SeniorProjUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorProjUITests.swift; sourceTree = "<group>"; };
 		E8BAF4F525AE91EF0036CD77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8C712B125C549A00010CCBB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		E8DD5CF325D7508800244C3C /* authFailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authFailed.swift; sourceTree = "<group>"; };
 		E8E9F9FD25B24B330049FE11 /* MyFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFormViewController.swift; sourceTree = "<group>"; };
 		FA12B66A87E6117CCC3D31AB /* Pods-SeniorProj-SeniorProjUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProj-SeniorProjUITests.debug.xcconfig"; path = "Target Support Files/Pods-SeniorProj-SeniorProjUITests/Pods-SeniorProj-SeniorProjUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 				E8A9A90825CFC5B3002612E3 /* SettingsPassword.swift */,
 				E8A9A90E25CFC5ED002612E3 /* AboutApp.swift */,
 				E8A9A91625CFC5F6002612E3 /* Credits.swift */,
+				E8DD5CF325D7508800244C3C /* authFailed.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				E8E9F9FE25B24B330049FE11 /* MyFormViewController.swift in Sources */,
 				E8A9A91725CFC5F6002612E3 /* Credits.swift in Sources */,
 				E8BAF4D425AE91EB0036CD77 /* SceneDelegate.swift in Sources */,
+				E8DD5CF425D7508800244C3C /* authFailed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

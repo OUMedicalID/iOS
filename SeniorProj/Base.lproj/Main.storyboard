@@ -70,6 +70,14 @@
             </objects>
             <point key="canvasLocation" x="-1313" y="574"/>
         </scene>
+        <!--Auth Failed-->
+        <scene sceneID="gon-cQ-VW7">
+            <objects>
+                <hostingController restorationIdentifier="authFail" storyboardIdentifier="authFail" id="8iQ-u8-I53" customClass="authFailed" customModule="SeniorProj" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JaE-QP-QLD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="-379"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Od1-5T-qYS">
             <objects>

@@ -85,6 +85,9 @@ class HelperFunctions{
             "EContact1": defaults.dictionary(forKey: "EContact1")
         ]
         
+        
+        
+        
         print(information)
     }
     

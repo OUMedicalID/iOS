@@ -2,7 +2,7 @@ import UIKit
 import SwiftUI
 import CoreNFC
 import NFCReaderWriter
-
+import BiometricAuthentication
 
 
 
@@ -177,6 +177,28 @@ class FirstViewController: UIHostingController<Home>,NFCReaderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // Biometrics Authentication
+        let defaults = UserDefaults.standard
+        let bioAuth = defaults.string(forKey: "bioAuth")
+        if(bioAuth != nil){
+            if(bioAuth == "on"){
+                promptBio()
+            }
+        }
+        
+        let password = defaults.string(forKey: "appPassword")
+        if(password != nil){
+            print("Calling on prompt password)")
+            promptPassword()
+        }
+        
+        
+        // Password Authentication
+        
+        
+        
+        
         HelperFunctions().showAllValues()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.showSpinningWheel(_:)), name: NSNotification.Name(rawValue: "notificationName"), object: nil)
@@ -218,5 +240,87 @@ class FirstViewController: UIHostingController<Home>,NFCReaderDelegate {
             self.readerWriter.end()
          }
     }
+  }
+    
+    
+    func promptBio(){
+        if BioMetricAuthenticator.canAuthenticate() {
+
+            BioMetricAuthenticator.authenticateWithBioMetrics(reason: "") { (result) in
+                switch result {
+                   case .success( _):
+                       print("Authentication Successful")
+                   case .failure( _):
+                       print("Authentication Failed")
+                    
+                    let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let lockV  = storyboard.instantiateViewController(withIdentifier: "authFail") as! authFailed
+                    lockV.isModalInPresentation = true
+                    lockV.modalPresentationStyle = .fullScreen
+                    self.present(lockV, animated: true, completion: nil)
+
+                    
+
+                    
+                   }
+               }
+            }
+        }
+    
+    
+    func promptPassword(){
+        DispatchQueue.main.async{
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Enter Password", message: "Please enter the password that you set.", preferredStyle: .alert)
+
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.placeholder = "App Password"
+            textField.isSecureTextEntry = true
+        }
+
+            
+            // 3. Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "Reset App", style: .destructive, handler: { [weak alert] (_) in
+                
+                _ = alert
+                let domain = Bundle.main.bundleIdentifier!
+                UserDefaults.standard.removePersistentDomain(forName: domain)
+                UserDefaults.standard.synchronize()
+                print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
+                HelperFunctions().showAlert(title: "App Reset", msg: "App has been reset. Please restart", controller: self)
+            }))
+            
+            
+            
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "Authenticate", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            
+            let defaults = UserDefaults.standard
+            let savedPassword   = defaults.string(forKey: "appPassword")
+            let enteredPassword = HelperFunctions().sha512(password: textField!.text!)
+            
+            if(savedPassword == enteredPassword){
+                // We're good.
+            }else{
+                self.promptPassword()
+            }
+           
+            
+        }))
+            
+            
+           
+
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+        
     }
+        
+    }
+    
+    
+    
+    
 }

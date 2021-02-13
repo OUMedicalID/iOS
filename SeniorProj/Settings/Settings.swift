@@ -1,5 +1,6 @@
 import UIKit
 import Eureka
+import BiometricAuthentication
 
 class Settings: FormViewController {
      
@@ -25,11 +26,17 @@ class Settings: FormViewController {
                 cell.switchControl?.onTintColor = UIColor(red: 31/255, green: 133/255, blue: 222/255, alpha: 1.0)
             }.onChange { row in
                (row.value ?? false) ? defaults.set("on", forKey: "bioAuth") : defaults.set("off", forKey: "bioAuth")
+
+                if(row.value!){
+                    print("Clearing password option")
+                    defaults.set(nil, forKey: "appPassword")
+                }
+                
                 
             }
 
             
-        form +++ Section("Application Configuration")
+        form +++ Section(header: "Application Configuration",  footer: "Note that using password authentication disables biometric authentication and vice versa.")
             
             <<< LabelRow () {
               $0.title = "Password Authentication"

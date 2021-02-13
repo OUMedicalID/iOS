@@ -6,10 +6,11 @@ target 'SeniorProj' do
   use_frameworks!
 
   # Pods for SeniorProj
-	pod 'NFCReaderWriter'
+  pod 'NFCReaderWriter'
   pod 'Eureka'
   pod 'CryptoSwift', '~> 1.3.8'
   pod 'CRDCrypt'
+  pod 'BiometricAuthentication'
 
 
   target 'SeniorProjTests' do

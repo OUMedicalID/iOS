@@ -65,6 +65,8 @@ class SettingsPassword: FormViewController {
                         return
                     }
                     
+                    
+                    defaults.set("off", forKey: "bioAuth")
                     let sha512Pass = HelperFunctions().sha512(password: password.value!)
                     defaults.set(sha512Pass, forKey: "appPassword")
                    // HelperFunctions().showAlert(title: "Success",msg: "Password Set", controller: self)

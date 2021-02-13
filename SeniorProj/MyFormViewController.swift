@@ -475,7 +475,10 @@ class MyFormViewController: FormViewController {
                             }
                             
                             
-                            let EContact1 = ["name": name.value!, "phone": phone.value!, "relationship": rel.value!]
+                            let EContact1 = ["name": HelperFunctions().encryptData(data: name.value!),
+                                             "phone": HelperFunctions().encryptData(data:phone.value!),
+                                             "relationship": HelperFunctions().encryptData(data:rel.value!)
+                                            ]
                             defaults.set(EContact1, forKey: "EContact1")
                             
                            
@@ -496,7 +499,10 @@ class MyFormViewController: FormViewController {
                                 return
                             }
                         
-                            let EContact2 = ["name": optName.value!, "phone": optPhone.value!, "relationship": optRel.value!]
+                            let EContact2 = ["name": HelperFunctions().encryptData(data:optName.value!),
+                                             "phone": HelperFunctions().encryptData(data:optPhone.value!),
+                                             "relationship": HelperFunctions().encryptData(data:optRel.value!)
+                                            ]
                             defaults.set(EContact2, forKey: "EContact2")
                         
                         }
@@ -768,17 +774,28 @@ class MyFormViewController: FormViewController {
         // Restore Contactss
         let EContact1 = defaults.dictionary(forKey: "EContact1")
         if(EContact1 != nil){
-            self.form.rowBy(tag: FormItems.eContactName1)?.baseValue = EContact1!["name"] as! String
-            self.form.rowBy(tag: FormItems.eContactPhone1)?.baseValue = EContact1!["phone"] as! String
-            self.form.rowBy(tag: FormItems.eContactRelationship1)?.baseValue = EContact1!["relationship"] as! String
+            
+            let name = HelperFunctions().decryptData(data: EContact1!["name"] as! String)
+            let phone = HelperFunctions().decryptData(data: EContact1!["phone"] as! String)
+            let relationship = HelperFunctions().decryptData(data: EContact1!["relationship"] as! String)
+            
+            
+            self.form.rowBy(tag: FormItems.eContactName1)?.baseValue = name
+            self.form.rowBy(tag: FormItems.eContactPhone1)?.baseValue = phone
+            self.form.rowBy(tag: FormItems.eContactRelationship1)?.baseValue = relationship
         }
         
         
         let EContact2 = defaults.dictionary(forKey: "EContact2")
         if(EContact2 != nil){
-            self.form.rowBy(tag: FormItems.eContactName2)?.baseValue = EContact2!["name"] as! String
-            self.form.rowBy(tag: FormItems.eContactPhone2)?.baseValue = EContact2!["phone"] as! String
-            self.form.rowBy(tag: FormItems.eContactRelationship2)?.baseValue = EContact2!["relationship"] as! String
+            
+            let name = HelperFunctions().decryptData(data: EContact2!["name"] as! String)
+            let phone = HelperFunctions().decryptData(data: EContact2!["phone"] as! String)
+            let relationship = HelperFunctions().decryptData(data: EContact2!["relationship"] as! String)
+            
+            self.form.rowBy(tag: FormItems.eContactName2)?.baseValue = name
+            self.form.rowBy(tag: FormItems.eContactPhone2)?.baseValue = phone
+            self.form.rowBy(tag: FormItems.eContactRelationship2)?.baseValue = relationship
         
         }
         
