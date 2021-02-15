@@ -1,6 +1,7 @@
 import UIKit
 import Eureka
 import BiometricAuthentication
+import MaterialComponents.MaterialSnackbar
 
 class Settings: FormViewController {
      
@@ -31,6 +32,12 @@ class Settings: FormViewController {
                     print("Clearing password option")
                     defaults.set(nil, forKey: "appPassword")
                 }
+                
+                let status = (row.value ?? false) ? "on" : "off"
+                let message = MDCSnackbarMessage()
+                message.text = "Biometric Authentication is now "+status
+                message.duration = 2
+                MDCSnackbarManager.default.show(message)
                 
                 
             }

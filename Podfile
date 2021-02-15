@@ -11,6 +11,7 @@ target 'SeniorProj' do
   pod 'CryptoSwift', '~> 1.3.8'
   pod 'CRDCrypt'
   pod 'BiometricAuthentication'
+  pod 'MaterialComponents/Snackbar'
 
 
   target 'SeniorProjTests' do

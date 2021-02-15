@@ -1,5 +1,7 @@
 import UIKit
 import Eureka
+import MaterialComponents.MaterialSnackbar
+
 
 class MyFormViewController: FormViewController {
     // Struct for form items tag constants
@@ -258,6 +260,12 @@ class MyFormViewController: FormViewController {
                         print(self)
                         print("Save Personal Info clicked!")
                         
+                        
+                        
+                        
+                        
+                        
+                        
                         let nameV  = self.form.rowBy(tag: FormItems.name) as? RowOf<String>
                         let birthdayV = self.form.rowBy(tag: FormItems.birthDate) as? RowOf<Date>
                         let genderV = self.form.rowBy(tag: "gender") as? RowOf<String>
@@ -311,6 +319,11 @@ class MyFormViewController: FormViewController {
                             defaults.set(HelperFunctions().encryptData(data: GroupMPH.value!), forKey: "groupMPH")
                             
                             
+                            let message = MDCSnackbarMessage()
+                            message.text = "Information has been saved."
+                            message.duration = 2
+                            MDCSnackbarManager.default.show(message)
+                            
                             
                             
                         if let address2 = self.form.rowBy(tag: FormItems.streetAddress2) as? RowOf<String>{
@@ -334,7 +347,13 @@ class MyFormViewController: FormViewController {
                             defaults.set(HelperFunctions().encryptData(data: workP.value!), forKey: "workPhone")
                         }
                             
+                            
+                            
+                           
+                            
                      }
+                        
+                       
                         
                     })
                     
@@ -482,6 +501,12 @@ class MyFormViewController: FormViewController {
                             defaults.set(EContact1, forKey: "EContact1")
                             
                            
+                            let message = MDCSnackbarMessage()
+                            message.text = "Contacts have been saved."
+                            message.duration = 2
+                            MDCSnackbarManager.default.show(message)
+                            
+                            
                             
                         } // End big let
                         
@@ -646,6 +671,12 @@ class MyFormViewController: FormViewController {
                 let injuryValues: [String]? = (form.sectionBy(tag: "InjuryMVS")?.compactMap { ($0 as? NameRow)?.value })
                 let InjuriesMVS = injuryValues!.compactMap { HelperFunctions().encryptData(data: $0) }
                 defaults.set(InjuriesMVS, forKey: "InjuryMVS")
+                
+                
+                let message = MDCSnackbarMessage()
+                message.text = "Conditions has been saved."
+                message.duration = 2
+                MDCSnackbarManager.default.show(message)
 
                 
             })

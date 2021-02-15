@@ -1,5 +1,6 @@
 import UIKit
 import Eureka
+import MaterialComponents.MaterialSnackbar
 
 class SettingsPassword: FormViewController {
      
@@ -17,6 +18,12 @@ class SettingsPassword: FormViewController {
                 }.onCellSelection({ [unowned self] (cell, row) in
                     
                     defaults.set(nil, forKey: "appPassword")
+                    
+                    let message = MDCSnackbarMessage()
+                    message.text = "Password has been removed."
+                    message.duration = 2
+                    MDCSnackbarManager.default.show(message)
+                    
                     dismiss(animated: true, completion: nil)
                 })
             
@@ -70,6 +77,13 @@ class SettingsPassword: FormViewController {
                     let sha512Pass = HelperFunctions().sha512(password: password.value!)
                     defaults.set(sha512Pass, forKey: "appPassword")
                    // HelperFunctions().showAlert(title: "Success",msg: "Password Set", controller: self)
+                    
+                    let message = MDCSnackbarMessage()
+                    message.text = "Password is set"
+                    message.duration = 2
+                    MDCSnackbarManager.default.show(message)
+                    
+                    
                     
                     navigationController?.popViewController(animated: true)
                     dismiss(animated: true, completion: nil)
