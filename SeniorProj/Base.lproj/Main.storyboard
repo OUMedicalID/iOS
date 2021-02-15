@@ -153,6 +153,14 @@
             </objects>
             <point key="canvasLocation" x="-3986" y="-379"/>
         </scene>
+        <!--About App-->
+        <scene sceneID="1uk-3D-OQ8">
+            <objects>
+                <hostingController restorationIdentifier="AboutApp" storyboardIdentifier="AboutApp" id="xvn-95-ygT" customClass="AboutApp" customModule="SeniorProj" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Wf-MI-HYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1806" y="-379"/>
+        </scene>
     </scenes>
     <resources>
         <image name="home" width="25" height="25"/>

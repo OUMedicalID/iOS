@@ -86,6 +86,10 @@ class Settings: FormViewController {
               $0.title = "About The App"
             }.cellSetup() { cell, row in
                 cell.accessoryType = .disclosureIndicator
+            }.onCellSelection{cell, row in
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "AboutApp") as! AboutApp
+                self.present(vc, animated: true, completion: nil)
             }
             
             <<< LabelRow () {

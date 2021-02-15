@@ -54,6 +54,7 @@
 		8BCA2950D2416295C8B9553E /* Pods-SeniorProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProj.debug.xcconfig"; path = "Target Support Files/Pods-SeniorProj/Pods-SeniorProj.debug.xcconfig"; sourceTree = "<group>"; };
 		961EDC5B75B66B191F22839E /* Pods-SeniorProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProj.release.xcconfig"; path = "Target Support Files/Pods-SeniorProj/Pods-SeniorProj.release.xcconfig"; sourceTree = "<group>"; };
 		E22A8B327DE1C6B2F948BADB /* Pods-SeniorProjTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProjTests.debug.xcconfig"; path = "Target Support Files/Pods-SeniorProjTests/Pods-SeniorProjTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E85C4B1225DA023100C16C8E /* SeniorProj.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeniorProj.entitlements; sourceTree = "<group>"; };
 		E888353425C3854C00687650 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		E8A9A90325CFB607002612E3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E8A9A90825CFC5B3002612E3 /* SettingsPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPassword.swift; sourceTree = "<group>"; };
@@ -167,6 +168,7 @@
 		E8BAF4D025AE91EB0036CD77 /* SeniorProj */ = {
 			isa = PBXGroup;
 			children = (
+				E85C4B1225DA023100C16C8E /* SeniorProj.entitlements */,
 				E8A9A90D25CFC5B7002612E3 /* Settings */,
 				E8BAF4D125AE91EB0036CD77 /* AppDelegate.swift */,
 				E8BAF4D325AE91EB0036CD77 /* SceneDelegate.swift */,
@@ -625,17 +627,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = SeniorProj/SeniorProj.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1;
-				DEVELOPMENT_TEAM = 327CGZT4K9;
+				DEVELOPMENT_TEAM = S7UN6N8EFD;
 				INFOPLIST_FILE = SeniorProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aryan.seniorProjectMedID;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matt.seniorProjectMedID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -648,17 +650,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = SeniorProj/SeniorProj.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1;
-				DEVELOPMENT_TEAM = 327CGZT4K9;
+				DEVELOPMENT_TEAM = S7UN6N8EFD;
 				INFOPLIST_FILE = SeniorProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aryan.seniorProjectMedID;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matt.seniorProjectMedID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
