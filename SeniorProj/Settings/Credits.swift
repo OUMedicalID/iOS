@@ -15,31 +15,31 @@ class Credits: FormViewController {
             
             <<< LabelRow() {
                 $0.title = "Mathew Yaldo"
-                $0.value = "IOS & Android Developer"
+                $0.value = "Developer"
                 
             }
          
             <<< LabelRow() {
                 $0.title = "Aryan Abdolhosseini"
-                $0.value = "IOS Developer"
+                $0.value = "Developer"
                 
             }
         
             <<< LabelRow() {
                 $0.title = "Adrian Berishaj"
-                $0.value = "IOS Developer"
+                $0.value = "Developer"
                 
             }
         
             <<< LabelRow() {
                 $0.title = "Yousif Hanani"
-                $0.value = "Android Developer"
+                $0.value = "Developer"
                 
             }
         
             <<< LabelRow() {
                 $0.title = "Tin Liu"
-                $0.value = "Android Developer"
+                $0.value = "Developer"
                 
             }
            
