@@ -50,7 +50,17 @@ class Credits: FormViewController {
            <<< LabelRow() {
                $0.title = "NFCReaderWriter"
                
-           }
+           }.onCellSelection({ [unowned self] (cell, row) in
+            _ = self
+            
+            if let url = URL(string: "https://github.com/janlionly/NFCReaderWriter") {
+                UIApplication.shared.open(url)
+            }
+            
+           }).cellSetup() { cell, row in
+            cell.accessoryType = .disclosureIndicator
+          }
+           
         
            <<< LabelRow() {
                $0.title = "Eureka"
