@@ -61,26 +61,65 @@ class Credits: FormViewController {
             cell.accessoryType = .disclosureIndicator
           }
            
-        
+            
            <<< LabelRow() {
                $0.title = "Eureka"
                
-           }
+           }.onCellSelection({ [unowned self] (cell, row) in
+            _ = self
+            
+            if let url = URL(string: "https://github.com/xmartlabs/Eureka") {
+                UIApplication.shared.open(url)
+            }
+            
+           }).cellSetup() { cell, row in
+            cell.accessoryType = .disclosureIndicator
+          }
        
+            
            <<< LabelRow() {
                $0.title = "CryptoSwift"
                
-           }
+           }.onCellSelection({ [unowned self] (cell, row) in
+            _ = self
+    
+            if let url = URL(string: "https://github.com/krzyzanowskim/CryptoSwift") {
+                UIApplication.shared.open(url)
+            }
+    
+            }).cellSetup() { cell, row in
+            cell.accessoryType = .disclosureIndicator
+            }
        
+            
            <<< LabelRow() {
                $0.title = "CRDCrypt"
                
-           }
+           }.onCellSelection({ [unowned self] (cell, row) in
+            _ = self
+    
+            if let url = URL(string: "https://github.com/cdisdero/CRDCrypt") {
+                UIApplication.shared.open(url)
+            }
+    
+            }).cellSetup() { cell, row in
+            cell.accessoryType = .disclosureIndicator
+            }
        
+            
            <<< LabelRow() {
                $0.title = "BiometricAuthentication"
                
-           }
+           }.onCellSelection({ [unowned self] (cell, row) in
+            _ = self
+    
+            if let url = URL(string: "https://github.com/rushisangani/BiometricAuthentication") {
+                UIApplication.shared.open(url)
+            }   
+    
+            }).cellSetup() { cell, row in
+            cell.accessoryType = .disclosureIndicator
+            }
 
         
         
