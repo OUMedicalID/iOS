@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+    </dependencies>
+    <scenes>
+        <!--Login Page-->
+        <scene sceneID="XLK-98-z8P">
+            <objects>
+                <hostingController restorationIdentifier="lr_login" storyboardIdentifier="lr_login" id="uaD-hQ-DE7" customClass="LoginPage" customModule="SeniorProj" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kSy-Gr-Nko" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-268" y="123"/>
+        </scene>
+        <!--Register Page-->
+        <scene sceneID="iPu-bb-PvM">
+            <objects>
+                <hostingController restorationIdentifier="lr_register" storyboardIdentifier="lr_register" id="LnK-Fv-ljY" customClass="RegisterPage" customModule="SeniorProj" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dy-B6-RJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="530" y="123"/>
+        </scene>
+    </scenes>
+</document>

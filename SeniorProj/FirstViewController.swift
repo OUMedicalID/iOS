@@ -177,6 +177,20 @@ class FirstViewController: UIHostingController<Home>,NFCReaderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Note: may want to switch to viewDidAppear if we end up doing the onboarding as both onboarding and login are intended to
+        // pop up when users first open the app.
+        // Maybe even delegate this task to a decider class in the future.
+        
+        
+        print("Attempting the show Login....")
+        DispatchQueue.main.async {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "LoginRegister", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "lr_login") as! LoginPage
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
+       
+        
         
         // Biometrics Authentication
         let defaults = UserDefaults.standard

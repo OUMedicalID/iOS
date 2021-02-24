@@ -10,6 +10,9 @@
 		218C997C92FA279A57655FC5 /* Pods_SeniorProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F92B94A4249A71CD5CA255 /* Pods_SeniorProj.framework */; };
 		663EECA881CB2D1C2B2CFA29 /* Pods_SeniorProj_SeniorProjUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121309B709F8D9A525B3F135 /* Pods_SeniorProj_SeniorProjUITests.framework */; };
 		AFCE096210EA15D4B192D6E5 /* Pods_SeniorProjTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F27EE90F9546744783E50F /* Pods_SeniorProjTests.framework */; };
+		E87DB95325E63D53008A8BD7 /* LoginRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E87DB95225E63D53008A8BD7 /* LoginRegister.storyboard */; };
+		E87DB95825E63DC6008A8BD7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87DB95725E63DC6008A8BD7 /* Login.swift */; };
+		E87DB95D25E64473008A8BD7 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87DB95C25E64473008A8BD7 /* Register.swift */; };
 		E888353525C3854C00687650 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E888353425C3854C00687650 /* HelperFunctions.swift */; };
 		E8A9A90425CFB607002612E3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9A90325CFB607002612E3 /* Settings.swift */; };
 		E8A9A90925CFC5B3002612E3 /* SettingsPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A9A90825CFC5B3002612E3 /* SettingsPassword.swift */; };
@@ -55,6 +58,9 @@
 		961EDC5B75B66B191F22839E /* Pods-SeniorProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProj.release.xcconfig"; path = "Target Support Files/Pods-SeniorProj/Pods-SeniorProj.release.xcconfig"; sourceTree = "<group>"; };
 		E22A8B327DE1C6B2F948BADB /* Pods-SeniorProjTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProjTests.debug.xcconfig"; path = "Target Support Files/Pods-SeniorProjTests/Pods-SeniorProjTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E85C4B1225DA023100C16C8E /* SeniorProj.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeniorProj.entitlements; sourceTree = "<group>"; };
+		E87DB95225E63D53008A8BD7 /* LoginRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginRegister.storyboard; sourceTree = "<group>"; };
+		E87DB95725E63DC6008A8BD7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		E87DB95C25E64473008A8BD7 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		E888353425C3854C00687650 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		E8A9A90325CFB607002612E3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E8A9A90825CFC5B3002612E3 /* SettingsPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPassword.swift; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				E85C4B1225DA023100C16C8E /* SeniorProj.entitlements */,
+				E8BAF4D725AE91EB0036CD77 /* Main.storyboard */,
 				E8A9A90D25CFC5B7002612E3 /* Settings */,
 				E8BAF4D125AE91EB0036CD77 /* AppDelegate.swift */,
 				E8BAF4D325AE91EB0036CD77 /* SceneDelegate.swift */,
@@ -176,7 +183,9 @@
 				E8E9F9FD25B24B330049FE11 /* MyFormViewController.swift */,
 				E888353425C3854C00687650 /* HelperFunctions.swift */,
 				E8C712B125C549A00010CCBB /* FirstViewController.swift */,
-				E8BAF4D725AE91EB0036CD77 /* Main.storyboard */,
+				E87DB95225E63D53008A8BD7 /* LoginRegister.storyboard */,
+				E87DB95725E63DC6008A8BD7 /* Login.swift */,
+				E87DB95C25E64473008A8BD7 /* Register.swift */,
 				E8BAF4DA25AE91EE0036CD77 /* Assets.xcassets */,
 				E8BAF4DC25AE91EE0036CD77 /* LaunchScreen.storyboard */,
 				E8BAF4DF25AE91EE0036CD77 /* Info.plist */,
@@ -311,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BAF4DE25AE91EE0036CD77 /* LaunchScreen.storyboard in Resources */,
+				E87DB95325E63D53008A8BD7 /* LoginRegister.storyboard in Resources */,
 				E8BAF4DB25AE91EE0036CD77 /* Assets.xcassets in Resources */,
 				E8BAF4D925AE91EB0036CD77 /* Main.storyboard in Resources */,
 			);
@@ -443,6 +453,8 @@
 				E8A9A90F25CFC5ED002612E3 /* AboutApp.swift in Sources */,
 				E888353525C3854C00687650 /* HelperFunctions.swift in Sources */,
 				E8BAF4D625AE91EB0036CD77 /* ViewController.swift in Sources */,
+				E87DB95825E63DC6008A8BD7 /* Login.swift in Sources */,
+				E87DB95D25E64473008A8BD7 /* Register.swift in Sources */,
 				E8BAF4D225AE91EB0036CD77 /* AppDelegate.swift in Sources */,
 				E8C712B225C549A00010CCBB /* FirstViewController.swift in Sources */,
 				E8A9A90425CFB607002612E3 /* Settings.swift in Sources */,
@@ -630,14 +642,14 @@
 				CODE_SIGN_ENTITLEMENTS = SeniorProj/SeniorProj.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.5;
-				DEVELOPMENT_TEAM = 327CGZT4K9;
+				DEVELOPMENT_TEAM = S7UN6N8EFD;
 				INFOPLIST_FILE = SeniorProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aryan.seniorProjectMedID;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matt.seniorProjectMedID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -653,14 +665,14 @@
 				CODE_SIGN_ENTITLEMENTS = SeniorProj/SeniorProj.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.5;
-				DEVELOPMENT_TEAM = 327CGZT4K9;
+				DEVELOPMENT_TEAM = S7UN6N8EFD;
 				INFOPLIST_FILE = SeniorProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aryan.seniorProjectMedID;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matt.seniorProjectMedID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
