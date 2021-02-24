@@ -163,10 +163,12 @@ struct LoginP: View{
             HStack(spacing: 5){
                 Text("Don't have an account ?")
                 
-                NavigationLink(destination: SignUp()){
-                    Text("Sign up")
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("Dominant"))
+                Button(action: {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "signup"), object: nil)
+                }) {
+                    Text("sign up")
+                        .fontWeight(.medium)
+                        .foregroundColor(Color("Dominant"))
                 }
                 
                 Text("now").multilineTextAlignment(.leading)
@@ -290,6 +292,7 @@ struct SignUp: View{
                     
                     // Sign up button
                     Button(action: {
+                        print("click")
                         self.Register()
                     }) {
                         Text("Sign up")
@@ -312,15 +315,8 @@ struct SignUp: View{
         }
     }
     func Register(){
-        if self.email != ""{
-            
-            
-        }else{
-            
-            self.error = "Please fill all the contents properly"
-            self.alert.toggle()
-        }
-        
+        print("click")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "signup"), object: nil)
     }
 }
 
@@ -334,5 +330,18 @@ class LoginPage: UIHostingController<LoginPView> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.signup(_:)), name: NSNotification.Name(rawValue: "signup"), object: nil)
     }
+    
+    
+    @objc func signup(_ notification: NSNotification) {
+        //dismiss(animated: true, completion: nil)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "LoginRegister", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "lr_register") as! RegisterPage
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }

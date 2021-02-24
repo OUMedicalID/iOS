@@ -48,7 +48,7 @@ struct RegisterPHScreen: View{
     var body: some View{
         VStack{
             
-            Image("currency").resizable().frame(width: 300.0, height: 225.0, alignment: .center)
+            Image("register").resizable().frame(width: 300.0, height: 225.0, alignment: .center)
             
             Text("Signed in successfully")
                 .font(.title)
@@ -90,7 +90,7 @@ struct RegisterP: View{
     
     var body: some View{
         VStack(){
-            Image("Register").resizable().frame(width: 300.0, height: 255.0, alignment: .top)
+            Image("register").resizable().frame(width: 300.0, height: 255.0, alignment: .top)
             
             Text("Register for a new account")
                 .font(.title)
