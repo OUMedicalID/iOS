@@ -182,6 +182,9 @@ struct RegisterP: View{
     func Verify(){
         if self.email != "" && self.pass != ""{
            
+            /// TO DO HERE: VERIFY EMAIL,PASS, create the account in server and transition to login page.
+            
+            transitionToLogin()
         }else{
             self.title = "RegisterP Error"
             self.error = "Please fill all the content property"
