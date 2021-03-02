@@ -181,10 +181,12 @@ struct LoginP: View{
     
     func Verify(){
         if self.email != "" && self.pass != ""{
-           
+            
+            dismiss()
+            
         }else{
-            self.title = "LoginP Error"
-            self.error = "Please fill all the content property"
+            self.title = "Error"
+            self.error = "Please fill out all fields property"
             self.alert = true
         }
     }
@@ -198,6 +200,13 @@ struct LoginP: View{
             self.error = "Email Id is empty"
             self.alert.toggle()
         }
+    }
+    
+    
+    // IMPORTANT
+    func dismiss(){
+        print("click")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "dismiss"), object: nil)
     }
 }
 
@@ -314,10 +323,13 @@ struct SignUp: View{
             }
         }
     }
+    
+    // IMPORTANT
     func Register(){
         print("click")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "signup"), object: nil)
     }
+    
 }
 
 
@@ -333,15 +345,29 @@ class LoginPage: UIHostingController<LoginPView> {
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.signup(_:)), name: NSNotification.Name(rawValue: "signup"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.dismiss(_:)), name: NSNotification.Name(rawValue: "dismiss"), object: nil)
+        
+        
     }
     
     
     @objc func signup(_ notification: NSNotification) {
         //dismiss(animated: true, completion: nil)
-        let storyBoard: UIStoryboard = UIStoryboard(name: "LoginRegister", bundle: nil)
+        /*let storyBoard: UIStoryboard = UIStoryboard(name: "LoginRegister", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "lr_register") as! RegisterPage
         vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)*/
+        
+        
+        performSegue(withIdentifier: "logintoRegister", sender: self)
+
+        
+    }
+    
+    @objc func dismiss(_ notification: NSNotification) {
+        //dismiss(animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
 }

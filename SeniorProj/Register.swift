@@ -161,12 +161,14 @@ struct RegisterP: View{
             }
             
             HStack(spacing: 5){
-                Text("Don't have an account ?")
+                Text("Already have an account?")
                 
-                NavigationLink(destination: SignUp()){
-                    Text("Sign up")
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("Dominant"))
+                Button(action: {
+                    transitionToLogin()
+                }) {
+                    Text("sign in")
+                        .fontWeight(.medium)
+                        .foregroundColor(Color("Dominant"))
                 }
                 
                 Text("now").multilineTextAlignment(.leading)
@@ -209,6 +211,12 @@ struct RegisterP: View{
         }
         
     }
+    
+    
+    func transitionToLogin(){
+        print("click")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "login"), object: nil)
+    }
 }
 
 
@@ -221,5 +229,19 @@ class RegisterPage: UIHostingController<RegisterPView> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.login(_:)), name: NSNotification.Name(rawValue: "login"), object: nil)
     }
+    
+    
+    @objc func login(_ notification: NSNotification) {
+        //dismiss(animated: true, completion: nil)
+        /*let storyBoard: UIStoryboard = UIStoryboard(name: "LoginRegister", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "lr_login") as! LoginPage
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)*/
+        
+        performSegue(withIdentifier: "registertoLogin", sender: self)
+    }
+    
 }
