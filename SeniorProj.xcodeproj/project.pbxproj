@@ -10,6 +10,9 @@
 		218C997C92FA279A57655FC5 /* Pods_SeniorProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F92B94A4249A71CD5CA255 /* Pods_SeniorProj.framework */; };
 		663EECA881CB2D1C2B2CFA29 /* Pods_SeniorProj_SeniorProjUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121309B709F8D9A525B3F135 /* Pods_SeniorProj_SeniorProjUITests.framework */; };
 		AFCE096210EA15D4B192D6E5 /* Pods_SeniorProjTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F27EE90F9546744783E50F /* Pods_SeniorProjTests.framework */; };
+		E80682E125F05E4A00A60F44 /* montserrat_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E80682E025F05E3000A60F44 /* montserrat_bold.ttf */; };
+		E80682E525F05E4D00A60F44 /* montserrat_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E80682DF25F05E3000A60F44 /* montserrat_light.ttf */; };
+		E80682E925F05E5100A60F44 /* montserrat_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E80682DE25F05E3000A60F44 /* montserrat_semibold.ttf */; };
 		E87DB95325E63D53008A8BD7 /* LoginRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E87DB95225E63D53008A8BD7 /* LoginRegister.storyboard */; };
 		E87DB95825E63DC6008A8BD7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87DB95725E63DC6008A8BD7 /* Login.swift */; };
 		E87DB95D25E64473008A8BD7 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87DB95C25E64473008A8BD7 /* Register.swift */; };
@@ -57,6 +60,9 @@
 		8BCA2950D2416295C8B9553E /* Pods-SeniorProj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProj.debug.xcconfig"; path = "Target Support Files/Pods-SeniorProj/Pods-SeniorProj.debug.xcconfig"; sourceTree = "<group>"; };
 		961EDC5B75B66B191F22839E /* Pods-SeniorProj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProj.release.xcconfig"; path = "Target Support Files/Pods-SeniorProj/Pods-SeniorProj.release.xcconfig"; sourceTree = "<group>"; };
 		E22A8B327DE1C6B2F948BADB /* Pods-SeniorProjTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeniorProjTests.debug.xcconfig"; path = "Target Support Files/Pods-SeniorProjTests/Pods-SeniorProjTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E80682DE25F05E3000A60F44 /* montserrat_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_semibold.ttf; sourceTree = "<group>"; };
+		E80682DF25F05E3000A60F44 /* montserrat_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_light.ttf; sourceTree = "<group>"; };
+		E80682E025F05E3000A60F44 /* montserrat_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_bold.ttf; sourceTree = "<group>"; };
 		E85C4B1225DA023100C16C8E /* SeniorProj.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeniorProj.entitlements; sourceTree = "<group>"; };
 		E87DB95225E63D53008A8BD7 /* LoginRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginRegister.storyboard; sourceTree = "<group>"; };
 		E87DB95725E63DC6008A8BD7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -137,6 +143,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E80682DD25F05DFF00A60F44 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E80682E025F05E3000A60F44 /* montserrat_bold.ttf */,
+				E80682DF25F05E3000A60F44 /* montserrat_light.ttf */,
+				E80682DE25F05E3000A60F44 /* montserrat_semibold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		E8A9A90D25CFC5B7002612E3 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +205,7 @@
 				E8BAF4DA25AE91EE0036CD77 /* Assets.xcassets */,
 				E8BAF4DC25AE91EE0036CD77 /* LaunchScreen.storyboard */,
 				E8BAF4DF25AE91EE0036CD77 /* Info.plist */,
+				E80682DD25F05DFF00A60F44 /* Fonts */,
 			);
 			path = SeniorProj;
 			sourceTree = "<group>";
@@ -320,9 +337,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BAF4DE25AE91EE0036CD77 /* LaunchScreen.storyboard in Resources */,
+				E80682E125F05E4A00A60F44 /* montserrat_bold.ttf in Resources */,
 				E87DB95325E63D53008A8BD7 /* LoginRegister.storyboard in Resources */,
 				E8BAF4DB25AE91EE0036CD77 /* Assets.xcassets in Resources */,
+				E80682E525F05E4D00A60F44 /* montserrat_light.ttf in Resources */,
 				E8BAF4D925AE91EB0036CD77 /* Main.storyboard in Resources */,
+				E80682E925F05E5100A60F44 /* montserrat_semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

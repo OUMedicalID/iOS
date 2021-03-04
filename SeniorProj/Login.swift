@@ -90,6 +90,19 @@ struct LoginP: View{
     
     var body: some View{
         VStack(){
+            
+            Text("Medical ID")
+                .font(Font.custom("Montserrat-Bold", size: 35.0))
+                .fontWeight(.bold)
+                .padding(.top, 15)
+                .foregroundColor(Color(red: 0.00, green: 0.69, blue: 1.00))
+            
+            Text("Securely carry your medical data with you")
+                .font(Font.custom("Montserrat-Light", size: 13.0))
+                .fontWeight(.bold)
+                .padding(.top, 5)
+                .foregroundColor(Color(red: 0.00, green: 0.69, blue: 1.00))
+            
             Image("login").resizable().frame(width: 300.0, height: 255.0, alignment: .top)
             
             Text("Sign in to your account")
@@ -146,7 +159,7 @@ struct LoginP: View{
             Button(action: {
                 self.Verify()
             }) {
-                Text("Sign in")
+                Text("Login")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                     .padding(.vertical)
@@ -230,6 +243,7 @@ class LoginPage: UIHostingController<LoginPView> {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.dismiss(_:)), name: NSNotification.Name(rawValue: "dismiss"), object: nil)
         
+       
         
     }
     

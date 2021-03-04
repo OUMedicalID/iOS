@@ -90,6 +90,21 @@ struct RegisterP: View{
     
     var body: some View{
         VStack(){
+            
+            Text("Registration")
+                .font(Font.custom("Montserrat-Bold", size: 35.0))
+                .fontWeight(.bold)
+                .padding(.top, 15)
+                .foregroundColor(Color(red: 0.00, green: 0.69, blue: 1.00))
+            
+            Text("Securely carry your medical data with you")
+                .font(Font.custom("Montserrat-Light", size: 13.0))
+                .fontWeight(.bold)
+                .padding(.top, 5)
+                .foregroundColor(Color(red: 0.00, green: 0.69, blue: 1.00))
+            
+            
+            
             Image("register").resizable().frame(width: 300.0, height: 255.0, alignment: .top)
             
             Text("Register for a new account")
