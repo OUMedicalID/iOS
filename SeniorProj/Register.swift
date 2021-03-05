@@ -161,7 +161,7 @@ struct RegisterP: View{
             Button(action: {
                 self.Verify()
             }) {
-                Text("Sign in")
+                Text("Sign up")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                     .padding(.vertical)
