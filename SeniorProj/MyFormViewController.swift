@@ -289,7 +289,7 @@ class MyFormViewController: FormViewController {
                         if let name = nameV, let bday = birthdayV, let gender = genderV, let addr1 = addressLine1V, let city = cityV, let state = stateV, let zip = zipV, let marital = maritalV, let weight = weightV, let bloodType = bloodTypeV, let ethnicity = ethnicityV, let primaryInsurance = primaryInsuranceV, let height = heightV, let policyNum = policyNumV, let GroupMPH = GroupMPHV{
                             
                             print("We have passed this stage")
-                            if(name.value == nil || bday.value == nil || addr1.value == nil || city.value == nil || state.value == nil || state.value == "Select State" || zip.value == nil || marital.value == nil || marital.value == "Select Status" || weight.value == nil || bloodType.value == nil || bloodType.value == "Select Status" || ethnicity.value == nil || ethnicity.value == "Select Status" || primaryInsurance.value == nil /*|| accidentInfo.value == nil || illnessHistory.value == nil|| height.value == nil*/){
+                            if(name.value == nil || bday.value == nil || addr1.value == nil || city.value == nil || state.value == nil || state.value == "Select State" || zip.value == nil || marital.value == nil || marital.value == "Select Status" || weight.value == nil || bloodType.value == nil || bloodType.value == "Select Status" || ethnicity.value == nil || ethnicity.value == "Select Status" || primaryInsurance.value == nil /*|| accidentInfo.value == nil || illnessHistory.value == nil|| height.value == nil*/ || gender.value == nil){
                                 
                                 HelperFunctions().showAlert(title: "Error", msg: "Please fill out everything", controller: self)
                                 return
@@ -301,22 +301,22 @@ class MyFormViewController: FormViewController {
                             let birthday = HelperFunctions().encryptData(data:df.string(from: bday.value!))
                             
                             
-                            defaults.set(HelperFunctions().encryptData(data: name.value!), forKey: "name")
-                            defaults.set(birthday, forKey: "birthday")
-                            defaults.set(HelperFunctions().encryptData(data: gender.value!), forKey: "gender")
-                            defaults.set(HelperFunctions().encryptData(data: addr1.value!), forKey: "address1")
-                            defaults.set(HelperFunctions().encryptData(data: city.value!), forKey: "city")
-                            defaults.set(HelperFunctions().encryptData(data: state.value!), forKey: "state")
-                            defaults.set(HelperFunctions().encryptData(data: zip.value!), forKey: "zip")
+                            defaults.set(HelperFunctions().encryptData(data: name.value!), forKey: "MID_Name")
+                            defaults.set(birthday, forKey: "MID_Birthday")
+                            defaults.set(HelperFunctions().encryptData(data: gender.value!), forKey: "MID_Gender")
+                            defaults.set(HelperFunctions().encryptData(data: addr1.value!), forKey: "MID_Address1")
+                            defaults.set(HelperFunctions().encryptData(data: city.value!), forKey: "MID_City")
+                            defaults.set(HelperFunctions().encryptData(data: state.value!), forKey: "MID_State")
+                            defaults.set(HelperFunctions().encryptData(data: zip.value!), forKey: "MID_Zip")
                            
-                            defaults.set(HelperFunctions().encryptData(data: marital.value!), forKey: "marital")
-                            defaults.set(HelperFunctions().encryptData(data: height.value!), forKey: "height")
-                            defaults.set(HelperFunctions().encryptData(data: weight.value!), forKey: "weight")
-                            defaults.set(HelperFunctions().encryptData(data: bloodType.value!), forKey: "bloodtype")
-                            defaults.set(HelperFunctions().encryptData(data: ethnicity.value!), forKey: "ethnicity")
-                            defaults.set(HelperFunctions().encryptData(data: primaryInsurance.value!), forKey: "primaryInsurance")
-                            defaults.set(HelperFunctions().encryptData(data: policyNum.value!), forKey: "policyNum")
-                            defaults.set(HelperFunctions().encryptData(data: GroupMPH.value!), forKey: "groupMPH")
+                            defaults.set(HelperFunctions().encryptData(data: marital.value!), forKey: "MID_MaritalStatus")
+                            defaults.set(HelperFunctions().encryptData(data: height.value!), forKey: "MID_Height")
+                            defaults.set(HelperFunctions().encryptData(data: weight.value!), forKey: "MID_Weight")
+                            defaults.set(HelperFunctions().encryptData(data: bloodType.value!), forKey: "MID_BloodType")
+                            defaults.set(HelperFunctions().encryptData(data: ethnicity.value!), forKey: "MID_Ethnicity")
+                            defaults.set(HelperFunctions().encryptData(data: primaryInsurance.value!), forKey: "MID_PrimaryInsurance")
+                            defaults.set(HelperFunctions().encryptData(data: policyNum.value!), forKey: "MID_PrimaryInsuranceNumber")
+                            defaults.set(HelperFunctions().encryptData(data: GroupMPH.value!), forKey: "MID_PrimaryInsuranceGroupNumberOrMainPH")
                             
                             
                             let message = MDCSnackbarMessage()
@@ -330,21 +330,21 @@ class MyFormViewController: FormViewController {
                             if(address2.value == nil){
                                 return
                             }
-                            defaults.set(HelperFunctions().encryptData(data: address2.value!), forKey: "address2")
+                            defaults.set(HelperFunctions().encryptData(data: address2.value!), forKey: "MID_Address2")
                         }
                             
                         if let homeP = self.form.rowBy(tag: FormItems.homePhone) as? RowOf<String>{
                             if(homeP.value == nil){
                                 return
                             }
-                            defaults.set(HelperFunctions().encryptData(data: homeP.value!), forKey: "homePhone")
+                            defaults.set(HelperFunctions().encryptData(data: homeP.value!), forKey: "MID_HomePhone")
                         }
                         
                         if let workP = self.form.rowBy(tag: FormItems.workPhone) as? RowOf<String>{
                             if(workP.value == nil){
                                 return
                             }
-                            defaults.set(HelperFunctions().encryptData(data: workP.value!), forKey: "workPhone")
+                            defaults.set(HelperFunctions().encryptData(data: workP.value!), forKey: "MID_WorkPhone")
                         }
                             
                             
@@ -498,7 +498,7 @@ class MyFormViewController: FormViewController {
                                              "phone": HelperFunctions().encryptData(data:phone.value!),
                                              "relationship": HelperFunctions().encryptData(data:rel.value!)
                                             ]
-                            defaults.set(EContact1, forKey: "EContact1")
+                            defaults.set(EContact1, forKey: "MID_EContact1")
                             
                            
                             let message = MDCSnackbarMessage()
@@ -528,7 +528,7 @@ class MyFormViewController: FormViewController {
                                              "phone": HelperFunctions().encryptData(data:optPhone.value!),
                                              "relationship": HelperFunctions().encryptData(data:optRel.value!)
                                             ]
-                            defaults.set(EContact2, forKey: "EContact2")
+                            defaults.set(EContact2, forKey: "MID_EContact2")
                         
                         }
                     
@@ -583,7 +583,7 @@ class MyFormViewController: FormViewController {
                 
                 
                 // Restore Medical Conditions
-                let medicalConditions = defaults.stringArray(forKey: "medicalConditions") ?? [String]()
+                let medicalConditions = defaults.stringArray(forKey: "MID_Conditions") ?? [String]()
                 
                 // Loop through all saved conditions and put them back.
                 for condition in medicalConditions {
@@ -622,7 +622,7 @@ class MyFormViewController: FormViewController {
                 
                 
                 // Restore Injuries
-                let injuries = defaults.stringArray(forKey: "InjuryMVS") ?? [String]()
+                let injuries = defaults.stringArray(forKey: "MID_Injuries") ?? [String]()
                 
                 // Loop through all saved conditions and put them back.
                 for condition in injuries {
@@ -665,12 +665,12 @@ class MyFormViewController: FormViewController {
                 
                 let listofValues: [String]? = (form.sectionBy(tag: "MedicalConditionsMVS")?.compactMap {($0 as? NameRow)?.value })
                 let medicalConditionValues = listofValues!.compactMap { HelperFunctions().encryptData(data: $0) }
-                defaults.set(medicalConditionValues, forKey: "medicalConditions")
+                defaults.set(medicalConditionValues, forKey: "MID_Conditions")
                 
                 
                 let injuryValues: [String]? = (form.sectionBy(tag: "InjuryMVS")?.compactMap { ($0 as? NameRow)?.value })
                 let InjuriesMVS = injuryValues!.compactMap { HelperFunctions().encryptData(data: $0) }
-                defaults.set(InjuriesMVS, forKey: "InjuryMVS")
+                defaults.set(InjuriesMVS, forKey: "MID_Injuries")
                 
                 
                 let message = MDCSnackbarMessage()
@@ -697,26 +697,26 @@ class MyFormViewController: FormViewController {
         
         
         // Restore Personal
-        let name = defaults.string(forKey: "name")
-        let birthday = defaults.string(forKey: "birthday")
-        let gender = defaults.string(forKey: "gender")
-        let address1 = defaults.string(forKey: "address1")
-        let address2 = defaults.string(forKey: "address2")
-        let city = defaults.string(forKey: "city")
-        let state = defaults.string(forKey: "state")
-        let zip = defaults.string(forKey: "zip")
-        let homePhone = defaults.string(forKey: "homePhone")
-        let workPhone = defaults.string(forKey: "workPhone")
+        let name = defaults.string(forKey: "MID_Name")
+        let birthday = defaults.string(forKey: "MID_Birthday")
+        let gender = defaults.string(forKey: "MID_Gender")
+        let address1 = defaults.string(forKey: "MID_Address1")
+        let address2 = defaults.string(forKey: "MID_Address2")
+        let city = defaults.string(forKey: "MID_City")
+        let state = defaults.string(forKey: "MID_State")
+        let zip = defaults.string(forKey: "MID_Zip")
+        let homePhone = defaults.string(forKey: "MID_HomePhone")
+        let workPhone = defaults.string(forKey: "MID_WorkPhone")
         
         
-        let marital = defaults.string(forKey: "marital")
-        let height = defaults.string(forKey: "height")
-        let weight = defaults.string(forKey: "weight")
-        let bloodType = defaults.string(forKey: "bloodtype")
-        let ethnicity = defaults.string(forKey: "ethnicity")
-        let primaryInsurance = defaults.string(forKey: "primaryInsurance")
-        let policyNum = defaults.string(forKey: "policyNum")
-        let groupMPH = defaults.string(forKey: "groupMPH")
+        let marital = defaults.string(forKey: "MID_MaritalStatus")
+        let height = defaults.string(forKey: "MID_Height")
+        let weight = defaults.string(forKey: "MID_Weight")
+        let bloodType = defaults.string(forKey: "MID_BloodType")
+        let ethnicity = defaults.string(forKey: "MID_Ethnicity")
+        let primaryInsurance = defaults.string(forKey: "MID_PrimaryInsurance")
+        let policyNum = defaults.string(forKey: "MID_PrimaryInsuranceNumber")
+        let groupMPH = defaults.string(forKey: "MID_PrimaryInsuranceGroupNumberOrMainPH")
         
         
         
@@ -803,7 +803,7 @@ class MyFormViewController: FormViewController {
         
                 
         // Restore Contactss
-        let EContact1 = defaults.dictionary(forKey: "EContact1")
+        let EContact1 = defaults.dictionary(forKey: "MID_EContact1")
         if(EContact1 != nil){
             
             let name = HelperFunctions().decryptData(data: EContact1!["name"] as! String)
@@ -817,7 +817,7 @@ class MyFormViewController: FormViewController {
         }
         
         
-        let EContact2 = defaults.dictionary(forKey: "EContact2")
+        let EContact2 = defaults.dictionary(forKey: "MID_EContact1")
         if(EContact2 != nil){
             
             let name = HelperFunctions().decryptData(data: EContact2!["name"] as! String)
