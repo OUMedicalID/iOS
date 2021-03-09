@@ -198,8 +198,19 @@ struct RegisterP: View{
         if self.email != "" && self.pass != ""{
            
             /// TO DO HERE: VERIFY EMAIL,PASS, create the account in server and transition to login page.
+            let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
+            let regex2 = try! NSRegularExpression(pattern:
+                "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$", options: .caseInsensitive)
+
+            if( regex.firstMatch(in: self.email, options: [], range: NSRange(location: 0, length: count)) != nil && regex2.firstMatch(in: self.pass, options: [], range: NSRange(location: 0, length: count)) != nil ){
+                transitionToLogin()
+            }else{
+                self.title = "Error"
+                self.error = "Please fill out a valid email"
+                self.alert = true
+            }
             
-            transitionToLogin()
+            
         }else{
             self.title = "RegisterP Error"
             self.error = "Please fill all the content property"
