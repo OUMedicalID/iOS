@@ -120,8 +120,18 @@ class HelperFunctions{
     func showAllValues(){
         print("Now printing all UserDefaults")
         for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
-                    print("\(key) = \(value) \n")
+            if(key.hasPrefix("MID_") == false){continue}
+            print("\(key) = \(HelperFunctions().decryptData(data: value as! String)) \n")
         }
+    }
+    
+    
+    
+    func json(from object:Any) -> String? {
+        guard let data = try? JSONSerialization.data(withJSONObject: object, options: []) else {
+            return nil
+        }
+        return String(data: data, encoding: String.Encoding.utf8)
     }
     
     
@@ -135,6 +145,8 @@ extension NSData {
         return map { String(format: "%02hhx", $0) }.joined()
     }
 }
+
+
 
 
 extension String {

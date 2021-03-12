@@ -497,11 +497,13 @@ class MyFormViewController: FormViewController {
                             }
                             
                             
-                            let EContact1 = ["name": HelperFunctions().encryptData(data: name.value!),
-                                             "phone": HelperFunctions().encryptData(data:phone.value!),
-                                             "relationship": HelperFunctions().encryptData(data:rel.value!)
-                                            ]
-                            defaults.set(EContact1, forKey: "MID_EContact1")
+                            let EContact1 = [name.value!, phone.value!, rel.value!]
+                            let JSON = HelperFunctions().json(from:EContact1 as Any)
+                            print("The JSON: " + JSON!)
+                            let hexJ = JSON!.toHexEncodedString()
+                            
+                            
+                            defaults.set(HelperFunctions().encryptData(data: hexJ), forKey: "MID_EContact1")
                             
                            
                             let message = MDCSnackbarMessage()
@@ -527,13 +529,22 @@ class MyFormViewController: FormViewController {
                                 return
                             }
                         
-                            let EContact2 = ["name": HelperFunctions().encryptData(data:optName.value!),
-                                             "phone": HelperFunctions().encryptData(data:optPhone.value!),
-                                             "relationship": HelperFunctions().encryptData(data:optRel.value!)
-                                            ]
-                            defaults.set(EContact2, forKey: "MID_EContact2")
+                            
+                            
+                            
+                            let EContact2 = [optName.value!, optPhone.value!, optRel.value!]
+                            let JSON = HelperFunctions().json(from:EContact2 as Any)
+                            let hexJ = JSON!.toHexEncodedString()
+                            
+                            
+                            defaults.set(HelperFunctions().encryptData(data: hexJ), forKey: "MID_EContact2")
+                                    
+        
                         
                         }
+                        
+                        
+                        // Prepare to save.
                     
                         
                         
@@ -806,12 +817,15 @@ class MyFormViewController: FormViewController {
         
                 
         // Restore Contactss
-        let EContact1 = defaults.dictionary(forKey: "MID_EContact1")
+        let EContact1 = defaults.string(forKey: "MID_EContact1")
         if(EContact1 != nil){
+            let JSON = HelperFunctions().decryptData(data: EContact1!).hexToString()
+            print(JSON)
+            let dict = JSON.toJSON() as! [String]
             
-            let name = HelperFunctions().decryptData(data: EContact1!["name"] as! String)
-            let phone = HelperFunctions().decryptData(data: EContact1!["phone"] as! String)
-            let relationship = HelperFunctions().decryptData(data: EContact1!["relationship"] as! String)
+            let name = dict[0]
+            let phone = dict[1]
+            let relationship = dict[2]
             
             
             self.form.rowBy(tag: FormItems.eContactName1)?.baseValue = name
@@ -820,12 +834,15 @@ class MyFormViewController: FormViewController {
         }
         
         
-        let EContact2 = defaults.dictionary(forKey: "MID_EContact1")
+        let EContact2 = defaults.string(forKey: "MID_EContact2")
         if(EContact2 != nil){
             
-            let name = HelperFunctions().decryptData(data: EContact2!["name"] as! String)
-            let phone = HelperFunctions().decryptData(data: EContact2!["phone"] as! String)
-            let relationship = HelperFunctions().decryptData(data: EContact2!["relationship"] as! String)
+            let JSON = HelperFunctions().decryptData(data: EContact2!).hexToString()
+            let dict = JSON.toJSON() as! [String]
+            
+            let name = dict[0]
+            let phone = dict[1]
+            let relationship = dict[2]
             
             self.form.rowBy(tag: FormItems.eContactName2)?.baseValue = name
             self.form.rowBy(tag: FormItems.eContactPhone2)?.baseValue = phone
@@ -843,3 +860,42 @@ class MyFormViewController: FormViewController {
      
  }
 
+
+
+extension String {
+    func toJSON() -> Any? {
+        guard let data = self.data(using: .utf8, allowLossyConversion: false) else { return nil }
+        return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+    }
+}
+
+extension String {
+    func toHexEncodedString(uppercase: Bool = true, prefix: String = "", separator: String = "") -> String {
+        return unicodeScalars.map { prefix + .init($0.value, radix: 16, uppercase: uppercase) } .joined(separator: separator)
+    }
+}
+
+
+extension String {
+    
+    func hexToString()->String{
+        
+        var finalString = ""
+        let chars = Array(self)
+        
+        for count in stride(from: 0, to: chars.count - 1, by: 2){
+            let firstDigit =  Int.init("\(chars[count])", radix: 16) ?? 0
+            let lastDigit = Int.init("\(chars[count + 1])", radix: 16) ?? 0
+            let decimal = firstDigit * 16 + lastDigit
+            let decimalString = String(format: "%c", decimal) as String
+            finalString.append(Character.init(decimalString))
+        }
+        return finalString
+        
+    }
+    
+    func base64Decoded() -> String? {
+        guard let data = Data(base64Encoded: self) else { return nil }
+        return String(data: data, encoding: .init(rawValue: 0))
+    }
+}
