@@ -14,7 +14,11 @@ class Settings: FormViewController {
         
         let defaults = UserDefaults.standard
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        let appPassword = defaults.string(forKey: "appPassword")
+        
+        
+        
+        
+        
         
         
          form +++ Section(header: "Biometric Authentication", footer: "Require TouchID or FaceID to open the app. Note that you must have TouchID or FaceID setup.")

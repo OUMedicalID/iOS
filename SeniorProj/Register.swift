@@ -202,7 +202,7 @@ struct RegisterP: View{
             let regex2 = try! NSRegularExpression(pattern:
                 "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$", options: .caseInsensitive)
 
-            if( regex.firstMatch(in: self.email, options: [], range: NSRange(location: 0, length: count)) != nil && regex2.firstMatch(in: self.pass, options: [], range: NSRange(location: 0, length: count)) != nil ){
+            if( regex.firstMatch(in: self.email, options: [], range: NSRange(location: 0, length: self.email.count)) != nil && regex2.firstMatch(in: self.pass, options: [], range: NSRange(location: 0, length: self.pass.count)) != nil ){
                 transitionToLogin()
             }else{
                 self.title = "Error"

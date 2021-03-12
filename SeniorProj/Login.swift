@@ -198,7 +198,7 @@ struct LoginP: View{
             /// TO DO HERE: VERIFY EMAIL,PASS and storage the secret key and login.
                 let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
 
-                if( regex.firstMatch(in: theEmailVar, options: [], range: NSRange(location: 0, length: count)) != nil ){
+            if( regex.firstMatch(in: self.email, options: [], range: NSRange(location: 0, length: self.email.count)) != nil ){
                     dismiss()
                 }else{
                     self.title = "Error"

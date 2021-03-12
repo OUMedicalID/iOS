@@ -261,7 +261,22 @@ class MyFormViewController: FormViewController {
                         print("Save Personal Info clicked!")
                         
                         
+                        if let homeP = self.form.rowBy(tag: FormItems.homePhone) as? RowOf<String>{
+                            if(homeP.value == nil){
+                                return
+                            }
+                            print("Saving homeP")
+                            defaults.set(HelperFunctions().encryptData(data: homeP.value!), forKey: "MID_HomePhone")
+                        }
                         
+                            
+                        if let workP = self.form.rowBy(tag: FormItems.workPhone) as? RowOf<String>{
+                            if(workP.value == nil){
+                                return
+                            }
+                            print("Saving workP")
+                            defaults.set(HelperFunctions().encryptData(data: workP.value!), forKey: "MID_WorkPhone")
+                        }
                         
                         
                         
@@ -333,19 +348,7 @@ class MyFormViewController: FormViewController {
                             defaults.set(HelperFunctions().encryptData(data: address2.value!), forKey: "MID_Address2")
                         }
                             
-                        if let homeP = self.form.rowBy(tag: FormItems.homePhone) as? RowOf<String>{
-                            if(homeP.value == nil){
-                                return
-                            }
-                            defaults.set(HelperFunctions().encryptData(data: homeP.value!), forKey: "MID_HomePhone")
-                        }
                         
-                        if let workP = self.form.rowBy(tag: FormItems.workPhone) as? RowOf<String>{
-                            if(workP.value == nil){
-                                return
-                            }
-                            defaults.set(HelperFunctions().encryptData(data: workP.value!), forKey: "MID_WorkPhone")
-                        }
                             
                             
                             

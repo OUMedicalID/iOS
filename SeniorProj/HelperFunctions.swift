@@ -35,11 +35,8 @@ class HelperFunctions{
           do {
               let encrypted = try AES(key: key, blockMode: CBC(iv: iv), padding: .pkcs7).encrypt(input)
               let data = NSData(bytes: encrypted, length: encrypted.count)
-              let base64Data = data.base64EncodedData(options: NSData.Base64EncodingOptions.endLineWithLineFeed)
-             
-              if let string = String(bytes: base64Data, encoding: .utf8) {
-                  return string // WE SHOULD END UP HERE.
-              }
+            
+              return data.hexEncodedString()
               
           } catch {
               print(error)
@@ -50,12 +47,13 @@ class HelperFunctions{
     // Decrypt Data
     func decryptData(data: String) -> String{
         
+        
            print("Data that we received: "+data)
      
            let key: Array<UInt8> = Array(secretKey.utf8)
            let iv: Array<UInt8> = Array(secretIV.utf8)
-           let newData = NSData(base64Encoded: data, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)!
-           let array = [UInt8](newData)
+           let newData =  data.data(using: .hexadecimal)
+           let array = [UInt8](newData!)
            
            
            do {
@@ -73,23 +71,7 @@ class HelperFunctions{
        }
     
     
-    func prepareData(){
-        // This is a function we use in the future to prepare data to be sent to server.
-        let defaults = UserDefaults.standard
-        let information = [
-            "name":      defaults.string(forKey: "name"),
-            "birthday":  defaults.object(forKey: "birthday"),
-            "gender":    defaults.string(forKey: "gender"),
-            "address1":  defaults.string(forKey: "address1"),
-            "address2":  defaults.string(forKey: "address2"),
-            "EContact1": defaults.dictionary(forKey: "EContact1")
-        ]
-        
-        
-        
-        
-        print(information)
-    }
+    
     
     func sha512(password: String) -> String{
         return password.sha512()
@@ -107,3 +89,35 @@ class HelperFunctions{
     
 }
 
+
+extension NSData {
+    func hexEncodedString() -> String {
+        return map { String(format: "%02hhx", $0) }.joined()
+    }
+}
+
+
+extension String {
+       enum ExtendedEncoding {
+           case hexadecimal
+       }
+
+       func data(using encoding:ExtendedEncoding) -> Data? {
+           let hexStr = self.dropFirst(self.hasPrefix("0x") ? 2 : 0)
+
+           guard hexStr.count % 2 == 0 else { return nil }
+
+           var newData = Data(capacity: hexStr.count/2)
+
+           var indexIsEven = true
+           for i in hexStr.indices {
+               if indexIsEven {
+                   let byteRange = i...hexStr.index(after: i)
+                   guard let byte = UInt8(hexStr[byteRange], radix: 16) else { return nil }
+                   newData.append(byte)
+               }
+               indexIsEven.toggle()
+           }
+           return newData
+       }
+   }
