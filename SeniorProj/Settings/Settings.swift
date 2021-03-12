@@ -16,7 +16,8 @@ class Settings: FormViewController {
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         
         
-        
+        let bday = defaults.string(forKey: "MID_Birthday")
+        print(HelperFunctions().decryptData(data: bday!))
         
         
         

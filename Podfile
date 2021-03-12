@@ -12,6 +12,7 @@ target 'SeniorProj' do
   pod 'CRDCrypt'
   pod 'BiometricAuthentication'
   pod 'MaterialComponents/Snackbar'
+  pod 'Alamofire', '~> 5.2'
 
 
   target 'SeniorProjTests' do

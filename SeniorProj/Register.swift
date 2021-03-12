@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import Alamofire
+
 
 struct RegisterPView: View {
     var body: some View {
@@ -145,6 +147,7 @@ struct RegisterP: View{
             .stroke(borderColor,lineWidth: 2))
             .padding(.top, 10)
             
+            
             /*HStack{
                 Spacer()
                 Button(action: {
@@ -156,6 +159,14 @@ struct RegisterP: View{
                         .foregroundColor(Color("Dominant"))
                 }.padding(.top, 10.0)
             }*/
+            
+            
+            Text("Password must be 8+ characters, contain at least one number and at least one special character ")
+                .padding(.top, 15)
+                .font(Font.custom("X", size: 12))
+            
+            
+            
             
             // Sign in button
             Button(action: {
@@ -203,7 +214,41 @@ struct RegisterP: View{
                 "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{8,}$", options: .caseInsensitive)
 
             if( regex.firstMatch(in: self.email, options: [], range: NSRange(location: 0, length: self.email.count)) != nil && regex2.firstMatch(in: self.pass, options: [], range: NSRange(location: 0, length: self.pass.count)) != nil ){
-                transitionToLogin()
+                
+                
+                let sha512Password = HelperFunctions().sha512(password: self.pass).prefix(32)
+                let email = HelperFunctions().encryptData2(data: self.email, key: String(sha512Password))
+                
+                
+                
+                let parameters = ["email": email]
+                
+                let url = HelperFunctions().domain + "/register.php"
+                AF.request(url, method: HTTPMethod.post, parameters: parameters, encoding: URLEncoding.default, headers: [:])
+                    .responseJSON { (response) in
+                        switch response.result {
+                           case .success(let value):
+                                if let JSON = value as? [String: Any] {
+                                    let status = JSON["succes"] as! String
+                                    
+                                    if(status == "success"){
+                                        transitionToLogin()
+                                    }else{
+                                        self.title = "Error"
+                                        self.error = "An error occured."
+                                        self.alert = true
+                                    }
+                                    
+                                }
+                                break
+                            case .failure:
+                                print(Error.self)
+                            }
+                        }
+                
+                
+                
+                
             }else{
                 self.title = "Error"
                 self.error = "Please fill out a valid email"

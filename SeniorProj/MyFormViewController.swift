@@ -312,7 +312,7 @@ class MyFormViewController: FormViewController {
                             
                             
                             let df = DateFormatter()
-                            df.dateFormat = "yyyy-MM-dd hh:mm:ss"
+                            df.dateFormat = "MM/dd/yyyy"
                             let birthday = HelperFunctions().encryptData(data:df.string(from: bday.value!))
                             
                             
@@ -731,7 +731,7 @@ class MyFormViewController: FormViewController {
         if(birthday != nil){
             let decryptedbday = HelperFunctions().decryptData(data: birthday!)
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+            dateFormatter.dateFormat = "MM/dd/yyyy"
             let date = dateFormatter.date(from:decryptedbday)
             self.form.rowBy(tag: FormItems.birthDate)?.baseValue = date
         }

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-
+import Alamofire
 struct LoginPView: View {
     var body: some View {
         LoginPH()
@@ -199,7 +199,55 @@ struct LoginP: View{
                 let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
 
             if( regex.firstMatch(in: self.email, options: [], range: NSRange(location: 0, length: self.email.count)) != nil ){
-                    dismiss()
+                
+                
+                let sha512Password = HelperFunctions().sha512(password: self.pass).prefix(32)
+                let email = HelperFunctions().encryptData2(data: self.email, key: String(sha512Password))
+                
+                
+                
+                let parameters = ["email": email]
+                
+                let url = HelperFunctions().domain + "/login.php"
+                AF.request(url, method: HTTPMethod.post, parameters: parameters, encoding: URLEncoding.default, headers: [:])
+                    .responseJSON { (response) in
+                        switch response.result {
+                           case .success(let value):
+                                if let JSON = value as? [String: String] {
+                                    
+                                    if let status = JSON["error"]{
+                                        _ = status
+                                        self.title = "Error"
+                                        self.error = "Invalid Login. Please try again"
+                                        self.alert = true
+                                        
+                                    }else{
+                                        
+                                        UserDefaults.standard.set(sha512Password, forKey: "sha512Key")
+                                        
+                                        for(key, value) in JSON{
+                                          if key.hasPrefix("MID_") == false { continue }
+                                          
+                                            UserDefaults.standard.set(value, forKey: key)
+                                            
+                                        }
+                                        
+                                        
+                                        dismiss()
+                                    }
+                                    
+                                }
+                                break
+                            case .failure:
+                                print(Error.self)
+                            }
+                        }
+                
+                
+                
+                
+                
+                    //dismiss()
                 }else{
                     self.title = "Error"
                     self.error = "Please fill out a valid email"
