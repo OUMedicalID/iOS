@@ -598,26 +598,21 @@ class MyFormViewController: FormViewController {
                }
                 
                 
-                /*
+                
                 // Restore Medical Conditions
-                let medicalConditions = defaults.string(forKey: "MID_Conditions")?.hexToString()
-                
-                let json = JSON(medicalConditions)
-                
-                if let array = json?.dictionary {
-                   print(array)
-                }*/
-                
-                
-                /*
-                // Loop through all saved conditions and put them back.
-                for condition in medConditions {
-                    $0 <<< NameRow() {
-                        $0.value = HelperFunctions().decryptData(data: condition)
+                let medicalConditions = defaults.string(forKey: "MID_Conditions")
+                if(medicalConditions != ""){
+                    let medicalConditionsDecrypted = HelperFunctions().decryptData(data: medicalConditions!)
+                    let medData = medicalConditionsDecrypted.toJSON() as! [String]
+                    
+                    // Loop through all saved conditions and put them back.
+                    for condition in medData {
+                        $0 <<< NameRow() {
+                            $0.value = condition
+                        }
                     }
-                }*/
                 
-                
+                }
                 
             }
             
@@ -647,13 +642,21 @@ class MyFormViewController: FormViewController {
                 
                 
                 // Restore Injuries
-                let injuries = defaults.stringArray(forKey: "MID_Injuries") ?? [String]()
+               
                 
-                // Loop through all saved conditions and put them back.
-                for condition in injuries {
-                    $0 <<< NameRow() {
-                        $0.value = HelperFunctions().decryptData(data: condition)
+                let injuries = defaults.string(forKey: "MID_Injuries")
+                if(injuries != ""){
+                    let injuriesDecrypted = HelperFunctions().decryptData(data: injuries!)
+                    print("Injuries: " + injuriesDecrypted)
+                    let injuryData = injuriesDecrypted.toJSON() as! [String]
+                    
+                    // Loop through all saved conditions and put them back.
+                    for condition in injuryData {
+                        $0 <<< NameRow() {
+                            $0.value = condition
+                        }
                     }
+                    
                 }
                 
                 
@@ -689,13 +692,17 @@ class MyFormViewController: FormViewController {
                 print("Button was clicked!")
                 
                 let listofValues: [String]? = (form.sectionBy(tag: "MedicalConditionsMVS")?.compactMap {($0 as? NameRow)?.value })
-                let medicalConditionValues = listofValues!.compactMap { HelperFunctions().encryptData(data: $0) }
-                defaults.set(medicalConditionValues, forKey: "MID_Conditions")
+                let medicalConditionValues = listofValues!.compactMap { $0 }
+                let mJSON = HelperFunctions().json(from:medicalConditionValues as Any)
+                defaults.set(HelperFunctions().encryptData(data: mJSON!), forKey: "MID_Conditions")
+                
+                
                 
                 
                 let injuryValues: [String]? = (form.sectionBy(tag: "InjuryMVS")?.compactMap { ($0 as? NameRow)?.value })
-                let InjuriesMVS = injuryValues!.compactMap { HelperFunctions().encryptData(data: $0) }
-                defaults.set(InjuriesMVS, forKey: "MID_Injuries")
+                let InjuriesMVS = injuryValues!.compactMap { $0 }
+                let iJSON = HelperFunctions().json(from:InjuriesMVS as Any)
+                defaults.set(HelperFunctions().encryptData(data: iJSON!), forKey: "MID_Injuries")
                 
                 
                 let message = MDCSnackbarMessage()
@@ -704,6 +711,7 @@ class MyFormViewController: FormViewController {
                 MDCSnackbarManager.default.show(message)
 
                 
+                HelperFunctions().saveToServer()
             })
         
        
@@ -789,7 +797,7 @@ class MyFormViewController: FormViewController {
         
         
         
-        if(marital != nil){
+        if(marital != nil && marital != ""){
             self.form.rowBy(tag: FormItems.marital)?.baseValue = HelperFunctions().decryptData(data: marital!)
         }
         
