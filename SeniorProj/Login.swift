@@ -207,12 +207,14 @@ struct LoginP: View{
                 
                 
                 let parameters = ["email": email]
-                
+                print("Calling the request now...")
+                print(email)
                 let url = HelperFunctions().domain + "/login.php"
                 AF.request(url, method: HTTPMethod.post, parameters: parameters, encoding: URLEncoding.default, headers: [:])
                     .responseJSON { (response) in
                         switch response.result {
                            case .success(let value):
+                                print(value)
                                 if let JSON = value as? [String: String] {
                                     
                                     if let status = JSON["error"]{
@@ -222,8 +224,9 @@ struct LoginP: View{
                                         self.alert = true
                                         
                                     }else{
-                                        
+                                        print("Response succeeded.")
                                         UserDefaults.standard.set(sha512Password, forKey: "sha512Key")
+                                        UserDefaults.standard.set(email, forKey: "email")
                                         
                                         for(key, value) in JSON{
                                           if key.hasPrefix("MID_") == false { continue }
@@ -231,6 +234,8 @@ struct LoginP: View{
                                             UserDefaults.standard.set(value, forKey: key)
                                             
                                         }
+                                        
+                                        UserDefaults.standard.set("true", forKey: "isLoggedIn")
                                         
                                         
                                         dismiss()
@@ -240,6 +245,7 @@ struct LoginP: View{
                                 break
                             case .failure:
                                 print(Error.self)
+                               
                             }
                         }
                 

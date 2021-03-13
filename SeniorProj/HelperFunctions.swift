@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import CryptoSwift
+import Alamofire
+
 
 class HelperFunctions{
     
@@ -82,7 +84,7 @@ class HelperFunctions{
     
     // Decrypt Data
     func decryptData(data: String) -> String{
-        
+            if(data == ""){ return "" }
             print("Data that we received: "+data)
             if let key = defaults.string(forKey: "sha512Key"){
                 secretKey = key
@@ -134,6 +136,52 @@ class HelperFunctions{
         return String(data: data, encoding: String.Encoding.utf8)
     }
     
+    
+    
+    
+    func saveToServer(){
+        var allData = [String: String]()
+        
+        
+        print("Now saving all items to server.")
+        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
+            if(key.hasPrefix("MID_") == false){continue}
+            allData[key] = (value as! String)
+        }
+        
+        allData["email"] = UserDefaults.standard.string(forKey: "email")
+        
+        print("All Data")
+        print(allData)
+        
+        
+        let url = HelperFunctions().domain + "/receiveData.php"
+        AF.request(url, method: HTTPMethod.post, parameters: allData, encoding: URLEncoding.default, headers: [:])
+            .responseJSON { (response) in
+                switch response.result {
+                   case .success(let value):
+                        if let JSON = value as? [String: String] {
+                            
+                            if let status = JSON["error"]{
+                               // Do nothing if we can't save.
+                                _ = status
+                            }else{
+
+                               // Do nothing here either.
+                            }
+                            
+                        }
+                        break
+                    case .failure:
+                        print("It failed")
+                        print(Error.self)
+                    }
+                }
+        
+        
+        
+        
+    }
     
     
     

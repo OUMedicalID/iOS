@@ -1,6 +1,8 @@
 import UIKit
 import Eureka
 import MaterialComponents.MaterialSnackbar
+import CoreFoundation
+import Foundation
 
 
 class MyFormViewController: FormViewController {
@@ -356,7 +358,7 @@ class MyFormViewController: FormViewController {
                             
                      }
                         
-                       
+                        HelperFunctions().saveToServer()
                         
                     })
                     
@@ -596,15 +598,24 @@ class MyFormViewController: FormViewController {
                }
                 
                 
+                /*
                 // Restore Medical Conditions
-                let medicalConditions = defaults.stringArray(forKey: "MID_Conditions") ?? [String]()
+                let medicalConditions = defaults.string(forKey: "MID_Conditions")?.hexToString()
                 
+                let json = JSON(medicalConditions)
+                
+                if let array = json?.dictionary {
+                   print(array)
+                }*/
+                
+                
+                /*
                 // Loop through all saved conditions and put them back.
-                for condition in medicalConditions {
+                for condition in medConditions {
                     $0 <<< NameRow() {
                         $0.value = HelperFunctions().decryptData(data: condition)
                     }
-                }
+                }*/
                 
                 
                 
@@ -818,7 +829,7 @@ class MyFormViewController: FormViewController {
                 
         // Restore Contactss
         let EContact1 = defaults.string(forKey: "MID_EContact1")
-        if(EContact1 != nil){
+        if(EContact1 != nil && EContact1 != ""){
             let JSON = HelperFunctions().decryptData(data: EContact1!).hexToString()
             print(JSON)
             let dict = JSON.toJSON() as! [String]
@@ -835,7 +846,7 @@ class MyFormViewController: FormViewController {
         
         
         let EContact2 = defaults.string(forKey: "MID_EContact2")
-        if(EContact2 != nil){
+        if(EContact2 != nil && EContact2 != "" ){
             
             let JSON = HelperFunctions().decryptData(data: EContact2!).hexToString()
             let dict = JSON.toJSON() as! [String]
