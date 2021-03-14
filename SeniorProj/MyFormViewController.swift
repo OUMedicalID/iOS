@@ -547,6 +547,8 @@ class MyFormViewController: FormViewController {
                         
                         
                         // Prepare to save.
+                        
+                        HelperFunctions().saveToServer()
                     
                         
                         

@@ -25,7 +25,7 @@ class HelperFunctions{
     
     
     private var secretKey = ""
-    private let secretIV = "0000000000000000"
+    private var secretIV = ""
     
     
     
@@ -41,9 +41,11 @@ class HelperFunctions{
     
     // Encrypt Data
     
-    func encryptData(data: String) -> String{
+    func encryptData(data: String, isEmail: Bool = false) -> String{
         
           secretKey = defaults.string(forKey: "sha512Key")!
+          secretIV = randomString(length: 16)
+        
           let input: Array<UInt8> = Array(data.utf8)
           let key: Array<UInt8> = Array(secretKey.utf8)
           let iv: Array<UInt8> = Array(secretIV.utf8)
@@ -52,7 +54,7 @@ class HelperFunctions{
               let encrypted = try AES(key: key, blockMode: CBC(iv: iv), padding: .pkcs7).encrypt(input)
               let data = NSData(bytes: encrypted, length: encrypted.count)
             
-              return data.hexEncodedString().uppercased()
+              return data.hexEncodedString().uppercased() + ":" + secretIV
               
           } catch {
               print(error)
@@ -64,9 +66,11 @@ class HelperFunctions{
     
     func encryptData2(data: String, key: String) -> String{
         
+          let ivSetup =  data.toHexEncodedString().padding(toLength: 16, withPad: "0", startingAt: 0).prefix(16)
+        
           let input: Array<UInt8> = Array(data.utf8)
           let key: Array<UInt8> = Array(key.utf8)
-          let iv: Array<UInt8> = Array(secretIV.utf8)
+          let iv: Array<UInt8> = Array(ivSetup.utf8)
           
           do {
               let encrypted = try AES(key: key, blockMode: CBC(iv: iv), padding: .pkcs7).encrypt(input)
@@ -91,9 +95,13 @@ class HelperFunctions{
             }else{
                 secretKey = ""
             }
+        
+           let encodedData = data.components(separatedBy: ":")
+            
+            
            let key: Array<UInt8> = Array(secretKey.utf8)
-           let iv: Array<UInt8> = Array(secretIV.utf8)
-           let newData =  data.data(using: .hexadecimal)
+           let iv: Array<UInt8> = Array(encodedData[1].utf8)
+           let newData =  encodedData[0].data(using: .hexadecimal)
            //if (newData == nil) {return "Report: "+newData}
            let array = [UInt8](newData!)
            
@@ -181,6 +189,23 @@ class HelperFunctions{
         
         
         
+    }
+    
+    
+    func randomString(length: Int) -> String {
+        
+        let letters : NSString = "ABCDEF0123456789"
+        let len = UInt32(letters.length)
+
+        var randomString = ""
+
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
+
+        return randomString
     }
     
     

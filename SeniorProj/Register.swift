@@ -228,10 +228,11 @@ struct RegisterP: View{
                     .responseJSON { (response) in
                         switch response.result {
                            case .success(let value):
+                                print(value)
                                 if let JSON = value as? [String: Any] {
                                     let status = JSON["success"] as! String
                                     
-                                    if(status == "success"){
+                                    if(status == "true"){
                                         transitionToLogin()
                                     }else{
                                         self.title = "Error"
