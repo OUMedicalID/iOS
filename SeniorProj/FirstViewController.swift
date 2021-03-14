@@ -233,9 +233,12 @@ class FirstViewController: UIHostingController<Home>,NFCReaderDelegate {
           // here for write test data
         
         DispatchQueue.main.async {
+            
+        let email = UserDefaults.standard.string(forKey: "email")
+        let key = UserDefaults.standard.string(forKey: "sha512Key")
 
         var payloadData = Data([0x00])
-        let myData = "[[2a77b04723b4a960:b72fddcbe416aa20]]" //Max of 39 characters.
+        let myData = "[[\(email!):\(key!)]]" //Max of 39 characters.
         let urls = [myData]
         payloadData.append(urls[Int.random(in: 0..<urls.count)].data(using: .utf8)!)
 
