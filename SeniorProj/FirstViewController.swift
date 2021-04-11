@@ -102,7 +102,9 @@ struct Login: View{
             let name = defaults.string(forKey: "MID_Name")
             //print(name)
             //print(HelperFunctions().decryptData(data: name!))
-            let welcome = "Welcome" + (name != "" ? ", "+HelperFunctions().decryptData(data: name!)+"!" : "!")
+            
+            let name2 = (name != nil ? ", "+HelperFunctions().decryptData(data: name!)+"!" : "")
+            let welcome = "Welcome" + (name2 != "" ? ", "+name2+"!" : "!")
             
             
             Text(welcome)
