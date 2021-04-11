@@ -13,6 +13,7 @@
 		E80682E125F05E4A00A60F44 /* montserrat_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E80682E025F05E3000A60F44 /* montserrat_bold.ttf */; };
 		E80682E525F05E4D00A60F44 /* montserrat_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E80682DF25F05E3000A60F44 /* montserrat_light.ttf */; };
 		E80682E925F05E5100A60F44 /* montserrat_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E80682DE25F05E3000A60F44 /* montserrat_semibold.ttf */; };
+		E83A3111262387C5003ABF61 /* inactiveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3110262387C5003ABF61 /* inactiveBackground.swift */; };
 		E87DB95325E63D53008A8BD7 /* LoginRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E87DB95225E63D53008A8BD7 /* LoginRegister.storyboard */; };
 		E87DB95825E63DC6008A8BD7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87DB95725E63DC6008A8BD7 /* Login.swift */; };
 		E87DB95D25E64473008A8BD7 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87DB95C25E64473008A8BD7 /* Register.swift */; };
@@ -63,6 +64,7 @@
 		E80682DE25F05E3000A60F44 /* montserrat_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_semibold.ttf; sourceTree = "<group>"; };
 		E80682DF25F05E3000A60F44 /* montserrat_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_light.ttf; sourceTree = "<group>"; };
 		E80682E025F05E3000A60F44 /* montserrat_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = montserrat_bold.ttf; sourceTree = "<group>"; };
+		E83A3110262387C5003ABF61 /* inactiveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inactiveBackground.swift; sourceTree = "<group>"; };
 		E85C4B1225DA023100C16C8E /* SeniorProj.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeniorProj.entitlements; sourceTree = "<group>"; };
 		E87DB95225E63D53008A8BD7 /* LoginRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginRegister.storyboard; sourceTree = "<group>"; };
 		E87DB95725E63DC6008A8BD7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				E8A9A90325CFB607002612E3 /* Settings.swift */,
 				E8A9A90825CFC5B3002612E3 /* SettingsPassword.swift */,
 				E8A9A90E25CFC5ED002612E3 /* AboutApp.swift */,
+				E83A3110262387C5003ABF61 /* inactiveBackground.swift */,
 				E8A9A91625CFC5F6002612E3 /* Credits.swift */,
 				E8DD5CF325D7508800244C3C /* authFailed.swift */,
 			);
@@ -480,6 +483,7 @@
 				E8A9A90425CFB607002612E3 /* Settings.swift in Sources */,
 				E8A9A90925CFC5B3002612E3 /* SettingsPassword.swift in Sources */,
 				E8E9F9FE25B24B330049FE11 /* MyFormViewController.swift in Sources */,
+				E83A3111262387C5003ABF61 /* inactiveBackground.swift in Sources */,
 				E8A9A91725CFC5F6002612E3 /* Credits.swift in Sources */,
 				E8BAF4D425AE91EB0036CD77 /* SceneDelegate.swift in Sources */,
 				E8DD5CF425D7508800244C3C /* authFailed.swift in Sources */,
@@ -661,14 +665,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SeniorProj/SeniorProj.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.5;
+				CURRENT_PROJECT_VERSION = 1.6;
 				DEVELOPMENT_TEAM = S7UN6N8EFD;
 				INFOPLIST_FILE = SeniorProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.matt.seniorProjectMedID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -684,14 +688,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SeniorProj/SeniorProj.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.5;
+				CURRENT_PROJECT_VERSION = 1.6;
 				DEVELOPMENT_TEAM = S7UN6N8EFD;
 				INFOPLIST_FILE = SeniorProj/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.matt.seniorProjectMedID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

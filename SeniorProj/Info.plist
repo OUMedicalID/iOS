@@ -26,6 +26,12 @@
 	<string>To pass your account information to scanner</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>This app requires Face ID permission to authenticate using Face recognition.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>montserrat_bold.ttf</string>
+		<string>montserrat_light.ttf</string>
+		<string>montserrat_semibold.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -67,12 +73,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>montserrat_bold.ttf</string>
-		<string>montserrat_light.ttf</string>
-		<string>montserrat_semibold.ttf</string>
 	</array>
 </dict>
 </plist>

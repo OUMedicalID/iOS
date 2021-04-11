@@ -97,7 +97,7 @@ class HelperFunctions{
             }
         
            let encodedData = data.components(separatedBy: ":")
-            
+           if(encodedData.count < 2){return ""}
             
            let key: Array<UInt8> = Array(secretKey.utf8)
            let iv: Array<UInt8> = Array(encodedData[1].utf8)
