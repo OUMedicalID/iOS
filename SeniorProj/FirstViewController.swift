@@ -103,7 +103,7 @@ struct Login: View{
             //print(name)
             //print(HelperFunctions().decryptData(data: name!))
             
-            let name2 = (name != nil ? ", "+HelperFunctions().decryptData(data: name!)+"!" : "")
+            let name2 = (name != nil ? HelperFunctions().decryptData(data: name!)+"" : "")
             let welcome = "Welcome" + (name2 != "" ? ", "+name2+"!" : "!")
             
             

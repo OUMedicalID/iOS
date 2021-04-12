@@ -11,9 +11,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        NotificationCenter.default.addObserver(forName:UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [self] (_) in
+            removeBlurViews()
+        }
+
+        NotificationCenter.default.addObserver(forName:UIApplication.willResignActiveNotification, object: nil, queue: nil) { [self] (_) in
+            addBlurViews()
+        }
+        
         return true
     }
 
@@ -30,7 +39,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    
+    
+    
+    
+    
+    
+    // Blur on app multitask
+  
+   
+    func applicationWillResignActive(_ application: UIApplication) {
+            addBlurViews()
+    }
 
+    func applicationDidBecomeActive(_ application: UIApplication){
+        removeBlurViews()
+    }
 
+}
+
+private extension AppDelegate {
+    var blurViewTag: Int {
+        return 999999
+    }
+
+    func addBlurViews() {
+        for window in UIApplication.shared.windows {
+            let blurEffect: UIBlurEffect
+            if #available(iOS 13.0, *) {
+                blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+            } else {
+                blurEffect = UIBlurEffect(style: .light)
+            }
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = window.frame
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            blurEffectView.tag = blurViewTag
+            window.addSubview(blurEffectView)
+        }
+    }
+
+    func removeBlurViews() {
+        for window in UIApplication.shared.windows {
+            if let blurView = window.viewWithTag(blurViewTag) {
+                blurView.removeFromSuperview()
+            }
+        }
+    }
 }
 
