@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         NotificationCenter.default.addObserver(forName:UIApplication.willResignActiveNotification, object: nil, queue: nil) { [self] (_) in
+            if(isScanning){return}
             addBlurViews()
         }
         

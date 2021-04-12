@@ -18,6 +18,12 @@ class Credits: FormViewController {
                 $0.value = "Developer"
                 
             }
+            
+            <<< LabelRow() {
+                $0.title = "Tin Liu"
+                $0.value = "Developer"
+                
+            }
          
             <<< LabelRow() {
                 $0.title = "Aryan Abdolhosseini"
@@ -37,11 +43,6 @@ class Credits: FormViewController {
                 
             }
         
-            <<< LabelRow() {
-                $0.title = "Tin Liu"
-                $0.value = "Developer"
-                
-            }
            
         
         

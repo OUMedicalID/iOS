@@ -7,7 +7,7 @@ import BiometricAuthentication
 
 
 
-
+var isScanning = false
 
 struct ContentView: View {
     var body: some View {
@@ -116,6 +116,7 @@ struct Login: View{
             
             // Begin NFC...
             Button(action: {
+                isScanning = true
                 self.BeginNFC()
             }) {
                 Text("Begin Scan")
@@ -148,6 +149,7 @@ struct Login: View{
     }
     
     func BeginNFC(){
+        isScanning = true
         print("We are here....")
         // The code below is listening for this call and will promptly begin NFC.
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "notificationName"), object: nil)
@@ -228,6 +230,9 @@ class FirstViewController: UIHostingController<Home>,NFCReaderDelegate {
     @objc func showSpinningWheel(_ notification: NSNotification) {
         readerWriter.newWriterSession(with: self, isLegacy: true, invalidateAfterFirstRead: true, alertMessage: "Please go near the Raspberry Pi")
         readerWriter.begin()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            isScanning = false
+        }
      }
     
     
@@ -235,7 +240,6 @@ class FirstViewController: UIHostingController<Home>,NFCReaderDelegate {
           // here for write test data
         
         DispatchQueue.main.async {
-            
         let email = UserDefaults.standard.string(forKey: "email")
         let key = UserDefaults.standard.string(forKey: "sha512Key")
 
@@ -261,6 +265,7 @@ class FirstViewController: UIHostingController<Home>,NFCReaderDelegate {
             }
             self.readerWriter.end()
          }
+            
     }
   }
     
